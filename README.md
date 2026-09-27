@@ -92,4 +92,5 @@ No futuro, pretendo também direcionar meus estudos para **desenvolvimento Back-
 ---
 
 > Este projeto começou como uma ideia inspirada por uma publicação que encontrei no Reddit e está sendo desenvolvido do meu próprio jeito, como uma forma de aprender, experimentar e evoluir como desenvolvedor.
-> Créditos: https://www.reddit.com/r/webdev/comments/r8qia3/i_modelled_my_portfolio_website_after_windows_95/
+
+ Créditos: https://www.reddit.com/r/webdev/comments/r8qia3/i_modelled_my_portfolio_website_after_windows_95/
