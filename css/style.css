@@ -62,3 +62,105 @@ body {
 .desktop-icon.selected span {
     background-color: #000080;
 }
+/*JANELA*/
+.window {
+    position: absolute;
+    width: 600px;
+    max-width: calc(100vw - 40px);
+    height: 420px;
+    max-height: calc(100vh - 100px);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #c0c0c0;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid #404040;
+    border-bottom: 2px solid #404040;
+    box-shadow: 2px 2px 0 #000;
+    display: none;
+    z-index: 10;
+    user-select: none;
+}
+
+/*JANELA ABERTA*/
+.window.open {
+    display: block;
+}
+
+/*BARRA DA JANELA*/
+
+.window-header {
+    height: 28px;
+    background-color: #000080;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 6px;
+    cursor: default;
+    user-select: none;
+    cursor: move;
+    touch-action: none;
+}
+
+.window-title {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/*BOTÕES DA JANELA*/
+
+.window-buttons {
+    display: flex;
+    gap: 3px;
+    padding-right: 3px;
+}
+
+.window-buttons button {
+    width: 22px;
+    height: 20px;
+    background-color: #c0c0c0;
+    border: none;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid #404040;
+    border-bottom: 2px solid #404040;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    line-height: 15px;
+    cursor: pointer;
+}
+
+.window-buttons button:active {
+    border-top: 2px solid #404040;
+    border-left: 2px solid #404040;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+}
+
+/*CONTEÚDO*/
+
+.window-content {
+    height: calc(100% - 28px);
+    margin: 8px;
+    padding: 25px;
+    background-color: white;
+    border-top: 2px solid #404040;
+    border-left: 2px solid #404040;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    overflow-y: auto;
+    color: #111;
+}
+
+.window-content h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.window-content p {
+    margin-bottom: 16px;
+    font-size: 16px;
+    line-height: 1.5;
+}
