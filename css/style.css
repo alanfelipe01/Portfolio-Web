@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
+    overflow: hidden;
+}
+/*DESKTOP*/
+.desktop {
+    width: 100vw;
+    height: 100vh;
+    background-color: #008080;
+    position: relative;
+    overflow: hidden;
+}
+/*ÍCONES DO DESKTOP*/
+.desktop-icon {
+    width: 90px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    color: white;
+    font-size: 13px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+}
+.projetos-icon {
+    top: 120px;
+}
+.github-icon {
+    top: 210px;
+}
+
+.linkedin-icon {
+    top: 300px;
+}
+
+.folder-icon svg {
+    display: block;
+}
+/* segundo ícone */
+.trash {
+    top: 145px;
+}
+/* ícone da pasta */
+.folder-icon {
+    font-size: 42px;
+    line-height: 42px;
+    filter: drop-shadow(2px 2px 0 black);
+}
+.desktop-icon span {
+    padding: 2px 4px;
+}
+/* efeito quando selecionado */
+.desktop-icon.selected span {
+    background-color: #000080;
+}
