@@ -14,7 +14,7 @@
             <div class="folder-icon">
                 👨🏻‍💻
             </div>
-            <span>About Me</span>
+            <span>Sobre mim</span>
         </div>
         <!--ÍCONE PROJETOS-->
         <div class="desktop-icon projetos-icon" data-window="projetos">
@@ -45,25 +45,29 @@
 </div>
 
  <!-- JANELA SOBRE MIM -->
-        <section class="window" id="sobre-mim">
+        <section class="window" id="sobre-mim" aria-labelledby="intro-title">
             <!-- BARRA DE TÍTULO -->
             <header class="window-header">
                 <div class="window-title">
                     📁 Sobre Alan Felipe
                 </div>
                 <div class="window-buttons">
-                    <button class="minimize-btn">_</button>
-                    <button class="close-btn">×</button>
+                    <button class="minimize-btn" aria-label="Minimizar janela">_</button>
+                    <button class="close-btn" aria-label="Fechar janela">×</button>
                 </div>
             </header>
 
             <!-- CONTEÚDO DA JANELA -->
-            <div class="window-content">
-                <h2>print("Hello, World!")</h2>
-                <p>Olá! Meu nome é Alan.</p>
-                <p>Sou estudante de Análise e Desenvolvimento de Sistemas e estou construindo minha jornada na área de tecnologia.</p>
-                <p>Atualmente estou estudando desenvolvimento web, trabalhando principalmente com HTML, CSS e JavaScript. Futuramente pretendo me especializar em Back-End</p>
-                <p>Este projeto foi desenvolvido como uma experiência inspirada na interface clássica do Windows 95.</p>
+            <div class="window-content intro-content">
+                <p class="intro-greeting"><code>print("Hello, World!")</code></p>
+                <h1 id="intro-title">Eu sou Alan Felipe.</h1>
+                <p>Estudante de Análise e Desenvolvimento de Sistemas, aprendendo desenvolvimento web com HTML, CSS e JavaScript.</p>
+                <p>Estou construindo meus primeiros projetos e quero me especializar em back-end.</p>
+                <div class="intro-actions" aria-label="Explore meu portfólio">
+                    <button type="button" class="intro-action" data-open-window="projetos" aria-controls="projetos">Ver projetos</button>
+                    <a class="intro-action" href="https://www.linkedin.com/in/alan-felipe-621a72406/" target="_blank" rel="noopener noreferrer">Contato pelo LinkedIn <span class="intro-new-tab">(nova aba)</span></a>
+                </div>
+                <p class="intro-hint">Explore os ícones da área de trabalho para conhecer minha jornada. Esta interface é inspirada no Windows 95.</p>
             </div>
         </section>
 
@@ -73,8 +77,8 @@
             <header class="window-header">
                 <div class="window-title">📁 Meus Projetos</div>
                 <div class="window-buttons">
-                    <button class="minimize-btn">_</button>
-                    <button class="close-btn">×</button>
+                    <button class="minimize-btn" aria-label="Minimizar janela">_</button>
+                    <button class="close-btn" aria-label="Fechar janela">×</button>
                 </div>
             </header>
 
@@ -88,8 +92,27 @@
 
         <!-- BARRA DE TAREFAS -->
         <footer class="taskbar">
+            <!-- MENU INICIAR -->
+            <nav class="start-menu" id="start-menu" aria-label="Menu Iniciar" hidden>
+                <div class="start-menu-brand" aria-hidden="true">Alan.dev</div>
+                <div class="start-menu-items">
+                    <button type="button" class="start-menu-item" data-open-window="sobre-mim" aria-controls="sobre-mim">
+                        <span aria-hidden="true">👨🏻‍💻</span> Sobre mim
+                    </button>
+                    <button type="button" class="start-menu-item" data-open-window="projetos" aria-controls="projetos">
+                        <span aria-hidden="true">📁</span> Projetos
+                    </button>
+                    <hr class="start-menu-divider">
+                    <a class="start-menu-item" href="https://github.com/alanfelipe01" target="_blank" rel="noopener noreferrer">
+                        <span aria-hidden="true">🌐</span> GitHub <span class="start-menu-external">(nova aba)</span>
+                    </a>
+                    <a class="start-menu-item" href="https://www.linkedin.com/in/alan-felipe-621a72406/" target="_blank" rel="noopener noreferrer">
+                        <span aria-hidden="true">✉</span> Contato <span class="start-menu-external">(LinkedIn, nova aba)</span>
+                    </a>
+                </div>
+            </nav>
             <!-- BOTÃO INICIAR -->
-            <button class="start-button">
+            <button type="button" class="start-button" aria-controls="start-menu" aria-expanded="false">
 
                 <svg class="windows-logo"
                     viewBox="0 0 40 40"
