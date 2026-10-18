@@ -219,6 +219,111 @@ body {
     margin-bottom: 0;
 }
 
+/* PASTA DE PROJETOS */
+.projects-window {
+    width: 760px;
+    height: 560px;
+}
+
+.projects-content {
+    user-select: text;
+}
+
+.projects-content h2 {
+    margin-bottom: 8px;
+}
+
+.projects-content .projects-intro,
+.project-card p {
+    font-size: 14px;
+}
+
+.project-list {
+    display: grid;
+    gap: 16px;
+}
+
+.project-card {
+    min-width: 0;
+    padding: 16px;
+    border: 2px solid;
+    border-color: white #808080 #808080 white;
+    background: #eee;
+    box-shadow: 1px 1px 0 #404040;
+}
+
+.project-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.project-icon {
+    flex-shrink: 0;
+    font-size: 28px;
+}
+
+.project-heading h3 {
+    color: #000080;
+    font-size: 18px;
+    overflow-wrap: anywhere;
+}
+
+.project-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 14px;
+    list-style: none;
+}
+
+.project-technologies li {
+    padding: 4px 7px;
+    border: 1px solid #808080;
+    background: white;
+    font-size: 12px;
+}
+
+.project-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.project-actions a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 8px 12px;
+    border: 2px solid;
+    border-color: white #404040 #404040 white;
+    background: #c0c0c0;
+    color: #111;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.project-actions a:hover {
+    color: #000080;
+    text-decoration: underline;
+}
+
+.project-actions a:active {
+    border-color: #404040 white white #404040;
+}
+
+.project-actions a:focus-visible {
+    outline: 2px dashed #000080;
+    outline-offset: 3px;
+}
+
+.projects-content .projects-footer {
+    margin: 16px 0 0;
+    font-size: 12px;
+}
+
 /*BARRA DE TAREFAS*/
 .taskbar {
     position: absolute;
