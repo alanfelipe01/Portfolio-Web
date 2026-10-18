@@ -159,6 +159,66 @@ body {
     font-size: 16px;
     line-height: 1.5;
 }
+/* APRESENTAÇÃO INICIAL */
+.intro-content {
+    user-select: text;
+}
+
+.intro-content .intro-greeting {
+    color: #000080;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.intro-content h1 {
+    font-size: 28px;
+    margin-bottom: 16px;
+}
+
+.intro-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.intro-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    min-height: 44px;
+    padding: 8px 12px;
+    border: 2px solid;
+    border-color: white #404040 #404040 white;
+    background: #c0c0c0;
+    color: #111;
+    font: bold 14px Tahoma, Arial, sans-serif;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.intro-action:active {
+    border-color: #404040 white white #404040;
+}
+
+.intro-action:focus-visible {
+    outline: 2px dashed #000080;
+    outline-offset: 3px;
+}
+
+.intro-new-tab {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.intro-content .intro-hint {
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
 /*BARRA DE TAREFAS*/
 .taskbar {
     position: absolute;
@@ -191,7 +251,8 @@ body {
     font-size: 14px;
     cursor: pointer;
 }
-.start-button:active {
+.start-button:active,
+.start-button[aria-expanded="true"] {
     border-top: 2px solid #404040;
     border-left: 2px solid #404040;
     border-right: 2px solid white;
@@ -201,6 +262,82 @@ body {
     width: 24px;
     height: 24px;
     flex-shrink: 0;
+}
+
+/* MENU INICIAR */
+.start-menu {
+    position: absolute;
+    left: 3px;
+    bottom: 100%;
+    display: flex;
+    width: 300px;
+    max-width: calc(100vw - 6px);
+    max-height: calc(100dvh - 48px);
+    padding: 3px;
+    background: #c0c0c0;
+    border: 2px solid;
+    border-color: white #404040 #404040 white;
+    box-shadow: 2px 2px 0 #000;
+}
+
+.start-menu[hidden] {
+    display: none;
+}
+
+.start-menu-brand {
+    padding: 12px 6px;
+    background: #808080;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+}
+
+.start-menu-items {
+    flex: 1;
+    min-width: 0;
+    overflow-y: auto;
+}
+
+.start-menu-item {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+    min-height: 48px;
+    padding: 10px;
+    border: none;
+    background: transparent;
+    color: #111;
+    font: 14px Tahoma, Arial, sans-serif;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.start-menu-item:hover,
+.start-menu-item:focus-visible {
+    background: #000080;
+    color: white;
+}
+
+.start-menu-item:focus-visible,
+.start-button:focus-visible {
+    outline: 1px dotted currentColor;
+    outline-offset: -4px;
+}
+
+.start-menu-external {
+    font-size: 11px;
+}
+
+.start-menu-divider {
+    margin: 3px 5px;
+    border: 0;
+    border-top: 1px solid #808080;
+    border-bottom: 1px solid white;
 }
 
 /*JANELAS NA TASKBAR*/
