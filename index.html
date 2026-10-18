@@ -72,7 +72,7 @@
         </section>
 
         <!--JANELA PROJETOS-->
-        <section class="window" id="projetos">
+        <section class="window projects-window" id="projetos" aria-labelledby="projects-title">
             <!--BARRA DE TITULO-->
             <header class="window-header">
                 <div class="window-title">📁 Meus Projetos</div>
@@ -83,10 +83,54 @@
             </header>
 
              <!-- CONTEÚDO DA JANELA -->
-            <div class="window-content">
-                <h2>Meus Projetos</h2>
-                <p>Aqui vou apresentar alguns dos projetos que estou desenvolvendo.</p>
-                <p>Em breve...</p>
+            <div class="window-content projects-content">
+                <h2 id="projects-title">Meus Projetos</h2>
+                <p class="projects-intro">Conheça os projetos e estudos que compartilho no GitHub.</p>
+                <div class="project-list">
+                    <article class="project-card" aria-labelledby="project-litoranea">
+                        <header class="project-heading">
+                            <span class="project-icon" aria-hidden="true">🌿</span>
+                            <h3 id="project-litoranea">Litorânea Ambiental</h3>
+                        </header>
+                        <p>Landing page para a empresa júnior de Ciências Ambientais da UFC, apresentando serviços, equipe e canais de contato.</p>
+                        <ul class="project-technologies" aria-label="Tecnologias de Litorânea Ambiental">
+                            <li>React</li><li>TypeScript</li><li>TanStack Start</li><li>Tailwind CSS</li>
+                        </ul>
+                        <div class="project-actions">
+                            <a href="https://litoranea-ambiental-ufc.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Visitar site de Litorânea Ambiental (nova aba)">Visitar site ↗</a>
+                            <a href="https://github.com/alanfelipe01/litoranea-ambiental" target="_blank" rel="noopener noreferrer" aria-label="Ver código de Litorânea Ambiental no GitHub (nova aba)">Ver código ↗</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card" aria-labelledby="project-portfolio">
+                        <header class="project-heading">
+                            <span class="project-icon" aria-hidden="true">🖥️</span>
+                            <h3 id="project-portfolio">Portfolio-Web</h3>
+                        </header>
+                        <p>Este portfólio! Uma área de trabalho inspirada no Windows 95, com janelas interativas, barra de tarefas e menu Iniciar.</p>
+                        <ul class="project-technologies" aria-label="Tecnologias do Portfolio-Web">
+                            <li>HTML</li><li>CSS</li><li>JavaScript</li>
+                        </ul>
+                        <div class="project-actions">
+                            <a href="https://github.com/alanfelipe01/Portfolio-Web" target="_blank" rel="noopener noreferrer" aria-label="Ver código do Portfolio-Web no GitHub (nova aba)">Ver código ↗</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card" aria-labelledby="project-python">
+                        <header class="project-heading">
+                            <span class="project-icon" aria-hidden="true">🐍</span>
+                            <h3 id="project-python">Python — Estudos e Exercícios</h3>
+                        </header>
+                        <p>Repositório de estudos com exercícios, desafios e mini projetos para praticar Python e lógica de programação, organizados por tópico.</p>
+                        <ul class="project-technologies" aria-label="Tecnologias de Python Estudos">
+                            <li>Python</li>
+                        </ul>
+                        <div class="project-actions">
+                            <a href="https://github.com/alanfelipe01/python-estudos" target="_blank" rel="noopener noreferrer" aria-label="Ver estudos de Python no GitHub (nova aba)">Ver repositório ↗</a>
+                        </div>
+                    </article>
+                </div>
+                <p class="projects-footer">3 projetos e estudos · Links abrem em uma nova aba.</p>
             </div>
         </section>
 
