@@ -486,7 +486,17 @@ body {
 
 /*RELÓGIO*/
 
+.tray-sound {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 24px;
+    height: 30px;
+    margin-left: 5px;
+}
+
 .clock {
+    flex-shrink: 0;
     width: 80px;
     height: 30px;
     display: flex;
