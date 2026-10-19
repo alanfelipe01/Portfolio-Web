@@ -11,6 +11,7 @@ const startButton = document.querySelector(".start-button");
 const startMenu = document.getElementById("start-menu");
 
 let highestZIndex = 10;
+const compactLayout = window.matchMedia("(max-width: 700px), (pointer: coarse)");
 
 
 // =========================================
@@ -39,6 +40,8 @@ function bringToFront(windowElement) {
 
     if (button) {
         button.classList.add("active");
+        // Mantém o atalho ativo visível quando a barra precisa rolar no celular.
+        button.scrollIntoView({ block: "nearest", inline: "nearest" });
     }
 }
 
@@ -242,7 +245,7 @@ windows.forEach(windowElement => {
 
     header.addEventListener("pointerdown", event => {
         // Não arrasta ao clicar nos botões
-        if (event.target.closest("button")) {
+        if (compactLayout.matches || event.button !== 0 || event.target.closest("button")) {
             return;
         }
 
@@ -262,7 +265,7 @@ windows.forEach(windowElement => {
     });
 
     header.addEventListener("pointermove", event => {
-        if (!dragging) {
+        if (!dragging || compactLayout.matches) {
             return;
         }
 
@@ -270,8 +273,8 @@ windows.forEach(windowElement => {
         let y = event.clientY - offsetY;
 
         // Limites: não sai da tela e o título nunca fica embaixo da taskbar
-        const maxX = window.innerWidth - windowElement.offsetWidth;
-        const maxY = window.innerHeight - 42 - header.offsetHeight;
+        const maxX = desktop.clientWidth - windowElement.offsetWidth;
+        const maxY = desktop.clientHeight - document.querySelector(".taskbar").offsetHeight - windowElement.offsetHeight;
 
         x = Math.max(0, Math.min(x, maxX));
         y = Math.max(0, Math.min(y, maxY));
@@ -288,7 +291,36 @@ windows.forEach(windowElement => {
         dragging = false;
     });
 
+    header.addEventListener("lostpointercapture", () => {
+        dragging = false;
+    });
+
+    compactLayout.addEventListener("change", () => {
+        dragging = false;
+    });
+
 });
+
+// Recoloca janelas arrastadas na área visível ao redimensionar ou girar a tela.
+function keepWindowsVisible() {
+    windows.forEach(windowElement => {
+        if (compactLayout.matches) {
+            windowElement.style.removeProperty("left");
+            windowElement.style.removeProperty("top");
+            windowElement.style.removeProperty("transform");
+            return;
+        }
+        if (!windowElement.classList.contains("open") || !windowElement.style.left) return;
+        const rect = windowElement.getBoundingClientRect();
+        const maxX = Math.max(0, desktop.clientWidth - windowElement.offsetWidth);
+        const maxY = Math.max(0, desktop.clientHeight - document.querySelector(".taskbar").offsetHeight - windowElement.offsetHeight);
+        windowElement.style.left = `${Math.max(0, Math.min(rect.left, maxX))}px`;
+        windowElement.style.top = `${Math.max(0, Math.min(rect.top, maxY))}px`;
+    });
+}
+
+window.addEventListener("resize", keepWindowsVisible);
+compactLayout.addEventListener("change", keepWindowsVisible);
 
 // Apresenta o portfólio uma vez por navegador. Sem armazenamento disponível,
 // mantém a apresentação acessível abrindo-a normalmente a cada carregamento.
