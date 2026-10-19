@@ -7,6 +7,8 @@ const desktopIcons = document.querySelectorAll(".desktop-icon");
 const windows = document.querySelectorAll(".window");
 const taskbar = document.getElementById("taskbar-windows");
 const clock = document.getElementById("clock");
+const startButton = document.querySelector(".start-button");
+const startMenu = document.getElementById("start-menu");
 
 let highestZIndex = 10;
 
@@ -133,6 +135,70 @@ desktopIcons.forEach(icon => {
     });
 });
 
+// MENU INICIAR
+function closeStartMenu(restoreFocus = false) {
+    startMenu.hidden = true;
+    startButton.setAttribute("aria-expanded", "false");
+    if (restoreFocus) startButton.focus();
+}
+
+function openStartMenu() {
+    startMenu.hidden = false;
+    startButton.setAttribute("aria-expanded", "true");
+    startMenu.querySelector(".start-menu-item").focus();
+}
+
+startButton.addEventListener("click", () => {
+    if (startMenu.hidden) openStartMenu();
+    else closeStartMenu(true);
+});
+
+document.addEventListener("pointerdown", event => {
+    if (!startMenu.hidden && !startMenu.contains(event.target) && !startButton.contains(event.target)) {
+        closeStartMenu(startMenu.contains(document.activeElement));
+    }
+});
+
+document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && !startMenu.hidden) {
+        event.preventDefault();
+        closeStartMenu(true);
+    }
+});
+
+document.addEventListener("focusin", event => {
+    if (!startMenu.hidden && !startMenu.contains(event.target) && !startButton.contains(event.target)) {
+        closeStartMenu();
+    }
+});
+
+// Tab funciona normalmente; as setas também percorrem os atalhos.
+startMenu.addEventListener("keydown", event => {
+    if (!["ArrowDown", "ArrowUp", "Home", "End"].includes(event.key)) return;
+    const items = [...startMenu.querySelectorAll(".start-menu-item")];
+    const index = items.indexOf(document.activeElement);
+    let next = event.key === "ArrowDown" ? (index + 1) % items.length : (index - 1 + items.length) % items.length;
+    if (event.key === "Home") next = 0;
+    if (event.key === "End") next = items.length - 1;
+    event.preventDefault();
+    items[next].focus();
+});
+
+startMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => closeStartMenu(true));
+});
+
+// Os atalhos da apresentação e do menu usam o mesmo sistema de janelas.
+document.querySelectorAll("[data-open-window]").forEach(button => {
+    button.addEventListener("click", () => {
+        const windowId = button.dataset.openWindow;
+        closeStartMenu();
+        openWindow(windowId);
+        // Permite continuar a navegação pelo teclado na janela aberta.
+        document.getElementById(windowId)?.querySelector(".close-btn")?.focus();
+    });
+});
+
 // Clicar no fundo do desktop tira a seleção dos ícones
 desktop.addEventListener("click", event => {
     if (
@@ -223,3 +289,15 @@ windows.forEach(windowElement => {
     });
 
 });
+
+// Apresenta o portfólio uma vez por navegador. Sem armazenamento disponível,
+// mantém a apresentação acessível abrindo-a normalmente a cada carregamento.
+try {
+    const welcomeKey = "alan-portfolio:intro-seen";
+    if (localStorage.getItem(welcomeKey) !== "true") {
+        openWindow("sobre-mim");
+        localStorage.setItem(welcomeKey, "true");
+    }
+} catch {
+    openWindow("sobre-mim");
+}

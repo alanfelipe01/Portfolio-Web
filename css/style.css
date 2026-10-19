@@ -45,10 +45,6 @@ body {
 .folder-icon svg {
     display: block;
 }
-/* segundo ícone */
-.trash {
-    top: 145px;
-}
 /* ícone da pasta */
 .folder-icon {
     font-size: 42px;
@@ -98,7 +94,6 @@ body {
     align-items: center;
     justify-content: space-between;
     padding-left: 6px;
-    cursor: default;
     user-select: none;
     cursor: move;
     touch-action: none;
@@ -142,7 +137,7 @@ body {
 /*CONTEÚDO*/
 
 .window-content {
-    height: calc(100% - 28px);
+    height: calc(100% - 28px - 16px);
     margin: 8px;
     padding: 25px;
     background-color: white;
@@ -164,6 +159,171 @@ body {
     font-size: 16px;
     line-height: 1.5;
 }
+/* APRESENTAÇÃO INICIAL */
+.intro-content {
+    user-select: text;
+}
+
+.intro-content .intro-greeting {
+    color: #000080;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.intro-content h1 {
+    font-size: 28px;
+    margin-bottom: 16px;
+}
+
+.intro-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.intro-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    min-height: 44px;
+    padding: 8px 12px;
+    border: 2px solid;
+    border-color: white #404040 #404040 white;
+    background: #c0c0c0;
+    color: #111;
+    font: bold 14px Tahoma, Arial, sans-serif;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.intro-action:active {
+    border-color: #404040 white white #404040;
+}
+
+.intro-action:focus-visible {
+    outline: 2px dashed #000080;
+    outline-offset: 3px;
+}
+
+.intro-new-tab {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.intro-content .intro-hint {
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
+/* PASTA DE PROJETOS */
+.projects-window {
+    width: 760px;
+    height: 560px;
+}
+
+.projects-content {
+    user-select: text;
+}
+
+.projects-content h2 {
+    margin-bottom: 8px;
+}
+
+.projects-content .projects-intro,
+.project-card p {
+    font-size: 14px;
+}
+
+.project-list {
+    display: grid;
+    gap: 16px;
+}
+
+.project-card {
+    min-width: 0;
+    padding: 16px;
+    border: 2px solid;
+    border-color: white #808080 #808080 white;
+    background: #eee;
+    box-shadow: 1px 1px 0 #404040;
+}
+
+.project-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.project-icon {
+    flex-shrink: 0;
+    font-size: 28px;
+}
+
+.project-heading h3 {
+    color: #000080;
+    font-size: 18px;
+    overflow-wrap: anywhere;
+}
+
+.project-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 14px;
+    list-style: none;
+}
+
+.project-technologies li {
+    padding: 4px 7px;
+    border: 1px solid #808080;
+    background: white;
+    font-size: 12px;
+}
+
+.project-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.project-actions a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 8px 12px;
+    border: 2px solid;
+    border-color: white #404040 #404040 white;
+    background: #c0c0c0;
+    color: #111;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.project-actions a:hover {
+    color: #000080;
+    text-decoration: underline;
+}
+
+.project-actions a:active {
+    border-color: #404040 white white #404040;
+}
+
+.project-actions a:focus-visible {
+    outline: 2px dashed #000080;
+    outline-offset: 3px;
+}
+
+.projects-content .projects-footer {
+    margin: 16px 0 0;
+    font-size: 12px;
+}
+
 /*BARRA DE TAREFAS*/
 .taskbar {
     position: absolute;
@@ -176,7 +336,7 @@ body {
     display: flex;
     align-items: center;
     padding: 3px;
-    z-index: 100;
+    z-index: 9999;
 }
 
 /*BOTÃO INICIAR*/
@@ -196,7 +356,8 @@ body {
     font-size: 14px;
     cursor: pointer;
 }
-.start-button:active {
+.start-button:active,
+.start-button[aria-expanded="true"] {
     border-top: 2px solid #404040;
     border-left: 2px solid #404040;
     border-right: 2px solid white;
@@ -206,6 +367,82 @@ body {
     width: 24px;
     height: 24px;
     flex-shrink: 0;
+}
+
+/* MENU INICIAR */
+.start-menu {
+    position: absolute;
+    left: 3px;
+    bottom: 100%;
+    display: flex;
+    width: 300px;
+    max-width: calc(100vw - 6px);
+    max-height: calc(100dvh - 48px);
+    padding: 3px;
+    background: #c0c0c0;
+    border: 2px solid;
+    border-color: white #404040 #404040 white;
+    box-shadow: 2px 2px 0 #000;
+}
+
+.start-menu[hidden] {
+    display: none;
+}
+
+.start-menu-brand {
+    padding: 12px 6px;
+    background: #808080;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+}
+
+.start-menu-items {
+    flex: 1;
+    min-width: 0;
+    overflow-y: auto;
+}
+
+.start-menu-item {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+    min-height: 48px;
+    padding: 10px;
+    border: none;
+    background: transparent;
+    color: #111;
+    font: 14px Tahoma, Arial, sans-serif;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.start-menu-item:hover,
+.start-menu-item:focus-visible {
+    background: #000080;
+    color: white;
+}
+
+.start-menu-item:focus-visible,
+.start-button:focus-visible {
+    outline: 1px dotted currentColor;
+    outline-offset: -4px;
+}
+
+.start-menu-external {
+    font-size: 11px;
+}
+
+.start-menu-divider {
+    margin: 3px 5px;
+    border: 0;
+    border-top: 1px solid #808080;
+    border-bottom: 1px solid white;
 }
 
 /*JANELAS NA TASKBAR*/
@@ -249,7 +486,17 @@ body {
 
 /*RELÓGIO*/
 
+.tray-sound {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 24px;
+    height: 30px;
+    margin-left: 5px;
+}
+
 .clock {
+    flex-shrink: 0;
     width: 80px;
     height: 30px;
     display: flex;
@@ -280,11 +527,4 @@ body {
     .taskbar-window {
         min-width: 100px;
     }
-}
-.taskbar {
-    z-index: 9999; /*antes era100 */
-}
-
-.window-content {
-    height: calc(100% - 28px - 16px); /*desconta as margens de 8px*/
 }
