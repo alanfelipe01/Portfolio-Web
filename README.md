@@ -1,116 +1,87 @@
-# 🖥️ Alan.dev — Portfólio
+# Alan.dev — Portfólio
 
-Portfólio pessoal de **Alan Felipe**, inspirado na interface clássica do **Windows 95** e desenvolvido com **HTML, CSS e JavaScript**.
+Este é o meu portfólio pessoal, criado para reunir meus projetos e acompanhar minha evolução como desenvolvedor. A interface foi inspirada no Windows 95: em vez de navegar por uma página tradicional, você pode explorar uma área de trabalho, abrir janelas e conhecer um pouco do meu trabalho.
 
-O site funciona como uma área de trabalho virtual: ícones abrem janelas com informações sobre mim, meus projetos e atalhos para minhas redes. É um projeto de hobby e aprendizado, criado para praticar desenvolvimento web e acompanhar minha evolução como desenvolvedor.
+O projeto começou como uma forma de praticar HTML, CSS e JavaScript e continua crescendo com novas ideias e funcionalidades próprias.
 
-**[🌐 Acessar o portfólio](https://alan-felipe-portfolio.vercel.app)**
+**[Acessar o portfólio](https://alan-felipe-portfolio.vercel.app)**
 
-## ✨ Funcionalidades
+## O que você encontra no portfólio
 
-- **Área de trabalho retrô:** cores, bordas, ícones e barra de tarefas inspirados no Windows 95.
-- **Apresentação inicial:** a janela “Sobre mim” abre na primeira visita, com a saudação `print("Hello, World!")`, minha apresentação e atalhos para projetos e contato.
-- **Janelas interativas:** abrir, fechar, minimizar, restaurar e trazer uma janela para frente. No desktop, também é possível arrastá-las pela barra de título.
-- **Menu Iniciar:** acesso a Sobre mim, Projetos, GitHub e Contato pelo LinkedIn.
-- **Pasta de projetos:** cartões com descrição, tecnologias e links para os repositórios.
-- **Barra de tarefas:** atalhos das janelas abertas e indicação da janela ativa.
-- **Detalhes visuais:** relógio com horário fixo proposital e ícone decorativo de som, sem reprodução de áudio.
+- Uma janela de apresentação que abre na primeira visita e também pode ser acessada pelo ícone “Sobre mim”.
+- Uma pasta com meus projetos, suas tecnologias e links para os repositórios.
+- Atalhos para meu GitHub e LinkedIn.
+- Um menu Iniciar com acesso às principais seções e redes.
+- Janelas que podem ser abertas, fechadas, minimizadas e restauradas pela barra de tarefas. No computador, também é possível arrastá-las.
+- Uma interface adaptada para telas menores e navegação por toque.
 
-A apresentação utiliza `localStorage` para lembrar que já foi exibida naquele navegador. Se o armazenamento estiver indisponível, ela abre a cada carregamento. A janela continua acessível pelo ícone “Sobre mim” e pelo menu Iniciar.
+A apresentação inicial fica registrada no navegador para não abrir automaticamente em todas as visitas. Se o armazenamento estiver indisponível, ela será exibida novamente ao carregar a página. O relógio tem um horário fixo e o ícone de som é apenas decorativo.
 
-## 📱 Experiência no celular
+## Projetos apresentados
 
-A interface adapta o visual retrô para telas pequenas e dispositivos com toque:
-
-- Janelas ajustadas à área disponível da tela, com conteúdo rolável.
-- Controles maiores para fechar e minimizar.
-- Ícones organizados em uma linha.
-- Botões dos projetos e da apresentação dispostos em coluna.
-- Barra de tarefas com rolagem horizontal para acessar as janelas.
-- Ajustes para mudanças de orientação e áreas seguras da tela.
-
-No modo compacto, as janelas ficam em posição fixa para facilitar a leitura e a navegação pelo toque.
-
-## 📁 Projetos apresentados
-
-| Projeto | Descrição | Links |
+| Projeto | Sobre | Links |
 | --- | --- | --- |
-| **Litorânea Ambiental** | Landing page para a empresa júnior de Ciências Ambientais da UFC, com serviços, equipe e contato. | [Código](https://github.com/alanfelipe01/litoranea-ambiental) · [Site](https://litoranea-ambiental-ufc.vercel.app/) |
-| **Portfolio-Web** | Este portfólio, com área de trabalho retrô e janelas interativas. | [Código](https://github.com/alanfelipe01/Portfolio-Web) |
-| **Python — Estudos e Exercícios** | Estudos de Python e lógica de programação, com exercícios, desafios e mini projetos organizados por tópico. | [Repositório](https://github.com/alanfelipe01/python-estudos) |
+| Litorânea Ambiental | Landing page para a empresa júnior de Ciências Ambientais da UFC. | [Site](https://litoranea-ambiental-ufc.vercel.app/) · [Código](https://github.com/alanfelipe01/litoranea-ambiental) |
+| Portfolio-Web | Este portfólio, com uma área de trabalho e janelas interativas. | [Código](https://github.com/alanfelipe01/Portfolio-Web) |
+| Python — Estudos e Exercícios | Repositório dedicado à prática de Python e lógica de programação. | [Repositório](https://github.com/alanfelipe01/python-estudos) |
 
-## 🛠️ Tecnologias
+## Tecnologias
 
-- **HTML5:** estrutura e conteúdo.
-- **CSS3:** aparência retrô, layout responsivo e estados visuais.
-- **JavaScript:** gerenciamento das janelas, menu Iniciar e registro da primeira visita.
-- **Vercel:** hospedagem.
+- HTML5
+- CSS3
+- JavaScript
+- Vercel para hospedagem
 
-O projeto utiliza JavaScript puro, sem frameworks ou dependências de instalação.
+O projeto usa JavaScript puro e não precisa de instalação de dependências ou de uma etapa de build.
 
-## 🚀 Como executar localmente
+## Como executar
 
-1. Clone o repositório:
+Clone o repositório:
 
-   ```bash
-   git clone https://github.com/alanfelipe01/Portfolio-Web.git
-   cd Portfolio-Web
-   ```
+```bash
+git clone https://github.com/alanfelipe01/Portfolio-Web.git
+cd Portfolio-Web
+```
 
-2. Abra o arquivo `index.html` no navegador.
+Depois, abra o arquivo `index.html` no navegador. Se preferir, também pode usar um servidor local, como o Live Server no VS Code.
 
-Também é possível abrir a pasta no VS Code e utilizar um servidor local, como o Live Server. Não é necessário executar comandos de instalação ou build.
+## Como navegar
 
-## 🖱️ Como navegar
+Clique ou toque nos ícones da área de trabalho para abrir as janelas ou acessar as redes. Use os botões no canto das janelas para minimizá-las ou fechá-las; os atalhos na barra de tarefas permitem alternar entre as janelas abertas.
 
-- Clique ou toque nos ícones para abrir as janelas e acessar as redes sociais.
-- Use **_** para minimizar e **×** para fechar uma janela.
-- Clique no atalho da barra de tarefas para restaurar ou alternar entre janelas. Clicar no atalho da janela ativa a minimiza.
-- No desktop, arraste uma janela pela barra de título para reposicioná-la.
-- Abra o menu **Iniciar** para acessar os atalhos. O menu fecha ao escolher uma opção, clicar fora ou pressionar **Esc**.
-- No menu Iniciar, utilize **Tab**, as **setas**, **Home** e **End** para navegar pelo teclado.
-- No celular, deslize o conteúdo das janelas e a barra de tarefas quando necessário.
+No computador, você também pode arrastar as janelas pela barra de título. No menu Iniciar, é possível navegar com Tab, setas, Home e End e fechá-lo com Esc.
 
-Os novos links e controles possuem indicação visual de foco. Os botões de fechar e minimizar têm nomes acessíveis, e os links externos abrem em uma nova aba.
-
-## 📂 Estrutura do projeto
+## Estrutura do projeto
 
 ```text
 Portfolio-Web/
-├── index.html       # Área de trabalho, janelas, projetos e menu
+├── index.html
 ├── css/
-│   └── style.css    # Estilo Windows 95 e adaptações para celular
+│   └── style.css
 ├── js/
-│   └── script.js    # Interações e gerenciamento das janelas
+│   └── script.js
 └── README.md
 ```
 
-## 🚧 Status
+## Próximos passos
 
-**Publicado na Vercel e em evolução.**
+O portfólio continua em desenvolvimento. Algumas das melhorias que pretendo adicionar são:
 
-- [x] Área de trabalho inspirada no Windows 95.
-- [x] Sistema de janelas e barra de tarefas.
-- [x] Apresentação inicial e seção Sobre mim.
-- [x] Menu Iniciar funcional.
-- [x] Projetos com descrições, tecnologias e links.
-- [x] Atalhos para GitHub e LinkedIn.
-- [x] Adaptação para celular e navegação por toque.
-- [x] Publicação na web.
+- Melhorar a experiência no celular.
+- Criar uma pasta para o currículo.
+- Atualizar os projetos apresentados.
+- Adicionar um plano de fundo e refinar a tipografia.
+- Criar uma versão de Campo Minado dentro do portfólio.
 
-O portfólio continuará recebendo melhorias conforme meus estudos e projetos avançarem.
+## Sobre mim
 
-## 👨‍💻 Autor
-
-**Alan Felipe**
-
-Estudante de Análise e Desenvolvimento de Sistemas, aprendendo desenvolvimento web e direcionando meus estudos para back-end com Python.
+Sou Alan Felipe, estudante de Análise e Desenvolvimento de Sistemas. Estou aprendendo desenvolvimento web e direcionando meus estudos para back-end com Python.
 
 - [GitHub](https://github.com/alanfelipe01)
 - [LinkedIn](https://www.linkedin.com/in/alan-felipe-621a72406/)
 
-## 💡 Inspiração e créditos
+## Inspiração
 
-A ideia surgiu após conhecer um portfólio com uma proposta semelhante em uma publicação no Reddit. A partir dessa referência, desenvolvi minha própria versão como exercício de aprendizado, adicionando minhas ideias e funcionalidades.
+A ideia surgiu depois que conheci um portfólio com uma proposta parecida em uma publicação no Reddit. A partir dessa referência, comecei a desenvolver minha própria versão, experimentando ideias e aprendendo durante o processo.
 
-[Publicação original: portfólio inspirado no Windows 95](https://www.reddit.com/r/webdev/comments/r8qia3/i_modelled_my_portfolio_website_after_windows_95/)
+[Publicação que inspirou o projeto](https://www.reddit.com/r/webdev/comments/r8qia3/i_modelled_my_portfolio_website_after_windows_95/)
