@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
 * {
     margin: 0;
     padding: 0;
@@ -9,8 +11,12 @@
     --window-header-height: 28px;
 }
 body {
-    font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
+    font-family: "VT323", monospace;
+    font-size: 20px;
     overflow: hidden;
+}
+button, input, textarea, select, code {
+    font-family: inherit;
 }
 /*DESKTOP*/
 .desktop {
@@ -32,7 +38,7 @@ body {
     align-items: center;
     gap: 5px;
     color: white;
-    font-size: 13px;
+    font-size: 18px;
     text-align: center;
     cursor: pointer;
     user-select: none;
@@ -112,7 +118,7 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: bold;
 }
 
@@ -134,7 +140,7 @@ body {
     border-left: 2px solid white;
     border-right: 2px solid #404040;
     border-bottom: 2px solid #404040;
-    font-family: Arial, sans-serif;
+    font-family: inherit;
     font-weight: bold;
     line-height: 15px;
     cursor: pointer;
@@ -172,7 +178,7 @@ body {
 
 .window-content p {
     margin-bottom: 16px;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1.5;
 }
 /* APRESENTAÇÃO INICIAL */
@@ -182,7 +188,7 @@ body {
 
 .intro-content .intro-greeting {
     color: #000080;
-    font-size: 13px;
+    font-size: 18px;
     margin-bottom: 8px;
 }
 
@@ -210,7 +216,7 @@ body {
     border-color: white #404040 #404040 white;
     background: #c0c0c0;
     color: #111;
-    font: bold 14px Tahoma, Arial, sans-serif;
+    font: bold 20px "VT323", monospace;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
@@ -226,12 +232,12 @@ body {
 }
 
 .intro-new-tab {
-    font-size: 12px;
+    font-size: 18px;
     font-weight: normal;
 }
 
 .intro-content .intro-hint {
-    font-size: 13px;
+    font-size: 18px;
     margin-bottom: 0;
 }
 
@@ -251,7 +257,7 @@ body {
 
 .projects-content .projects-intro,
 .project-card p {
-    font-size: 14px;
+    font-size: 18px;
 }
 
 .project-list {
@@ -298,7 +304,7 @@ body {
     padding: 4px 7px;
     border: 1px solid #808080;
     background: white;
-    font-size: 12px;
+    font-size: 18px;
 }
 
 .project-actions {
@@ -317,7 +323,7 @@ body {
     border-color: white #404040 #404040 white;
     background: #c0c0c0;
     color: #111;
-    font-size: 13px;
+    font-size: 18px;
     text-decoration: none;
 }
 
@@ -337,7 +343,7 @@ body {
 
 .projects-content .projects-footer {
     margin: 16px 0 0;
-    font-size: 12px;
+    font-size: 18px;
 }
 
 /*BARRA DE TAREFAS*/
@@ -372,8 +378,8 @@ body {
     border-left: 2px solid white;
     border-right: 2px solid #404040;
     border-bottom: 2px solid #404040;
-    font-family: "MS Sans Serif", Tahoma, sans-serif;
-    font-size: 14px;
+    font-family: inherit;
+    font-size: 18px;
     cursor: pointer;
 }
 .start-button:active,
@@ -436,7 +442,7 @@ body {
     border: none;
     background: transparent;
     color: #111;
-    font: 14px Tahoma, Arial, sans-serif;
+    font: 20px "VT323", monospace;
     text-align: left;
     text-decoration: none;
     cursor: pointer;
@@ -455,7 +461,7 @@ body {
 }
 
 .start-menu-external {
-    font-size: 11px;
+    font-size: 18px;
 }
 
 .start-menu-divider {
@@ -490,7 +496,7 @@ body {
     border-left: 2px solid white;
     border-right: 2px solid #404040;
     border-bottom: 2px solid #404040;
-    font-size: 12px;
+    font-size: 18px;
     font-weight: bold;
     text-align: left;
     cursor: pointer;
@@ -530,7 +536,7 @@ body {
     border-left: 2px solid #404040;
     border-right: 2px solid white;
     border-bottom: 2px solid white;
-    font-size: 12px;
+    font-size: 18px;
 }
 
 /*RESPONSIVIDADE*/
@@ -565,7 +571,7 @@ body {
         width: 100%;
         min-height: 88px;
         padding: 8px 0;
-        font-size: 12px;
+        font-size: 18px;
         touch-action: manipulation;
     }
 
@@ -605,7 +611,7 @@ body {
     }
 
     .project-card p {
-        font-size: 16px;
+        font-size: 20px;
     }
 
     .start-button {
