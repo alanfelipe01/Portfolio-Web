@@ -1,0 +1,193 @@
+/*BARRA DE TAREFAS*/
+.taskbar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: var(--taskbar-height);
+    background-color: #c0c0c0;
+    border-top: 2px solid white;
+    display: flex;
+    align-items: center;
+    padding: 3px;
+    padding-bottom: calc(3px + env(safe-area-inset-bottom, 0px));
+    padding-left: max(3px, env(safe-area-inset-left, 0px));
+    padding-right: max(3px, env(safe-area-inset-right, 0px));
+    z-index: 9999;
+}
+
+/*BOTÃO INICIAR*/
+.start-button {
+    flex-shrink: 0;
+    height: 32px;
+    min-width: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background-color: #c0c0c0;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid #404040;
+    border-bottom: 2px solid #404040;
+    font-family: "MS Sans Serif", Tahoma, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+}
+.start-button:active,
+.start-button[aria-expanded="true"] {
+    border-top: 2px solid #404040;
+    border-left: 2px solid #404040;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+}
+.windows-logo {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+/* MENU INICIAR */
+.start-menu {
+    position: absolute;
+    left: 3px;
+    bottom: 100%;
+    display: flex;
+    width: 300px;
+    max-width: calc(100vw - 6px);
+    max-height: calc(100dvh - var(--taskbar-height) - 16px - env(safe-area-inset-top, 0px));
+    padding: 3px;
+    background: #c0c0c0;
+    border: 2px solid;
+    border-color: white #404040 #404040 white;
+    box-shadow: 2px 2px 0 #000;
+}
+
+.start-menu[hidden] {
+    display: none;
+}
+
+.start-menu-brand {
+    padding: 12px 6px;
+    background: #808080;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+}
+
+.start-menu-items {
+    flex: 1;
+    min-width: 0;
+    overflow-y: auto;
+}
+
+.start-menu-item {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+    min-height: 48px;
+    padding: 10px;
+    border: none;
+    background: transparent;
+    color: #111;
+    font: 14px Tahoma, Arial, sans-serif;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.start-menu-item:hover,
+.start-menu-item:focus-visible {
+    background: #000080;
+    color: white;
+}
+
+.start-menu-item:focus-visible,
+.start-button:focus-visible {
+    outline: 1px dotted currentColor;
+    outline-offset: -4px;
+}
+
+.start-menu-external {
+    font-size: 11px;
+}
+
+.start-menu-divider {
+    margin: 3px 5px;
+    border: 0;
+    border-top: 1px solid #808080;
+    border-bottom: 1px solid white;
+}
+
+/*JANELAS NA TASKBAR*/
+
+.taskbar-windows {
+    min-width: 0;
+    height: 32px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: 6px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.taskbar-window {
+    flex-shrink: 0;
+    height: 30px;
+    min-width: 150px;
+    max-width: 200px;
+    padding: 0 8px;
+    background-color: #c0c0c0;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid #404040;
+    border-bottom: 2px solid #404040;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: left;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.taskbar-window.active {
+    border-top: 2px solid #404040;
+    border-left: 2px solid #404040;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    background-color: #a0a0a0;
+}
+
+/*RELÓGIO*/
+
+.tray-sound {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 24px;
+    height: 30px;
+    margin-left: 5px;
+}
+
+.clock {
+    flex-shrink: 0;
+    width: 80px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px;
+    border-top: 2px solid #404040;
+    border-left: 2px solid #404040;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    font-size: 12px;
+}
+

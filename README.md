@@ -52,7 +52,13 @@ portfolio/
 ├── index.html
 │
 ├── css/
-│   └── style.css
+│   ├── base.css          # configurações globais
+│   ├── desktop.css       # área de trabalho e ícones
+│   ├── windows.css       # estrutura das janelas
+│   ├── intro.css         # apresentação inicial
+│   ├── projects.css      # conteúdo de projetos
+│   ├── taskbar.css       # barra de tarefas e menu Iniciar
+│   └── responsive.css    # ajustes para telas menores e toque
 │
 ├── js/
 │   └── script.js
@@ -63,6 +69,8 @@ portfolio/
 │
 └── README.md
 ```
+
+Os arquivos CSS são carregados na ordem apresentada no `index.html`. Os ajustes responsivos ficam por último para sobrescrever as regras gerais quando necessário. Novas funcionalidades podem ter seus próprios arquivos de estilo.
 
 A estrutura poderá ser modificada conforme novas funcionalidades forem adicionadas ao projeto.
 

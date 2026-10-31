@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --taskbar-size: 42px;
+    --taskbar-height: calc(var(--taskbar-size) + env(safe-area-inset-bottom, 0px));
+    --window-header-height: 28px;
+}
+body {
+    font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
+    overflow: hidden;
+}

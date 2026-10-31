@@ -1,0 +1,115 @@
+/*RESPONSIVIDADE*/
+
+@media (max-width: 700px), (pointer: coarse) {
+    :root {
+        --taskbar-size: 56px;
+        --window-header-height: 52px;
+    }
+
+    .desktop {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        align-content: start;
+        gap: 8px;
+        padding: calc(16px + env(safe-area-inset-top, 0px)) max(8px, env(safe-area-inset-right, 0px)) 0 max(8px, env(safe-area-inset-left, 0px));
+    }
+
+    .window {
+        /* O celular usa janelas fixas, mesmo depois de um arrasto no desktop. */
+        left: max(8px, env(safe-area-inset-left, 0px)) !important;
+        top: calc(8px + env(safe-area-inset-top, 0px)) !important;
+        transform: none !important;
+        width: calc(100% - max(8px, env(safe-area-inset-left, 0px)) - max(8px, env(safe-area-inset-right, 0px)));
+        max-width: none;
+        height: calc(100% - var(--taskbar-height) - 16px - env(safe-area-inset-top, 0px));
+        max-height: none;
+    }
+
+    .desktop-icon {
+        position: static;
+        width: 100%;
+        min-height: 88px;
+        padding: 8px 0;
+        font-size: 12px;
+        touch-action: manipulation;
+    }
+
+    .window-header {
+        padding-left: 8px;
+        cursor: default;
+        touch-action: auto;
+    }
+
+    .window-buttons {
+        gap: 4px;
+    }
+
+    .window-buttons button {
+        width: 44px;
+        height: 44px;
+        font-size: 22px;
+    }
+
+    .window-content {
+        margin: 6px;
+        padding: 16px;
+        touch-action: pan-y pinch-zoom;
+    }
+
+    .intro-content h1 {
+        font-size: 26px;
+    }
+
+    .intro-actions,
+    .project-actions {
+        flex-direction: column;
+    }
+
+    .project-card {
+        padding: 12px;
+    }
+
+    .project-card p {
+        font-size: 16px;
+    }
+
+    .start-button {
+        min-width: 84px;
+        height: 44px;
+    }
+
+    .taskbar-windows {
+        height: 44px;
+        scrollbar-width: none;
+    }
+
+    .taskbar-windows::-webkit-scrollbar {
+        display: none;
+    }
+
+    .taskbar-window {
+        height: 44px;
+        min-width: 104px;
+        max-width: 128px;
+    }
+
+    .clock {
+        width: 66px;
+        height: 36px;
+    }
+
+    .tray-sound {
+        flex-basis: 20px;
+        margin-left: 3px;
+    }
+
+    .start-menu {
+        width: 320px;
+        left: max(3px, env(safe-area-inset-left, 0px));
+        max-width: calc(100vw - max(3px, env(safe-area-inset-left, 0px)) - max(3px, env(safe-area-inset-right, 0px)));
+    }
+
+    .start-menu-item {
+        min-height: 52px;
+    }
+}
