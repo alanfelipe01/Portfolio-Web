@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" shape-rendering="crispEdges">
+  <!-- Pasta e aba -->
+  <path fill="#222b29" d="M2 6h11l2 3h13v2h2v17H2z"/>
+  <path fill="#e4ae37" d="M4 8h8l2 3h14v15H4z"/>
+  <path fill="#ffe18a" d="M4 8h8l2 3H4z"/>
+  <!-- Currículo com foto e linhas -->
+  <path fill="#222b29" d="M8 2h14l3 3v16H8z"/>
+  <path fill="#f8f4da" d="M10 4h11v3h2v12H10z"/>
+  <path fill="#a59e7e" d="M21 4v3h2z"/>
+  <path fill="#b7d5a9" d="M11 7h5v7h-5z"/>
+  <path fill="#436d60" d="M12 8h3v2h-3zm-1 3h5v2h-5zm6-2h4v1h-4zm0 2h4v1h-4zm-6 4h10v1H11zm0 2h10v1H11z"/>
+  <!-- Frente da pasta -->
+  <path fill="#222b29" d="M2 19h11l2-2h15l-2 11H3z"/>
+  <path fill="#f6c750" d="M4 21h10l2-2h12l-2 7H5z"/>
+  <path fill="#ffe18a" d="M4 21h10v1H4zm12-2h12v1H16z"/>
+  <path fill="#bb852a" d="M5 26h21v1H5z"/>
+</svg>

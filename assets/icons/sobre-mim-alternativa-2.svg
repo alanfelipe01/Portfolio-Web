@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" shape-rendering="crispEdges">
+  <!-- Computador com janela de perfil -->
+  <path fill="#222b29" d="M4 2h24v2h2v20h-2v2h-9v2h6v3H7v-3h6v-2H4v-2H2V4h2z"/>
+  <path fill="#fffdf2" d="M4 4h24v19H4z"/>
+  <path fill="#bcbcaf" d="M4 23h24v1H4zm11 3h2v3h-2zm-6 3h14v1H9z"/>
+  <path fill="#54756a" d="M6 6h20v15H6z"/>
+  <path fill="#b7d5a9" d="M7 7h18v13H7z"/>
+  <path fill="#222b29" d="M8 8h16v11H8z"/>
+  <path fill="#f8f4da" d="M9 9h14v9H9z"/>
+  <path fill="#436d60" d="M9 9h14v2H9zm2 3h3v2h-3zm-1 3h5v2h-5zm7-3h4v1h-4zm0 2h4v1h-4zm0 2h3v1h-3z"/>
+  <path fill="#f6c750" d="M21 9h1v1h-1zm3 15h2v1h-2z"/>
+  <path fill="#222b29" d="M7 27h18v1h2v4H5v-4h2z"/>
+  <path fill="#fffdf2" d="M7 28h18v1h1v2H6v-2h1z"/>
+  <path fill="#54756a" d="M8 29h2v1H8zm3 0h2v1h-2zm3 0h2v1h-2zm3 0h2v1h-2zm3 0h2v1h-2zm-9 1h10v1H11z"/>
+</svg>
