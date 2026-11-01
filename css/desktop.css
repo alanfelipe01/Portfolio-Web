@@ -9,6 +9,7 @@
 }
 /*ÍCONES DO DESKTOP*/
 .desktop-icon {
+    font-family: var(--interface-font);
     width: 90px;
     position: absolute;
     top: 30px;

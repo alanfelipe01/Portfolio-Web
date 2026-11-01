@@ -1,3 +1,11 @@
+@font-face {
+    font-family: "W95FA";
+    src: url("../assets/fonts/w95fa.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,8 +15,9 @@
     --taskbar-size: 42px;
     --taskbar-height: calc(var(--taskbar-size) + env(safe-area-inset-bottom, 0px));
     --window-header-height: 28px;
+    --interface-font: "W95FA", "MS Sans Serif", Tahoma, Arial, sans-serif;
 }
 body {
-    font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
+    font-family: var(--interface-font);
     overflow: hidden;
 }

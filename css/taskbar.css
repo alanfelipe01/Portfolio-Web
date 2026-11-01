@@ -1,5 +1,6 @@
 /*BARRA DE TAREFAS*/
 .taskbar {
+    font-family: var(--interface-font);
     position: absolute;
     left: 0;
     bottom: 0;
@@ -30,7 +31,7 @@
     border-left: 2px solid white;
     border-right: 2px solid #404040;
     border-bottom: 2px solid #404040;
-    font-family: "MS Sans Serif", Tahoma, sans-serif;
+    font-family: var(--interface-font);
     font-size: 14px;
     cursor: pointer;
 }
@@ -94,7 +95,7 @@
     border: none;
     background: transparent;
     color: #111;
-    font: 14px Tahoma, Arial, sans-serif;
+    font: 14px var(--interface-font);
     text-align: left;
     text-decoration: none;
     cursor: pointer;
@@ -138,6 +139,7 @@
 }
 
 .taskbar-window {
+    font-family: var(--interface-font);
     flex-shrink: 0;
     height: 30px;
     min-width: 150px;
