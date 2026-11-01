@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" shape-rendering="crispEdges">
+  <!-- Lixeira de coleta com folha -->
+  <path fill="#222b29" d="M11 3h10v2h5v3h-1l-2 21H9L7 8H6V5h5z"/>
+  <path fill="#b7d5a9" d="M12 5h8v1h4v2H8V6h4z"/>
+  <path fill="#54756a" d="M9 9h14l-2 18H11z"/>
+  <path fill="#f8f4da" d="M11 11h10v13H11z"/>
+  <path fill="#436d60" d="M18 12h2v3h-1v2h-2v1h-2v2h-1v-3h-1v-2h1v-1h2v-1h2zm-5 9h5v1h-5z"/>
+  <path fill="#e4ae37" d="M12 27h8v1h-8z"/>
+</svg>
