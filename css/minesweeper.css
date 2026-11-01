@@ -1,0 +1,24 @@
+.mines-icon { top: 480px; }
+.mines-window { width: 330px; height: auto; }
+.mines-content { padding: 10px; overflow: auto; }
+.mines-panel, .mines-board { border: 2px solid; border-color: #808080 #fff #fff #808080; padding: 5px; }
+.mines-panel { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+.mines-counter { background: #000; color: #f22; font: bold 24px monospace; letter-spacing: 2px; padding: 2px 4px; border: 2px solid; border-color: #808080 #fff #fff #808080; }
+.mines-reset, .mines-flag-mode, .mines-cell { background: #c0c0c0; border: 3px solid; border-color: #fff #808080 #808080 #fff; cursor: pointer; }
+.mines-reset { width: 40px; height: 40px; font: bold 18px var(--interface-font); }
+.mines-reset:active, .mines-flag-mode:active, .mines-flag-mode[aria-pressed="true"] { border-color: #808080 #fff #fff #808080; }
+.mines-board { display: grid; grid-template-columns: repeat(9, 32px); grid-template-rows: repeat(9, 32px); width: max-content; margin-inline: auto; }
+.mines-cell { width: 32px; height: 32px; min-width: 0; min-height: 0; padding: 0; font: bold 18px Arial, sans-serif; line-height: 1; touch-action: manipulation; }
+.mines-cell.revealed { border: 1px solid #888; background: #c0c0c0; cursor: default; }
+.mines-cell.exploded { background: #f44; }
+.mines-cell:focus-visible, .mines-reset:focus-visible, .mines-flag-mode:focus-visible { outline: 2px dotted #000; outline-offset: -4px; }
+.mines-footer { display: grid; grid-template-columns: 1fr auto; gap: 7px; margin-top: 10px; font: 13px var(--interface-font); }
+.mines-footer p { margin: 0; padding: 5px; border: 2px solid; border-color: #808080 #fff #fff #808080; }
+.mines-flag-mode { font: inherit; padding: 4px; }
+.mines-help { text-align: center; }
+@media (max-width: 700px), (pointer: coarse) {
+    .mines-window { height: calc(100% - var(--taskbar-height) - 16px - env(safe-area-inset-top, 0px)); }
+    .mines-content { width: min(100%, 380px); margin: 0 auto; }
+    .mines-cell { font-size: 20px; }
+}
+

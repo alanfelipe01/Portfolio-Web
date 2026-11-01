@@ -126,6 +126,9 @@ function createTaskbarButton(windowElement) {
 // =========================================
 
 desktopIcons.forEach(icon => {
+    icon.addEventListener("keydown", event => {
+        if (event.key === "Enter" || event.key === " ") { event.preventDefault(); icon.click(); }
+    });
     icon.addEventListener("click", () => {
         desktopIcons.forEach(other => other.classList.remove("selected"));
         icon.classList.add("selected");

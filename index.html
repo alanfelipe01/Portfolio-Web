@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/intro.css">
     <link rel="stylesheet" href="css/projects.css">
     <link rel="stylesheet" href="css/taskbar.css">
+    <link rel="stylesheet" href="css/minesweeper.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
@@ -53,6 +54,8 @@
     </div>
     <span>LinkedIn</span>
 </div>
+
+<div class="desktop-icon mines-icon" data-window="campo-minado" role="button" tabindex="0" aria-label="Abrir Campo Minado"><div class="folder-icon"><img src="assets/icons/campo-minado.svg" alt="" width="48" height="48"></div><span>Campo Minado</span></div>
 
  <!-- JANELA SOBRE MIM -->
         <section class="window" id="sobre-mim" aria-labelledby="intro-title">
@@ -173,6 +176,14 @@
             </div>
         </section>
 
+        <section class="window mines-window" id="campo-minado" aria-label="Campo Minado">
+            <header class="window-header"><div class="window-title">💣 Campo Minado</div><div class="window-buttons"><button class="minimize-btn" aria-label="Minimizar janela">_</button><button class="close-btn" aria-label="Fechar janela">×</button></div></header>
+            <div class="mines-content"><div class="mines-panel"><output id="mines-count" class="mines-counter" aria-label="Minas restantes">010</output><button type="button" id="mines-reset" class="mines-reset" aria-label="Reiniciar jogo">:)</button><output id="mines-time" class="mines-counter" aria-label="Tempo em segundos">000</output></div>
+                <div id="mines-board" class="mines-board" aria-label="Tabuleiro de Campo Minado"></div>
+                <div class="mines-footer"><p id="mines-status" class="mines-status" role="status">Boa sorte!</p><button type="button" id="mines-flag-mode" class="mines-flag-mode" aria-pressed="false">Bandeira: off</button><p id="mines-best" class="mines-best">Meu Melhor: 24s</p><p class="mines-help">Botão direito ou F = bandeira</p></div>
+            </div>
+        </section>
+
         <!-- BARRA DE TAREFAS -->
         <footer class="taskbar">
             <!-- MENU INICIAR -->
@@ -188,6 +199,7 @@
                     <button type="button" class="start-menu-item" data-open-window="curriculo" aria-controls="curriculo">
                         <span aria-hidden="true">📁</span> Currículo
                     </button>
+                    <button type="button" class="start-menu-item" data-open-window="campo-minado" aria-controls="campo-minado"><span aria-hidden="true">💣</span> Campo Minado</button>
                     <hr class="start-menu-divider">
                     <a class="start-menu-item" href="https://github.com/alanfelipe01" target="_blank" rel="noopener noreferrer">
                         <span aria-hidden="true">🌐</span> GitHub <span class="start-menu-external">(nova aba)</span>
@@ -229,5 +241,6 @@
         </footer>
     </main>
     <script src="js/script.js"></script>
+    <script src="js/minesweeper.js"></script>
 </body>
 </html>
