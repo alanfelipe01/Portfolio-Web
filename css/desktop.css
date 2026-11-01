@@ -26,12 +26,15 @@
 .projetos-icon {
     top: 120px;
 }
-.github-icon {
+.curriculo-icon {
     top: 210px;
+}
+.github-icon {
+    top: 300px;
 }
 
 .linkedin-icon {
-    top: 300px;
+    top: 390px;
 }
 
 .folder-icon svg {

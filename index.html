@@ -28,6 +28,12 @@
             <span>Projetos</span>
         </div>
 
+        <!-- ÍCONE CURRÍCULO -->
+        <div class="desktop-icon curriculo-icon" data-window="curriculo">
+            <div class="folder-icon">📁</div>
+            <span>Currículo</span>
+        </div>
+
         <!-- ÍCONE GITHUB -->
 <div class="desktop-icon github-icon" data-link="https://github.com/alanfelipe01">
     <div class="folder-icon">
@@ -93,6 +99,20 @@
                 <h2 id="projects-title">Meus Projetos</h2>
                 <p class="projects-intro">Conheça os projetos e estudos que compartilho no GitHub.</p>
                 <div class="project-list">
+                    <article class="project-card" aria-labelledby="project-ecotour">
+                        <header class="project-heading">
+                            <span class="project-icon" aria-hidden="true">♻️</span>
+                            <h3 id="project-ecotour">EcoTour</h3>
+                        </header>
+                        <p>Guia digital de descarte de resíduos desenvolvido durante o Hackathon UNINASSAU 2026. com orientações sobre materiais e pontos de coleta no campus.</p>
+                        <ul class="project-technologies" aria-label="Tecnologias do EcoTour">
+                            <li>HTML</li><li>CSS</li><li>JavaScript</li>
+                        </ul>
+                        <div class="project-actions">
+                            <a href="https://github.com/alanfelipe01/EcoTour" target="_blank" rel="noopener noreferrer" aria-label="Ver código do EcoTour no GitHub (nova aba)">Ver código ↗</a>
+                        </div>
+                    </article>
+
                     <article class="project-card" aria-labelledby="project-litoranea">
                         <header class="project-heading">
                             <span class="project-icon" aria-hidden="true">🌿</span>
@@ -136,7 +156,22 @@
                         </div>
                     </article>
                 </div>
-                <p class="projects-footer">3 projetos e estudos · Links abrem em uma nova aba.</p>
+                <p class="projects-footer">4 projetos e estudos · Links abrem em uma nova aba.</p>
+            </div>
+        </section>
+
+        <!-- JANELA CURRÍCULO -->
+        <section class="window" id="curriculo" aria-labelledby="curriculo-title">
+            <header class="window-header">
+                <div class="window-title">📁 Currículo</div>
+                <div class="window-buttons">
+                    <button class="minimize-btn" aria-label="Minimizar janela">_</button>
+                    <button class="close-btn" aria-label="Fechar janela">×</button>
+                </div>
+            </header>
+            <div class="window-content">
+                <h2 id="curriculo-title">Currículo</h2>
+                <p>Meu currículo estará disponível aqui em breve.</p>
             </div>
         </section>
 
@@ -151,6 +186,9 @@
                     </button>
                     <button type="button" class="start-menu-item" data-open-window="projetos" aria-controls="projetos">
                         <span aria-hidden="true">📁</span> Projetos
+                    </button>
+                    <button type="button" class="start-menu-item" data-open-window="curriculo" aria-controls="curriculo">
+                        <span aria-hidden="true">📁</span> Currículo
                     </button>
                     <hr class="start-menu-divider">
                     <a class="start-menu-item" href="https://github.com/alanfelipe01" target="_blank" rel="noopener noreferrer">
