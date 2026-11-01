@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" shape-rendering="crispEdges">
+  <!-- Pasta e aba -->
+  <path fill="#222b29" d="M2 6h11l2 3h13v2h2v17H2z"/>
+  <path fill="#e4ae37" d="M4 8h8l2 3h14v15H4z"/>
+  <path fill="#ffe18a" d="M4 8h8l2 3H4z"/>
+  <!-- Arquivo de código -->
+  <path fill="#222b29" d="M9 3h11l4 4v14H9z"/>
+  <path fill="#f8f4da" d="M11 5h8v4h3v10H11z"/>
+  <path fill="#a59e7e" d="M19 5v4h3z"/>
+  <path fill="#436d60" d="M14 11h2v1h-1v1h-1v1h1v1h1v1h-2v-1h-1v-3h1zm5 0h-1v2h-1v3h1v-2h1zm1 1h1v3h-1v1h-2v-1h1v-1h1v-1h-1v-1z"/>
+  <!-- Frente da pasta -->
+  <path fill="#222b29" d="M2 18h11l2-2h15l-2 12H3z"/>
+  <path fill="#f6c750" d="M4 20h10l2-2h12l-2 8H5z"/>
+  <path fill="#ffe18a" d="M4 20h10v1H4zm12-2h12v1H16z"/>
+  <path fill="#bb852a" d="M5 26h21v1H5z"/>
+</svg>
