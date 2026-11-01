@@ -111,3 +111,17 @@
     font-size: 16px;
     line-height: 1.5;
 }
+
+.skills-content fieldset {
+    margin: 0 0 14px;
+    padding: 8px 12px;
+    border: 2px groove #ddd;
+}
+
+.skills-content legend {
+    font-weight: bold;
+}
+
+.skills-content fieldset p {
+    margin: 4px 0;
+}

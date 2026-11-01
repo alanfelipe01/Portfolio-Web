@@ -10,6 +10,7 @@ O projeto começou como uma forma de praticar HTML, CSS e JavaScript e continua 
 
 - Uma janela de apresentação que abre na primeira visita e também pode ser acessada pelo ícone “Sobre mim”.
 - Uma pasta com meus projetos, suas tecnologias e links para os repositórios.
+- Minhas habilidades e estudos na janela “Sobre mim”.
 - Atalhos para meu GitHub e LinkedIn.
 - Um menu Iniciar com acesso às principais seções e redes.
 - Janelas que podem ser abertas, fechadas, minimizadas e restauradas pela barra de tarefas. No computador, também é possível arrastá-las.
