@@ -101,6 +101,13 @@
     cursor: pointer;
 }
 
+.start-menu-icon {
+    width: 24px;
+    height: 24px;
+    flex: 0 0 24px;
+    image-rendering: pixelated;
+}
+
 .start-menu-item:hover,
 .start-menu-item:focus-visible {
     background: #000080;
