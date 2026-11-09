@@ -1,0 +1,72 @@
+.control-panel-window {
+    width: 600px;
+    height: 410px;
+}
+
+.control-panel-content {
+    background: var(--window-frame-background);
+    border: 0;
+    padding: 16px;
+}
+
+.control-panel-content h2 {
+    margin-bottom: 6px;
+    font-size: 21px;
+}
+
+.control-panel-content > p {
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+.appearance-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(130px, 180px);
+    gap: 18px;
+    align-items: start;
+}
+
+.theme-choices {
+    min-width: 0;
+    padding: 10px;
+    border: 2px groove #eee;
+}
+
+.theme-choices legend { padding: 0 4px; }
+.theme-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+
+.theme-choice, .control-panel-actions button {
+    color: #111;
+    background: var(--window-frame-background);
+    border: 2px solid;
+    border-color: white #404040 #404040 white;
+    font: 14px var(--interface-font);
+    cursor: pointer;
+}
+
+.theme-choice { min-height: 64px; padding: 8px; text-align: left; }
+.theme-choice[aria-pressed="true"], .control-panel-actions button:active { border-color: #404040 white white #404040; }
+.theme-choice[aria-pressed="true"] { outline: 1px dotted #111; outline-offset: -5px; }
+.theme-choice:focus-visible, .control-panel-actions button:focus-visible { outline: 2px dashed #000080; outline-offset: 2px; }
+.theme-swatch { display: block; height: 16px; margin-bottom: 6px; border: 1px solid #404040; }
+.theme-swatch-default { background: #008080; }
+.theme-swatch-night { background: #263548; }
+
+.preview-monitor { padding: 6px; background: #333; border: 4px solid; border-color: white #555 #555 white; }
+.preview-desktop { min-height: 100px; padding: 14px 10px; background: var(--desktop-background); }
+.preview-window { min-height: 65px; margin-left: 15%; padding: 3px; background: var(--window-frame-background); border: 2px solid; border-color: white #404040 #404040 white; }
+.preview-title { padding: 3px; background: var(--window-title-background); color: white; font-size: 10px; }
+.preview-content { padding: 8px 3px; color: #111; font-size: 11px; }
+.control-panel-content .theme-current { margin: 8px 0 0; font-size: 13px; }
+.control-panel-actions { display: flex; justify-content: flex-end; margin-top: 18px; }
+.control-panel-actions button { min-height: 40px; padding: 7px 12px; }
+.control-panel-icon { display: inline-flex; align-items: center; justify-content: center; font-size: 24px; }
+
+@media (max-width: 700px), (pointer: coarse) {
+    .control-panel-window { height: calc(100% - var(--taskbar-height) - 16px - env(safe-area-inset-top, 0px)); }
+    .control-panel-content { padding: 16px; }
+    .appearance-layout { grid-template-columns: 1fr; }
+    .preview-monitor { max-width: 200px; }
+    .theme-choice { min-height: 70px; }
+    .control-panel-actions button { min-height: 44px; }
+}

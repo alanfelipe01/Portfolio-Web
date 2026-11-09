@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Alan.dev</title>
+    <script src="js/theme.js"></script>
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/desktop.css">
     <link rel="stylesheet" href="css/windows.css">
@@ -11,6 +12,7 @@
     <link rel="stylesheet" href="css/projects.css">
     <link rel="stylesheet" href="css/taskbar.css">
     <link rel="stylesheet" href="css/minesweeper.css">
+    <link rel="stylesheet" href="css/control-panel.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
@@ -190,6 +192,48 @@
             </div>
         </section>
 
+        <!-- PAINEL DE CONTROLE -->
+        <section class="window control-panel-window" id="painel-controle" aria-labelledby="control-panel-title">
+            <header class="window-header">
+                <div class="window-title">⚙ Painel de Controle</div>
+                <div class="window-buttons">
+                    <button class="minimize-btn" aria-label="Minimizar janela">_</button>
+                    <button class="close-btn" aria-label="Fechar janela">×</button>
+                </div>
+            </header>
+            <div class="window-content control-panel-content">
+                <h2 id="control-panel-title">Personalize sua área de trabalho</h2>
+                <p>Escolha um tema para ver o resultado.</p>
+                <div class="appearance-layout">
+                    <fieldset class="theme-choices">
+                        <legend>Temas</legend>
+                        <div class="theme-grid">
+                            <button type="button" class="theme-choice" data-theme-choice="padrao" aria-pressed="true">
+                                <span class="theme-swatch theme-swatch-default" aria-hidden="true"></span>Padrão
+                            </button>
+                            <button type="button" class="theme-choice" data-theme-choice="noite" aria-pressed="false">
+                                <span class="theme-swatch theme-swatch-night" aria-hidden="true"></span>Noite
+                            </button>
+                        </div>
+                    </fieldset>
+                    <div class="appearance-preview">
+                        <div class="preview-monitor" aria-hidden="true">
+                            <div class="preview-desktop">
+                                <div class="preview-window">
+                                    <div class="preview-title">Sobre mim</div>
+                                    <div class="preview-content">Olá! Eu sou Alan.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="theme-current" aria-live="polite">Tema: <strong id="current-theme">Padrão</strong></p>
+                    </div>
+                </div>
+                <div class="control-panel-actions">
+                    <button type="button" id="reset-theme">Restaurar padrão</button>
+                </div>
+            </div>
+        </section>
+
         <!-- BARRA DE TAREFAS -->
         <footer class="taskbar">
             <!-- MENU INICIAR -->
@@ -206,6 +250,7 @@
                         <img class="start-menu-icon" src="assets/icons/curriculo.svg" alt="" width="24" height="24"> Currículo
                     </button>
                     <button type="button" class="start-menu-item" data-open-window="campo-minado" aria-controls="campo-minado"><img class="start-menu-icon" src="assets/icons/campo-minado.svg" alt="" width="24" height="24"> Campo Minado</button>
+                    <button type="button" class="start-menu-item" data-open-window="painel-controle" aria-controls="painel-controle"><span class="start-menu-icon control-panel-icon" aria-hidden="true">⚙</span> Painel de Controle</button>
                     <hr class="start-menu-divider">
                     <a class="start-menu-item" href="https://github.com/alanfelipe01" target="_blank" rel="noopener noreferrer">
                         <svg class="start-menu-icon" aria-hidden="true" viewBox="0 0 16 16" width="42" height="42" xmlns="http://www.w3.org/2000/svg">

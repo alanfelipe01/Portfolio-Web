@@ -8,7 +8,7 @@
     left: 50%;
     top: calc((100% - var(--taskbar-height)) / 2);
     transform: translate(-50%, -50%);
-    background-color: #c0c0c0;
+    background-color: var(--window-frame-background);
     border-top: 2px solid white;
     border-left: 2px solid white;
     border-right: 2px solid #404040;
@@ -30,7 +30,7 @@
 .window-header {
     height: var(--window-header-height);
     flex: 0 0 var(--window-header-height);
-    background-color: #000080;
+    background-color: var(--window-title-background);
     color: white;
     display: flex;
     align-items: center;

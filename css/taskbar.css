@@ -110,7 +110,7 @@
 
 .start-menu-item:hover,
 .start-menu-item:focus-visible {
-    background: #000080;
+    background: var(--window-title-background);
     color: white;
 }
 
