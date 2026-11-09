@@ -1,4 +1,4 @@
-.mines-icon { top: 480px; }
+.mines-icon { top: 300px; }
 .mines-window { width: 330px; height: auto; }
 .mines-content { padding: 10px; overflow: auto; }
 .mines-panel, .mines-board { border: 2px solid; border-color: #808080 #fff #fff #808080; padding: 5px; }
