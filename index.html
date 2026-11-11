@@ -7,6 +7,7 @@
     <script src="js/theme.js"></script>
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/desktop.css">
+    <link rel="stylesheet" href="css/orbita.css">
     <link rel="stylesheet" href="css/windows.css">
     <link rel="stylesheet" href="css/intro.css">
     <link rel="stylesheet" href="css/projects.css">
@@ -18,6 +19,20 @@
 <body>
      <!-- DESKTOP -->
     <main class="desktop">
+        <!-- Cenário decorativo do tema Órbita 95 -->
+        <div class="orbita-scene" aria-hidden="true">
+            <span class="orbita-star orbita-star-one"></span>
+            <span class="orbita-star orbita-star-two"></span>
+            <span class="orbita-star orbita-star-three"></span>
+            <span class="orbita-star orbita-star-four"></span>
+            <span class="orbita-moon"></span>
+            <span class="orbita-planet"></span>
+            <span class="orbita-satellite">
+                <span class="orbita-wing orbita-wing-left"></span>
+                <span class="orbita-satellite-body"></span>
+                <span class="orbita-wing orbita-wing-right"></span>
+            </span>
+        </div>
         <!-- ÍCONE SOBRE MIM -->
         <div class="desktop-icon" data-window="sobre-mim">
             <div class="folder-icon"><img src="assets/icons/sobre-mim-alternativa-1.svg" alt="" width="48" height="48"></div>
@@ -214,6 +229,9 @@
                             </button>
                             <button type="button" class="theme-choice" data-theme-choice="noite" aria-pressed="false">
                                 <span class="theme-swatch theme-swatch-night" aria-hidden="true"></span>Noite
+                            </button>
+                            <button type="button" class="theme-choice" data-theme-choice="orbita" aria-pressed="false">
+                                <span class="theme-swatch theme-swatch-orbit" aria-hidden="true"></span>Órbita 95
                             </button>
                         </div>
                     </fieldset>

@@ -1,6 +1,6 @@
 (() => {
     const storageKey = "alan-portfolio:theme";
-    const labels = { padrao: "Padrão", noite: "Noite" };
+    const labels = { padrao: "Padrão", noite: "Noite", orbita: "Órbita 95" };
     let theme = "padrao";
 
     try {

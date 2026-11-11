@@ -51,9 +51,14 @@
 .theme-swatch { display: block; height: 16px; margin-bottom: 6px; border: 1px solid #404040; }
 .theme-swatch-default { background: #008080; }
 .theme-swatch-night { background: #263548; }
+.theme-swatch-orbit { background: #342563; }
 
 .preview-monitor { padding: 6px; background: #333; border: 4px solid; border-color: white #555 #555 white; }
 .preview-desktop { min-height: 100px; padding: 14px 10px; background: var(--desktop-background); }
+:root[data-theme="orbita"] .preview-desktop {
+    background-image: radial-gradient(circle at 15% 25%, #eee6ff 1px, transparent 2px), radial-gradient(circle at 85% 65%, #eee6ff 1px, transparent 2px);
+    background-size: 45px 40px, 58px 50px;
+}
 .preview-window { min-height: 65px; margin-left: 15%; padding: 3px; background: var(--window-frame-background); border: 2px solid; border-color: white #404040 #404040 white; }
 .preview-title { padding: 3px; background: var(--window-title-background); color: white; font-size: 10px; }
 .preview-content { padding: 8px 3px; color: #111; font-size: 11px; }

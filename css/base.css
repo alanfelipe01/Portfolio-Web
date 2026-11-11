@@ -15,6 +15,7 @@
     --desktop-background: #008080;
     --window-title-background: #000080;
     --window-frame-background: #c0c0c0;
+    --taskbar-background: #c0c0c0;
     --taskbar-size: 42px;
     --taskbar-height: calc(var(--taskbar-size) + env(safe-area-inset-bottom, 0px));
     --window-header-height: 28px;
@@ -24,6 +25,12 @@
     --desktop-background: #263548;
     --window-title-background: #17243e;
     --window-frame-background: #d2d4d9;
+}
+:root[data-theme="orbita"] {
+    --desktop-background: #171b3b;
+    --window-title-background: #342563;
+    --window-frame-background: #c8c9d6;
+    --taskbar-background: #b8bacb;
 }
 body {
     font-family: var(--interface-font);

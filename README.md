@@ -13,7 +13,7 @@ O projeto começou como uma forma de praticar HTML, CSS e JavaScript e continua 
 - Minhas habilidades e estudos na janela “Sobre mim”.
 - Atalhos para meu GitHub e LinkedIn.
 - Um menu Iniciar com acesso às principais seções e redes.
-- Um Painel de Controle no menu Iniciar para alternar entre os temas Padrão e Noite, com preferência salva no navegador quando possível.
+- Um Painel de Controle no menu Iniciar para alternar entre os temas Padrão, Noite e Órbita 95, com preferência salva no navegador quando possível.
 - Janelas que podem ser abertas, fechadas, minimizadas e restauradas pela barra de tarefas. No computador, também é possível arrastá-las.
 - Uma interface adaptada para telas menores e navegação por toque.
 

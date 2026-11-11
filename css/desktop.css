@@ -12,6 +12,7 @@
     font-family: var(--interface-font);
     width: 90px;
     position: absolute;
+    z-index: 1;
     top: 30px;
     left: 30px;
     display: flex;
