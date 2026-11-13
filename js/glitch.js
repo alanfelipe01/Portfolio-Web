@@ -1,8 +1,8 @@
 (() => {
     const config = {
         storageKey: "alan-portfolio:glitch-autostart",
-        decisionMin: 5000,
-        decisionMax: 10000,
+        decisionMin: 1800,
+        decisionMax: 3500,
         walkMin: 96,
         walkMax: 240,
         walkClearance: 32,
@@ -14,8 +14,9 @@
         obstacleMargin: 6,
         attentionRadius: 150,
         attentionDuration: 2500,
-        attentionCooldown: 6000,
-        sleepAfter: 90000,
+        attentionCooldown: 3500,
+        sleepAfter: 60000,
+        startupSleepDuration: 3000,
         wakeDuration: 700,
         stretchDuration: 1200,
         spontaneousStretchChance: .15,
@@ -27,10 +28,8 @@
         strongGlitchCooldown: 20000,
         multiClickWindow: 2000,
         reducedReactionDuration: 600,
-        clickReactionCooldown: 2000,
+        clickReactionCooldown: 600,
         spontaneousGlitchInterval: 6000,
-        glitchSeparation: 2000,
-        spontaneousGlitchChance: .7,
         spontaneousMediumChance: .35,
         retreatMin: 48,
         retreatMax: 96
@@ -91,17 +90,19 @@
     let consecutiveRests = 0;
     let attentionTimer = null;
     let glitchTimer = null;
+    let spontaneousGlitchTimer = null;
+    let spontaneousEffectTimer = null;
     let sleepTimer = null;
+    let startupWakeTimer = null;
     let routineTimer = null;
     let walkFrame = null;
     let layoutFrame = null;
     let lastAttentionAt = -Infinity;
     let lastClickReactionAt = -Infinity;
-    let lastSpontaneousGlitchAt = performance.now();
-    let lastGlitchAt = -Infinity;
     let lastStrongGlitchAt = -Infinity;
     let clickTimes = [];
     let entrancePending = autoStart;
+    let startupWakePending = false;
     let lastInteractionAt = performance.now();
     let sleepRequested = false;
     let pendingWindowAttention = null;
@@ -166,12 +167,18 @@
         cancelDecision();
         if (attentionTimer !== null) clearTimeout(attentionTimer);
         if (glitchTimer !== null) clearTimeout(glitchTimer);
+        if (spontaneousGlitchTimer !== null) clearTimeout(spontaneousGlitchTimer);
+        if (spontaneousEffectTimer !== null) clearTimeout(spontaneousEffectTimer);
         if (sleepTimer !== null) clearTimeout(sleepTimer);
+        if (startupWakeTimer !== null) clearTimeout(startupWakeTimer);
         if (routineTimer !== null) clearTimeout(routineTimer);
         if (walkFrame !== null) cancelAnimationFrame(walkFrame);
         attentionTimer = null;
         glitchTimer = null;
+        spontaneousGlitchTimer = null;
+        spontaneousEffectTimer = null;
         sleepTimer = null;
+        startupWakeTimer = null;
         routineTimer = null;
         sleepRequested = false;
         pendingWindowAttention = null;
@@ -232,6 +239,7 @@
         renderPose();
         updateControls();
         if (tryEnterSleep()) return;
+        scheduleSpontaneousGlitch();
         if (decisionPending) {
             decisionPending = false;
             takeDecision();
@@ -251,6 +259,9 @@
 
     function wakeGlitch() {
         if (!canInteract() || activity !== "sleeping") return;
+        if (startupWakeTimer !== null) clearTimeout(startupWakeTimer);
+        startupWakeTimer = null;
+        startupWakePending = false;
         clickTimes = [];
         lastInteractionAt = performance.now();
         sleepRequested = false;
@@ -287,6 +298,12 @@
             glitchTimer = null;
         }
 
+        if (spontaneousEffectTimer !== null) {
+            clearTimeout(spontaneousEffectTimer);
+            spontaneousEffectTimer = null;
+            mascot.dataset.glitch = "";
+        }
+
         // Uma interação interrompe o passeio ou a observação sem retomá-los depois.
         if (attentionTimer !== null) clearTimeout(attentionTimer);
         if (walkFrame !== null) cancelAnimationFrame(walkFrame);
@@ -308,7 +325,6 @@
         }
         mascot.dataset.glitch = reduced ? "reduced" : kind;
         mascot.style.setProperty("--glitch-duration", duration + "ms");
-        lastGlitchAt = now;
         if (kind === "strong") lastStrongGlitchAt = now;
         renderPose();
         glitchTimer = setTimeout(() => {
@@ -340,16 +356,6 @@
         }
         decisionPending = false;
         if (tryEnterSleep()) return;
-        const now = performance.now();
-        const spontaneousAllowed = now - lastSpontaneousGlitchAt >= config.spontaneousGlitchInterval &&
-            now - lastGlitchAt >= config.glitchSeparation;
-        if (spontaneousAllowed && Math.random() < config.spontaneousGlitchChance) {
-            const kind = Math.random() >= 1 - config.spontaneousMediumChance ? "medium" : "micro";
-            if (startGlitch(kind, "spontaneous")) {
-                lastSpontaneousGlitchAt = now;
-                return;
-            }
-        }
         const choice = Math.random();
         const shouldWalk = choice < config.walkChance || consecutiveRests >= config.maxRestDecisions;
         if (shouldWalk && startWalk()) {
@@ -361,6 +367,32 @@
         activity = choice < .9 ? "sitting" : "idle";
         renderPose();
         scheduleDecision();
+    }
+
+    function startSpontaneousGlitch() {
+        if (!canAct() || activity === "glitching" || spontaneousEffectTimer !== null) return false;
+        const medium = Math.random() < config.spontaneousMediumChance;
+        const min = medium ? config.mediumGlitchMin : config.microGlitchMin;
+        const max = medium ? config.mediumGlitchMax : config.microGlitchMax;
+        const duration = Math.round(min + Math.random() * (max - min));
+        mascot.style.setProperty("--glitch-duration", duration + "ms");
+        mascot.dataset.glitch = medium ? "medium" : "micro";
+        spontaneousEffectTimer = setTimeout(() => {
+            spontaneousEffectTimer = null;
+            mascot.dataset.glitch = "";
+        }, duration);
+        return true;
+    }
+
+    function scheduleSpontaneousGlitch(delay = config.spontaneousGlitchInterval) {
+        if (!canAct() || spontaneousGlitchTimer !== null) return;
+        spontaneousGlitchTimer = setTimeout(() => {
+            spontaneousGlitchTimer = null;
+            if (!canAct()) return;
+            // Uma reação direta em curso termina antes da próxima falha espontânea.
+            scheduleSpontaneousGlitch(startSpontaneousGlitch()
+                ? config.spontaneousGlitchInterval : 100);
+        }, delay);
     }
 
     function scheduleDecision() {
@@ -377,14 +409,21 @@
         if (activity === "sleeping") {
             mascot.classList.toggle("is-active", canInteract() && !motionPreference.matches);
             if (!canInteract()) stopActivities();
+            else if (startupWakePending && startupWakeTimer === null) {
+                startupWakeTimer = setTimeout(() => {
+                    startupWakeTimer = null;
+                    wakeGlitch();
+                }, config.startupSleepDuration);
+            }
             return;
         }
         const active = canAct();
         mascot.classList.toggle("is-active", active);
         if (!active) {
             stopActivities();
-        } else if (activity === "idle" || activity === "sitting") {
-            scheduleDecision();
+        } else {
+            scheduleSpontaneousGlitch();
+            if (activity === "idle" || activity === "sitting") scheduleDecision();
         }
         scheduleSleepCheck();
     }
@@ -450,7 +489,8 @@
         if (position) setPosition(position);
         if (entrancePending && canInteract()) {
             entrancePending = false;
-            if (!motionPreference.matches) startGlitch("strong", "entrance");
+            startupWakePending = true;
+            enterSleep();
         }
         if (openedWindow && openedWindow.classList.contains("open") && canAct()) {
             const windowRect = openedWindow.getBoundingClientRect();
@@ -691,6 +731,7 @@
         visible = false;
         paused = false;
         entrancePending = false;
+        startupWakePending = false;
         lastInteractionAt = performance.now();
         sleepRequested = false;
         refresh();
