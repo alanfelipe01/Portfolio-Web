@@ -115,17 +115,24 @@
     bottom: 0;
 }
 
-/* A cabeça e o tronco permanecem iguais; somente as patas alternam. */
+/* Preserva o focinho de perfil e troca apenas a área das patas. */
 .glitch-mascot[data-state="walking"][data-walk-frame="1"] #glitch-walk-right-next,
-.glitch-mascot[data-state="walking"][data-walk-frame="1"] #glitch-walk-left-next {
-    clip-path: inset(0 0 25% 0);
+.glitch-mascot[data-state="walking"][data-walk-frame="3"] #glitch-walk-right-next {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 68% 100%, 68% 75%, 0 75%);
 }
 
-.glitch-mascot[data-state="walking"][data-walk-frame="1"] #glitch-walk-right {
+.glitch-mascot[data-state="walking"][data-walk-frame="1"] #glitch-walk-left-next,
+.glitch-mascot[data-state="walking"][data-walk-frame="3"] #glitch-walk-left-next {
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 28% 75%, 28% 100%, 0 100%);
+}
+
+.glitch-mascot[data-state="walking"][data-walk-frame="1"] #glitch-walk-right,
+.glitch-mascot[data-state="walking"][data-walk-frame="3"] #glitch-walk-right {
     clip-path: inset(75% 32% 0 0);
 }
 
-.glitch-mascot[data-state="walking"][data-walk-frame="1"] #glitch-walk-left {
+.glitch-mascot[data-state="walking"][data-walk-frame="1"] #glitch-walk-left,
+.glitch-mascot[data-state="walking"][data-walk-frame="3"] #glitch-walk-left {
     clip-path: inset(75% 28% 0 0);
 }
 
@@ -142,12 +149,17 @@
     animation: none;
 }
 
-.glitch-mascot.is-active[data-state="walking"][data-walk-frame="1"] img.glitch-walk-pose {
+.glitch-mascot.is-active[data-state="walking"][data-walk-frame="1"] img.glitch-walk-pose,
+.glitch-mascot.is-active[data-state="walking"][data-walk-frame="3"] img.glitch-walk-pose {
     transform: translateY(-1px);
 }
 
 .glitch-mascot.is-active[data-state="walking"][data-walk-frame="1"] #glitch-walk-right {
     transform: translate(-1px, -1px);
+}
+
+.glitch-mascot.is-active[data-state="walking"][data-walk-frame="3"] #glitch-walk-left {
+    transform: translate(1px, -1px);
 }
 
 @keyframes glitch-breathe {
@@ -426,10 +438,7 @@
     .glitch-mascot.is-active[data-state="walking"] img.glitch-walk-pose {
         animation: none;
     }
-    .glitch-mascot.is-active[data-state="walking"][data-walk-frame="1"] img.glitch-walk-pose {
-        transform: none;
-    }
-    .glitch-mascot.is-active[data-state="walking"][data-walk-frame="1"] #glitch-walk-right {
+    .glitch-mascot.is-active[data-state="walking"] img.glitch-walk-pose {
         transform: none;
     }
     .glitch-mascot[data-glitch="micro"]::before,

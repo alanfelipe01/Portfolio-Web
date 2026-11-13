@@ -10,7 +10,7 @@
         maxRestDecisions: 1,
         walkSpeed: 60,
         walkAcceleration: 120,
-        walkStepLength: 18,
+        walkStepLength: 9,
         obstacleMargin: 6,
         attentionRadius: 150,
         attentionDuration: 2500,
@@ -30,6 +30,7 @@
         reducedReactionDuration: 600,
         clickReactionCooldown: 600,
         spontaneousGlitchInterval: 6000,
+        spontaneousStrongChance: .25,
         spontaneousMediumChance: .35,
         retreatMin: 48,
         retreatMax: 96
@@ -143,7 +144,7 @@
             const steady = walkDirection + "Next";
             if (poseReady[steady]) {
                 selected = [steady];
-                if (walkFrameIndex === 1 && poseReady[walkDirection]) {
+                if (walkFrameIndex % 2 === 1 && poseReady[walkDirection]) {
                     selected.push(walkDirection);
                     combinedStep = true;
                 }
@@ -153,7 +154,8 @@
             image.hidden = !selected.includes(name);
         });
         mascot.dataset.state = activity;
-        mascot.dataset.walkFrame = combinedStep ? "1" : "0";
+        mascot.dataset.walkFrame = activity === "walking" && (walkFrameIndex % 2 === 0 || combinedStep)
+            ? String(walkFrameIndex) : "0";
     }
 
     function cancelDecision() {
@@ -371,12 +373,13 @@
 
     function startSpontaneousGlitch() {
         if (!canAct() || activity === "glitching" || spontaneousEffectTimer !== null) return false;
-        const medium = Math.random() < config.spontaneousMediumChance;
+        const strong = Math.random() < config.spontaneousStrongChance;
+        const medium = !strong && Math.random() < config.spontaneousMediumChance;
         const min = medium ? config.mediumGlitchMin : config.microGlitchMin;
         const max = medium ? config.mediumGlitchMax : config.microGlitchMax;
-        const duration = Math.round(min + Math.random() * (max - min));
+        const duration = strong ? config.strongGlitchDuration : Math.round(min + Math.random() * (max - min));
         mascot.style.setProperty("--glitch-duration", duration + "ms");
-        mascot.dataset.glitch = medium ? "medium" : "micro";
+        mascot.dataset.glitch = strong ? "strong" : medium ? "medium" : "micro";
         spontaneousEffectTimer = setTimeout(() => {
             spontaneousEffectTimer = null;
             mascot.dataset.glitch = "";
@@ -457,8 +460,8 @@
 
     function setPosition(next) {
         position = next;
-        mascot.style.left = Math.round(next.x) + "px";
-        mascot.style.top = Math.round(next.y) + "px";
+        mascot.style.left = next.x.toFixed(2) + "px";
+        mascot.style.top = next.y.toFixed(2) + "px";
     }
 
     function updateLayout() {
@@ -568,7 +571,7 @@
         }
         walkTravelled += Math.abs(next.x - position.x);
         setPosition(next);
-        const frame = Math.floor(walkTravelled / config.walkStepLength) % 2;
+        const frame = Math.floor(walkTravelled / config.walkStepLength) % 4;
         if (frame !== walkFrameIndex) {
             walkFrameIndex = frame;
             renderPose();
