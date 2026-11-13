@@ -1,7 +1,7 @@
 /* Glitch: atalho, mascote e janela de opções. */
 .glitch-icon {
-    top: 30px;
-    left: 145px;
+    top: 390px;
+    left: 30px;
     padding: 0;
     border: 0;
     background: transparent;
@@ -305,122 +305,27 @@
     pointer-events: none;
 }
 
-.glitch-window {
-    width: 400px;
-    height: auto;
-}
-
-.glitch-options-content {
-    padding: 16px;
-    border: 0;
-    background: var(--window-frame-background);
-}
-
-.glitch-intro {
-    display: grid;
-    grid-template-columns: 82px minmax(0, 1fr);
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 18px;
-}
-
-.glitch-portrait {
-    width: 82px;
-    height: 82px;
-    padding: 4px;
-    border: 2px solid;
-    border-color: #808080 white white #808080;
-    background: var(--desktop-background);
-}
-
-.glitch-options-content h2 {
-    margin: 0 0 6px;
-    font-size: 19px;
-}
-
-.glitch-options-content p {
-    margin: 0;
-    font-size: 14px;
-    line-height: 1.4;
-}
-
-.glitch-options-content .glitch-status {
-    margin-top: 9px;
-}
-
-.glitch-preferences {
-    min-width: 0;
-    padding: 12px;
-    border: 2px groove #eee;
-}
-
-.glitch-preferences legend {
-    padding: 0 4px;
-}
-
-.glitch-start-setting {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
-}
-
-.glitch-start-setting input {
-    width: 16px;
-    height: 16px;
-    accent-color: #000080;
-}
-
-.glitch-options-content #glitch-storage-message {
-    margin: 8px 0 0 24px;
-    color: #424242;
-    font-size: 12px;
-}
-
-.glitch-options-content .glitch-asset-message {
-    margin-top: 10px;
-    color: #7b1515;
-}
-
-.glitch-actions {
-    display: flex;
-    justify-content: flex-end;
-    gap: 8px;
-    margin-top: 16px;
-}
-
-.glitch-actions button {
-    min-width: 90px;
-    min-height: 34px;
-    padding: 5px 12px;
-    border: 2px solid;
-    border-color: white #404040 #404040 white;
-    background: var(--window-frame-background);
-    color: #111;
-    font: 14px var(--interface-font);
-    cursor: pointer;
-}
-
-.glitch-actions button:active:not(:disabled) {
-    border-color: #404040 white white #404040;
-}
-
-.glitch-actions button:disabled {
-    color: #777;
-    cursor: default;
-}
-
-.glitch-actions button:focus-visible,
-.glitch-start-setting input:focus-visible {
-    outline: 2px dashed #000080;
-    outline-offset: 2px;
-}
-
-.glitch-options-content .glitch-hint {
-    margin-top: 12px;
-    color: #424242;
-    font-size: 12px;
-}
+.glitch-window { width: 420px; height: auto; }
+.glitch-options-content { padding: 14px; border: 0; background: var(--window-frame-background); }
+.glitch-intro { display: grid; grid-template-columns: 108px minmax(0, 1fr); align-items: center; gap: 16px; padding: 14px; margin-bottom: 16px; color: #fff; background: #182844; border: 2px solid; border-color: #777 #fff #fff #777; }
+.glitch-portrait { width: 108px; height: 108px; padding: 8px; background: #263957; border: 2px solid; border-color: #101b30 #61728b #61728b #101b30; }
+.glitch-portrait img { width: 100%; height: 100%; }
+.glitch-options-content h2 { margin: 6px 0; font-size: 20px; }
+.glitch-options-content p { margin: 0; font-size: 14px; line-height: 1.4; }
+.glitch-options-content .glitch-status { margin-top: 12px; font-size: 12px; }
+.glitch-preferences { min-width: 0; padding: 12px; border: 2px groove #eee; }
+.glitch-preferences legend { padding: 0 5px; font-weight: bold; }
+.glitch-start-setting { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+.glitch-start-setting input { width: 16px; height: 16px; accent-color: #000080; }
+.glitch-options-content #glitch-storage-message { margin: 8px 0 0 24px; color: #424242; font-size: 12px; }
+.glitch-options-content .glitch-asset-message { margin-top: 10px; color: #7b1515; }
+.glitch-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 16px; }
+.glitch-actions button { min-width: 90px; min-height: 34px; padding: 5px 12px; border: 2px solid; border-color: white #404040 #404040 white; background: var(--window-frame-background); color: #111; font: 14px var(--interface-font); cursor: pointer; }
+.glitch-actions button:active:not(:disabled) { border-color: #404040 white white #404040; }
+.glitch-actions button:disabled { color: #777; cursor: default; }
+.glitch-actions button:focus-visible, .glitch-start-setting input:focus-visible { outline: 2px dashed #000080; outline-offset: 2px; }
+.glitch-options-content .glitch-hint { margin-top: 12px; color: #424242; font-size: 12px; }
+@media (max-width: 380px) { .glitch-intro { grid-template-columns: 76px minmax(0, 1fr); gap: 10px; padding: 10px; } .glitch-portrait { width: 76px; height: 76px; } }
 
 @media (max-width: 700px), (pointer: coarse) {
     .glitch-icon {
