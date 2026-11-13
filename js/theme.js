@@ -11,6 +11,7 @@
     }
 
     function applyTheme(value, save = false) {
+        const previousTheme = theme;
         theme = Object.hasOwn(labels, value) ? value : "padrao";
         document.documentElement.dataset.theme = theme;
         document.querySelectorAll("[data-theme-choice]").forEach(button => {
@@ -24,6 +25,9 @@
             } catch {
                 // Sem armazenamento, a escolha vale apenas para a visita atual.
             }
+        }
+        if (save && theme !== previousTheme) {
+            document.dispatchEvent(new CustomEvent("alan-portfolio:theme-change", { detail: { theme } }));
         }
     }
 

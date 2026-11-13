@@ -1,0 +1,360 @@
+/* Glitch: atalho, mascote e janela de opções. */
+.glitch-icon {
+    top: 390px;
+    left: 30px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: white;
+    appearance: none;
+}
+
+.glitch-icon:focus-visible {
+    outline: 2px dotted white;
+    outline-offset: 3px;
+}
+
+.glitch-mascot {
+    position: absolute;
+    z-index: 2;
+    width: 128px;
+    height: 128px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    visibility: hidden;
+    pointer-events: none;
+    user-select: none;
+}
+
+.glitch-mascot[hidden] {
+    display: none;
+}
+
+.glitch-interact {
+    position: absolute;
+    z-index: 3;
+    left: 19%;
+    bottom: 8%;
+    width: 62%;
+    height: 60%;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    pointer-events: auto;
+    touch-action: manipulation;
+}
+
+.glitch-interact:focus-visible {
+    outline: 2px dotted white;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 3px #111;
+}
+
+.glitch-mascot img,
+.glitch-portrait img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+    image-rendering: pixelated;
+}
+
+.glitch-mascot img[hidden] {
+    display: none;
+}
+
+/* Compensa a margem transparente abaixo das patas em cada imagem. */
+.glitch-mascot img {
+    object-position: center calc(100% + var(--glitch-foot-offset, 10px));
+}
+
+.glitch-mascot #glitch-walk-right,
+.glitch-mascot #glitch-walk-right-next {
+    --glitch-foot-offset: 14px;
+}
+
+.glitch-mascot #glitch-walk-left,
+.glitch-mascot #glitch-walk-left-next {
+    --glitch-foot-offset: 11px;
+}
+
+.glitch-mascot #glitch-sleep {
+    --glitch-foot-offset: 6px;
+}
+
+.glitch-mascot #glitch-wake {
+    --glitch-foot-offset: 5px;
+}
+
+.glitch-mascot #glitch-stretch {
+    --glitch-foot-offset: 4px;
+}
+
+.glitch-mascot img:not(.glitch-walk-pose) {
+    width: 75%;
+    height: 75%;
+}
+
+.glitch-mascot img.glitch-rest-pose {
+    width: 100%;
+    height: 100%;
+}
+
+/* Mantém o tamanho da pose recolhida durante a transição para acordar. */
+.glitch-mascot img#glitch-wake {
+    width: 75%;
+    height: 75%;
+}
+
+.glitch-mascot img.glitch-walk-pose {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+/* Preserva o focinho de perfil e troca apenas a área das patas. */
+.glitch-mascot[data-state="walking"][data-walk-frame="1"] #glitch-walk-right-next,
+.glitch-mascot[data-state="walking"][data-walk-frame="3"] #glitch-walk-right-next {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 68% 100%, 68% 75%, 0 75%);
+}
+
+.glitch-mascot[data-state="walking"][data-walk-frame="1"] #glitch-walk-left-next,
+.glitch-mascot[data-state="walking"][data-walk-frame="3"] #glitch-walk-left-next {
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 28% 75%, 28% 100%, 0 100%);
+}
+
+.glitch-mascot[data-state="walking"][data-walk-frame="1"] #glitch-walk-right,
+.glitch-mascot[data-state="walking"][data-walk-frame="3"] #glitch-walk-right {
+    clip-path: inset(75% 32% 0 0);
+}
+
+.glitch-mascot[data-state="walking"][data-walk-frame="1"] #glitch-walk-left,
+.glitch-mascot[data-state="walking"][data-walk-frame="3"] #glitch-walk-left {
+    clip-path: inset(75% 28% 0 0);
+}
+
+.glitch-mascot.is-active img {
+    animation: glitch-breathe 4s steps(2, end) infinite;
+    transform-origin: center bottom;
+}
+
+.glitch-mascot.is-active[data-state="sleeping"] #glitch-sleep {
+    animation: glitch-sleep-breathe 6s steps(2, end) infinite;
+}
+
+.glitch-mascot.is-active[data-state="walking"] img.glitch-walk-pose {
+    animation: none;
+}
+
+.glitch-mascot.is-active[data-state="walking"][data-walk-frame="1"] img.glitch-walk-pose,
+.glitch-mascot.is-active[data-state="walking"][data-walk-frame="3"] img.glitch-walk-pose {
+    transform: translateY(-1px);
+}
+
+.glitch-mascot.is-active[data-state="walking"][data-walk-frame="1"] #glitch-walk-right {
+    transform: translate(-1px, -1px);
+}
+
+.glitch-mascot.is-active[data-state="walking"][data-walk-frame="3"] #glitch-walk-left {
+    transform: translate(1px, -1px);
+}
+
+@keyframes glitch-breathe {
+    0%, 100% { transform: scaleY(1); }
+    50% { transform: scaleY(.985); }
+}
+
+@keyframes glitch-sleep-breathe {
+    0%, 100% { transform: scaleY(1); }
+    50% { transform: scaleY(.985); }
+}
+
+/* Recortes breves do sprite criam rastros sem alterar a imagem original. */
+.glitch-mascot[data-glitch="micro"]::before,
+.glitch-mascot[data-glitch="micro"]::after,
+.glitch-mascot[data-glitch="medium"]::before,
+.glitch-mascot[data-glitch="medium"]::after,
+.glitch-mascot[data-glitch="strong"]::before,
+.glitch-mascot[data-glitch="strong"]::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 12.5%;
+    bottom: 0;
+    width: 75%;
+    height: 75%;
+    background: url("../assets/glitch/glitch-base.webp") center calc(100% + 10px) / contain no-repeat;
+    image-rendering: pixelated;
+    pointer-events: none;
+    animation-duration: var(--glitch-duration, 220ms);
+    animation-timing-function: steps(1, end);
+    animation-fill-mode: both;
+}
+
+.glitch-mascot[data-glitch="micro"]::before {
+    clip-path: inset(0 0 64% 0);
+    filter: drop-shadow(-2px 0 #00ffff);
+    animation-name: glitch-micro-ear;
+}
+
+.glitch-mascot[data-glitch="micro"]::after {
+    clip-path: inset(48% 45% 5% 0);
+    filter: drop-shadow(2px 0 #ff35e9);
+    animation-name: glitch-micro-tail;
+}
+
+.glitch-mascot[data-glitch="micro"] img,
+.glitch-mascot[data-glitch="medium"] img,
+.glitch-mascot[data-glitch="reduced"] img {
+    animation: none;
+}
+
+@keyframes glitch-micro-ear {
+    0%, 100% { opacity: 0; transform: translateX(0); }
+    15% { opacity: .9; transform: translateX(-2px); }
+    45% { opacity: .65; transform: translateX(2px); }
+    70% { opacity: .8; transform: translateX(-1px); }
+}
+
+@keyframes glitch-micro-tail {
+    0%, 25%, 100% { opacity: 0; transform: translateX(0); }
+    35% { opacity: .8; transform: translateX(2px); }
+    60% { opacity: .65; transform: translateX(-2px); }
+    80% { opacity: .7; transform: translateX(1px); }
+}
+
+.glitch-mascot[data-glitch="medium"]::before {
+    filter: drop-shadow(-3px 0 #00ffff);
+    animation-name: glitch-medium-cyan;
+}
+
+.glitch-mascot[data-glitch="medium"]::after {
+    filter: drop-shadow(3px 0 #ff35e9);
+    animation-name: glitch-medium-magenta;
+}
+
+@keyframes glitch-medium-cyan {
+    0%, 100% { opacity: 0; transform: translateX(0); }
+    18% { opacity: .9; clip-path: inset(14% 0 65% 0); transform: translateX(-4px); }
+    42% { opacity: .8; clip-path: inset(42% 0 42% 0); transform: translateX(4px); }
+    70% { opacity: .7; clip-path: inset(63% 0 22% 0); transform: translateX(-3px); }
+}
+
+@keyframes glitch-medium-magenta {
+    0%, 100% { opacity: 0; transform: translateX(0); }
+    25% { opacity: .8; clip-path: inset(57% 0 25% 0); transform: translateX(4px); }
+    50% { opacity: .85; clip-path: inset(25% 0 58% 0); transform: translateX(-4px); }
+    76% { opacity: .65; clip-path: inset(44% 0 40% 0); transform: translateX(3px); }
+}
+
+.glitch-mascot[data-glitch="strong"]::before {
+    filter: drop-shadow(-4px 0 #00ffff);
+    animation-name: glitch-strong-cyan;
+}
+
+.glitch-mascot[data-glitch="strong"]::after {
+    filter: drop-shadow(4px 0 #ff35e9);
+    animation-name: glitch-strong-magenta;
+}
+
+.glitch-mascot[data-glitch="strong"] img:not([hidden]) {
+    animation: glitch-strong-body var(--glitch-duration, 800ms) steps(1, end) both;
+}
+
+@keyframes glitch-strong-cyan {
+    0%, 100% { opacity: 0; transform: translateX(0); }
+    10% { opacity: .95; clip-path: inset(4% 0 75% 0); transform: translateX(-7px); }
+    27% { opacity: .85; clip-path: inset(35% 0 49% 0); transform: translateX(6px); }
+    45% { opacity: .9; clip-path: inset(62% 0 18% 0); transform: translateX(-6px); }
+    65% { opacity: .8; clip-path: inset(21% 0 62% 0); transform: translateX(5px); }
+    82% { opacity: .55; clip-path: inset(46% 0 38% 0); transform: translateX(-3px); }
+}
+
+@keyframes glitch-strong-magenta {
+    0%, 100% { opacity: 0; transform: translateX(0); }
+    15% { opacity: .85; clip-path: inset(55% 0 27% 0); transform: translateX(7px); }
+    32% { opacity: .9; clip-path: inset(19% 0 65% 0); transform: translateX(-6px); }
+    50% { opacity: .8; clip-path: inset(40% 0 43% 0); transform: translateX(7px); }
+    69% { opacity: .75; clip-path: inset(69% 0 14% 0); transform: translateX(-5px); }
+    85% { opacity: .5; clip-path: inset(8% 0 75% 0); transform: translateX(3px); }
+}
+
+@keyframes glitch-strong-body {
+    0%, 100% { opacity: 1; transform: translateX(0); }
+    14% { opacity: .85; transform: translateX(2px); }
+    30% { opacity: 1; transform: translateX(-3px); }
+    49% { opacity: .85; transform: translateX(2px); }
+    67% { opacity: 1; transform: translateX(-2px); }
+    83% { opacity: .95; transform: translateX(1px); }
+}
+
+/* Com movimento reduzido, a reação é um detalhe estático e discreto. */
+.glitch-mascot[data-glitch="reduced"]::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 71%;
+    bottom: 69%;
+    width: 4px;
+    height: 4px;
+    background: #00d8d5;
+    box-shadow: 6px 4px #ed45d7;
+    pointer-events: none;
+}
+
+.glitch-window { width: 420px; height: auto; }
+.glitch-options-content { padding: 14px; border: 0; background: var(--window-frame-background); }
+.glitch-intro { display: grid; grid-template-columns: 108px minmax(0, 1fr); align-items: center; gap: 16px; padding: 14px; margin-bottom: 16px; color: #fff; background: #182844; border: 2px solid; border-color: #777 #fff #fff #777; }
+.glitch-portrait { width: 108px; height: 108px; padding: 8px; background: #263957; border: 2px solid; border-color: #101b30 #61728b #61728b #101b30; }
+.glitch-portrait img { width: 100%; height: 100%; }
+.glitch-options-content h2 { margin: 6px 0; font-size: 20px; }
+.glitch-options-content p { margin: 0; font-size: 14px; line-height: 1.4; }
+.glitch-options-content .glitch-status { margin-top: 12px; font-size: 12px; }
+.glitch-preferences { min-width: 0; padding: 12px; border: 2px groove #eee; }
+.glitch-preferences legend { padding: 0 5px; font-weight: bold; }
+.glitch-start-setting { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+.glitch-start-setting input { width: 16px; height: 16px; accent-color: #000080; }
+.glitch-options-content #glitch-storage-message { margin: 8px 0 0 24px; color: #424242; font-size: 12px; }
+.glitch-options-content .glitch-asset-message { margin-top: 10px; color: #7b1515; }
+.glitch-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 16px; }
+.glitch-actions button { min-width: 90px; min-height: 34px; padding: 5px 12px; border: 2px solid; border-color: white #404040 #404040 white; background: var(--window-frame-background); color: #111; font: 14px var(--interface-font); cursor: pointer; }
+.glitch-actions button:active:not(:disabled) { border-color: #404040 white white #404040; }
+.glitch-actions button:disabled { color: #777; cursor: default; }
+.glitch-actions button:focus-visible, .glitch-start-setting input:focus-visible { outline: 2px dashed #000080; outline-offset: 2px; }
+.glitch-options-content .glitch-hint { margin-top: 12px; color: #424242; font-size: 12px; }
+@media (max-width: 380px) { .glitch-intro { grid-template-columns: 76px minmax(0, 1fr); gap: 10px; padding: 10px; } .glitch-portrait { width: 76px; height: 76px; } }
+
+@media (max-width: 700px), (pointer: coarse) {
+    .glitch-icon {
+        padding: 8px 0;
+    }
+
+    .glitch-actions button {
+        min-height: 44px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .glitch-mascot.is-active img,
+    .glitch-mascot.is-active[data-state="sleeping"] #glitch-sleep,
+    .glitch-mascot.is-active[data-state="walking"] img.glitch-walk-pose {
+        animation: none;
+    }
+    .glitch-mascot.is-active[data-state="walking"] img.glitch-walk-pose {
+        transform: none;
+    }
+    .glitch-mascot[data-glitch="micro"]::before,
+    .glitch-mascot[data-glitch="micro"]::after,
+    .glitch-mascot[data-glitch="medium"]::before,
+    .glitch-mascot[data-glitch="medium"]::after,
+    .glitch-mascot[data-glitch="strong"]::before,
+    .glitch-mascot[data-glitch="strong"]::after {
+        display: none;
+    }
+    .glitch-mascot[data-glitch="strong"] img:not([hidden]) {
+        animation: none;
+    }
+}

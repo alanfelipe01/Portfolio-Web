@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/taskbar.css">
     <link rel="stylesheet" href="css/minesweeper.css">
     <link rel="stylesheet" href="css/control-panel.css">
+    <link rel="stylesheet" href="css/glitch.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
@@ -50,6 +51,16 @@
             <span>Currículo</span>
         </div>
 
+<div class="desktop-icon mines-icon" data-window="campo-minado" role="button" tabindex="0" aria-label="Abrir Campo Minado"><div class="folder-icon"><img src="assets/icons/campo-minado.svg" alt="" width="48" height="48"></div><span>Campo Minado</span></div>
+
+
+        <!-- ATALHO DO GLITCH -->
+        <button type="button" class="desktop-icon glitch-icon" id="glitch-shortcut" aria-controls="glitch-options">
+            <span class="folder-icon"><img src="assets/glitch/glitch-base.webp" alt="" width="48" height="48"></span>
+            <span>Glitch.exe</span>
+        </button>
+
+
         <!-- ÍCONE GITHUB -->
 <div class="desktop-icon github-icon" data-link="https://github.com/alanfelipe01">
     <div class="folder-icon">
@@ -72,7 +83,20 @@
     <span>LinkedIn</span>
 </div>
 
-<div class="desktop-icon mines-icon" data-window="campo-minado" role="button" tabindex="0" aria-label="Abrir Campo Minado"><div class="folder-icon"><img src="assets/icons/campo-minado.svg" alt="" width="48" height="48"></div><span>Campo Minado</span></div>
+        <!-- Apenas o botão sobre o mascote recebe cliques. -->
+        <div class="glitch-mascot" id="glitch-mascot" hidden>
+            <img id="glitch-sprite" src="assets/glitch/glitch-base.webp" alt="" draggable="false">
+            <img class="glitch-walk-pose" id="glitch-walk-right" src="assets/glitch/glitch-andando-direita.webp" alt="" draggable="false" hidden>
+            <img class="glitch-walk-pose" id="glitch-walk-right-next" src="assets/glitch/glitch-perfil-direita.webp" alt="" draggable="false" hidden>
+            <img class="glitch-walk-pose" id="glitch-walk-left" src="assets/glitch/glitch-andando-esquerda.webp" alt="" draggable="false" hidden>
+            <img class="glitch-walk-pose" id="glitch-walk-left-next" src="assets/glitch/glitch-perfil-esquerda.webp" alt="" draggable="false" hidden>
+            <img id="glitch-watch" src="assets/glitch/glitch-observando.webp" alt="" draggable="false" hidden>
+            <img id="glitch-watch-left" src="assets/glitch/glitch-observando-esquerda.webp" alt="" draggable="false" hidden>
+            <img class="glitch-rest-pose" id="glitch-sleep" src="assets/glitch/glitch-dormindo.webp" alt="" draggable="false" hidden>
+            <img class="glitch-rest-pose" id="glitch-wake" src="assets/glitch/glitch-acordando.webp" alt="" draggable="false" hidden>
+            <img class="glitch-rest-pose" id="glitch-stretch" src="assets/glitch/glitch-espreguicando.webp" alt="" draggable="false" hidden>
+            <button type="button" class="glitch-interact" id="glitch-interact" aria-label="Interagir com Glitch" title="Interagir com Glitch"></button>
+        </div>
 
  <!-- JANELA SOBRE MIM -->
         <section class="window" id="sobre-mim" aria-labelledby="intro-title">
@@ -261,6 +285,43 @@
             </div>
         </section>
 
+        <!-- OPÇÕES DO GLITCH -->
+        <section class="window glitch-window" id="glitch-options" aria-labelledby="glitch-options-title">
+            <header class="window-header">
+                <div class="window-title" id="glitch-options-title">Glitch.exe</div>
+                <div class="window-buttons">
+                    <button class="minimize-btn" aria-label="Minimizar janela">_</button>
+                    <button class="close-btn" aria-label="Fechar janela">×</button>
+                </div>
+            </header>
+            <div class="window-content glitch-options-content">
+                <div class="glitch-intro">
+                    <div class="glitch-portrait" aria-hidden="true">
+                        <img src="assets/glitch/glitch-base.webp" alt="" width="72" height="72">
+                    </div>
+                    <div>
+                        <h2>Glitch está por aqui.</h2>
+                        <p>Estou por aqui para acompanhar você.</p>
+                        <p class="glitch-status">Status: <strong id="glitch-status" aria-live="polite">Ativo</strong></p>
+                    </div>
+                </div>
+                <fieldset class="glitch-preferences">
+                    <legend>Preferências</legend>
+                    <label class="glitch-start-setting">
+                        <input type="checkbox" id="glitch-autostart">
+                        <span>Iniciar junto com o desktop</span>
+                    </label>
+                    <p id="glitch-storage-message">Sua preferência fica salva neste navegador.</p>
+                </fieldset>
+                <p class="glitch-asset-message" id="glitch-asset-message" role="status" hidden>Não foi possível carregar o visual do Glitch.</p>
+                <div class="glitch-actions">
+                    <button type="button" id="glitch-pause">Pausar</button>
+                    <button type="button" id="glitch-hide">Ocultar</button>
+                </div>
+                <p class="glitch-hint">Use o ícone Glitch.exe para me trazer de volta.</p>
+            </div>
+        </section>
+
         <!-- BARRA DE TAREFAS -->
         <footer class="taskbar">
             <!-- MENU INICIAR -->
@@ -325,6 +386,8 @@
         </footer>
     </main>
     <script src="js/script.js"></script>
+    <script src="js/glitch-geometry.js"></script>
+    <script src="js/glitch.js"></script>
     <script src="js/minesweeper.js"></script>
 </body>
 </html>
