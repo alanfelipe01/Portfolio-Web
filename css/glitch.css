@@ -9,6 +9,28 @@
     appearance: none;
 }
 
+.glitch-icon .folder-icon {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.glitch-icon.selected .folder-icon {
+    background: transparent;
+}
+
+.glitch-icon .folder-icon img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: auto;
+    max-width: none;
+    transform: translate(-50%, -50%);
+}
+
 .glitch-icon:focus-visible {
     outline: 2px dotted white;
     outline-offset: 3px;
