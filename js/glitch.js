@@ -435,11 +435,15 @@
         const desktopRect = desktop.getBoundingClientRect();
         const taskbarRect = taskbar.getBoundingClientRect();
         const mascotRect = mascot.getBoundingClientRect();
-        const ground = taskbarRect.top - desktopRect.top;
+        const startMenu = document.getElementById("start-menu");
+        const mobileMenuOpen = !startMenu.hidden && window.matchMedia("(max-width: 700px), (pointer: coarse)").matches;
+        // No celular, o topo do menu oferece uma superfície para o Glitch.
+        const ground = mobileMenuOpen
+            ? startMenu.getBoundingClientRect().top - desktopRect.top - config.obstacleMargin
+            : taskbarRect.top - desktopRect.top;
         const obstacles = [...desktop.querySelectorAll(".desktop-icon, .window.open")]
             .map(element => element.getBoundingClientRect())
             .filter(rect => rect.width > 0 && rect.height > 0);
-        const startMenu = document.getElementById("start-menu");
         if (!startMenu.hidden) obstacles.push(startMenu.getBoundingClientRect());
         return {
             size: { width: mascotRect.width, height: mascotRect.height },
