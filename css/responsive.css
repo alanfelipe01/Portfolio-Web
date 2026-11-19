@@ -57,6 +57,32 @@
         touch-action: pan-y pinch-zoom;
     }
 
+    /* O Campo Minado acompanha o tamanho do tabuleiro, sem sobra na janela. */
+    .window.mines-window {
+        width: min(300px, calc(100% - max(24px, env(safe-area-inset-left, 0px)) - max(24px, env(safe-area-inset-right, 0px))));
+        height: auto;
+        max-height: calc(100% - var(--taskbar-height) - 24px - env(safe-area-inset-top, 0px));
+    }
+
+    .mines-content {
+        flex: 0 1 auto;
+        min-height: 0;
+        padding: 8px;
+    }
+
+    .mines-board {
+        width: 100%;
+        max-width: 266px;
+        grid-template-columns: repeat(9, minmax(0, 1fr));
+        grid-template-rows: none;
+    }
+
+    .mines-cell {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+    }
+
     .intro-content h1 {
         font-size: 26px;
     }
