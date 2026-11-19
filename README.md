@@ -1,89 +1,84 @@
 # Alan.dev — Portfólio
 
-Este é o meu portfólio pessoal, criado para reunir meus projetos e acompanhar minha evolução como desenvolvedor. A interface foi inspirada no Windows 95: em vez de navegar por uma página tradicional, você pode explorar uma área de trabalho, abrir janelas e conhecer um pouco do meu trabalho.
-
-O projeto começou como uma forma de praticar HTML, CSS e JavaScript e continua crescendo com novas ideias e funcionalidades próprias.
+Um portfólio pessoal que transforma a navegação em uma área de trabalho inspirada no Windows 95. O projeto reúne minha trajetória, habilidades e projetos em uma interface interativa, desenvolvida com HTML, CSS e JavaScript puro.
 
 **[Acessar o portfólio](https://alan-felipe-portfolio.vercel.app)**
 
-## O que você encontra no portfólio
+![Área de trabalho do portfólio no computador com a janela Sobre mim aberta e o Glitch](assets/images/portfolio-desktop.jpg)
 
-- Uma janela de apresentação que abre na primeira visita e também pode ser acessada pelo ícone “Sobre mim”.
-- Uma pasta com meus projetos, suas tecnologias e links para os repositórios.
-- Minhas habilidades e estudos na janela “Sobre mim”.
-- Atalhos para meu GitHub e LinkedIn.
-- Um menu Iniciar com acesso às principais seções e redes.
-- Um Painel de Controle no menu Iniciar para alternar entre os temas Padrão, Noite e Órbita 95, com preferência salva no navegador quando possível.
-- Janelas que podem ser abertas, fechadas, minimizadas e restauradas pela barra de tarefas. Também é possível arrastá-las e maximizá-las.
-- Uma interface adaptada para telas menores e navegação por toque.
+## Explore a área de trabalho
 
-A apresentação inicial fica registrada no navegador para não abrir automaticamente em todas as visitas. Se o armazenamento estiver indisponível, ela será exibida novamente ao carregar a página. O relógio tem um horário fixo e o ícone de som é apenas decorativo.
+- **Sobre mim:** apresentação, formação e tecnologias que estudo.
+- **Projetos:** trabalhos e estudos com suas tecnologias e links para código ou demonstração.
+- **Glitch.exe:** um gato que acompanha a área de trabalho. É possível interagir com ele, pausar ou ocultá-lo e escolher se inicia com o site.
+- **Campo Minado:** jogo acessível pelo menu Iniciar, com cronômetro e modo de bandeira para telas de toque.
+- **Painel de Controle:** alterna entre os temas Padrão, Noite e Órbita 95.
+- **Janelas:** podem ser arrastadas, minimizadas, maximizadas, restauradas e fechadas. A barra de tarefas permite alternar entre elas.
+- **Atalhos:** acesso ao GitHub, LinkedIn e contato por e-mail.
+
+A interface se adapta a telas menores e à navegação por toque. A janela de currículo já existe, mas seu conteúdo ainda está em preparação.
 
 ## Projetos apresentados
 
-| Projeto | Sobre | Links |
+| Projeto | Descrição | Links |
 | --- | --- | --- |
-| Litorânea Ambiental | Landing page para a empresa júnior de Ciências Ambientais da UFC. | [Site](https://litoranea-ambiental-ufc.vercel.app/) · [Código](https://github.com/alanfelipe01/litoranea-ambiental) |
-| Portfolio-Web | Este portfólio, com uma área de trabalho e janelas interativas. | [Código](https://github.com/alanfelipe01/Portfolio-Web) |
-| Python — Estudos e Exercícios | Repositório dedicado à prática de Python e lógica de programação. | [Repositório](https://github.com/alanfelipe01/python-estudos) |
+| **EcoTour** | Guia digital de descarte de resíduos, vencedor do Hackathon UNINASSAU 2026. | [Código](https://github.com/alanfelipe01/EcoTour) |
+| **Litorânea Ambiental** | Landing page para a empresa júnior de Ciências Ambientais da UFC. | [Site](https://litoranea-ambiental-ufc.vercel.app/) · [Código](https://github.com/alanfelipe01/litoranea-ambiental) |
+| **Portfolio-Web** | Este portfólio, com área de trabalho e janelas interativas. | [Código](https://github.com/alanfelipe01/Portfolio-Web) |
+| **Python — Estudos e Exercícios** | Exercícios, desafios e projetos para praticar Python e lógica de programação. | [Repositório](https://github.com/alanfelipe01/python-estudos) |
 
 ## Tecnologias
 
-- HTML5
-- CSS3
-- JavaScript
+- HTML5, CSS3 e JavaScript
 - Vercel para hospedagem
 
-O projeto usa JavaScript puro e não precisa de instalação de dependências ou de uma etapa de build.
+O projeto não utiliza frameworks, instalação de dependências ou etapa de build.
 
-## Como executar
-
-Clone o repositório:
+## Executar localmente
 
 ```bash
 git clone https://github.com/alanfelipe01/Portfolio-Web.git
 cd Portfolio-Web
 ```
 
-Depois, abra o arquivo `index.html` no navegador. Se preferir, também pode usar um servidor local, como o Live Server no VS Code.
+Abra o arquivo `index.html` no navegador ou utilize um servidor local, como o Live Server do VS Code.
 
 ## Como navegar
 
-Clique ou toque nos ícones da área de trabalho para abrir as janelas ou acessar as redes. Use os botões no canto das janelas para minimizá-las ou fechá-las; os atalhos na barra de tarefas permitem alternar entre as janelas abertas.
+Clique ou toque nos ícones da área de trabalho para abrir janelas e acessar links. Arraste uma janela pela barra de título; use os botões no canto superior para minimizar, maximizar ou fechar. Os botões na barra de tarefas permitem alternar entre as janelas.
 
-Arraste as janelas pela barra de título no computador ou no celular. Use o botão entre minimizar e fechar para maximizar ou restaurar uma janela. No menu Iniciar, é possível navegar com Tab, setas, Home e End e fechá-lo com Esc.
+No menu Iniciar, use **Tab**, as **setas**, **Home** e **End** para navegar e **Esc** para fechar. No Campo Minado, use o botão direito ou a tecla **F** para marcar uma bandeira; em telas de toque, ative o modo de bandeira.
+
+O navegador pode guardar localmente o tema, a preferência de inicialização do Glitch, a apresentação da primeira visita e o melhor tempo do jogo. Se o armazenamento estiver indisponível, algumas preferências podem não persistir. O relógio tem valor fixo e o ícone de som é decorativo.
 
 ## Estrutura do projeto
 
 ```text
 Portfolio-Web/
-├── index.html
-├── css/
-│   └── style.css
-├── js/
-│   └── script.js
+├── index.html       # Área de trabalho e janelas
+├── css/             # Estilos separados por componente e responsividade
+├── js/              # Interações, temas, Glitch e Campo Minado
+├── assets/
+│   ├── fonts/       # Fonte da interface
+│   ├── glitch/      # Imagens do mascote
+│   ├── icons/       # Ícones do portfólio e tecnologias
+│   └── images/      # Foto e captura do portfólio
 └── README.md
 ```
 
 ## Próximos passos
 
-O portfólio continua em desenvolvimento. Algumas das melhorias que pretendo adicionar são:
-
-- Melhorar a experiência no celular.
-- Criar uma pasta para o currículo.
-- Atualizar os projetos apresentados.
-- Adicionar um plano de fundo e refinar a tipografia.
-- Criar uma versão de Campo Minado dentro do portfólio.
+O portfólio continua em desenvolvimento. Entre as ideias em planejamento estão aprofundar a apresentação dos projetos e criar um navegador simulado dentro da área de trabalho.
 
 ## Sobre mim
 
-Sou Alan Felipe, estudante de Análise e Desenvolvimento de Sistemas. Estou aprendendo desenvolvimento web e direcionando meus estudos para back-end com Python.
+Sou Alan Felipe, estudante de Análise e Desenvolvimento de Sistemas na UNINASSAU, com foco em desenvolvimento back-end com Python, Django e SQL. Busco uma oportunidade de estágio na área de TI.
 
 - [GitHub](https://github.com/alanfelipe01)
 - [LinkedIn](https://www.linkedin.com/in/alan-felipe-621a72406/)
 
 ## Inspiração
 
-A ideia surgiu depois que conheci um portfólio com uma proposta parecida em uma publicação no Reddit. A partir dessa referência, comecei a desenvolver minha própria versão, experimentando ideias e aprendendo durante o processo.
+A ideia surgiu após conhecer um portfólio com uma proposta semelhante em uma publicação no Reddit. A partir dela, comecei a criar minha própria versão, experimentando ideias e aprendendo durante o processo.
 
 [Publicação que inspirou o projeto](https://www.reddit.com/r/webdev/comments/r8qia3/i_modelled_my_portfolio_website_after_windows_95/)
