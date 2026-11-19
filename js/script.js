@@ -226,6 +226,21 @@ windows.forEach(windowElement => {
     const header = windowElement.querySelector(".window-header");
     const closeButton = windowElement.querySelector(".close-btn");
     const minimizeButton = windowElement.querySelector(".minimize-btn");
+    const maximizeButton = document.createElement("button");
+    maximizeButton.type = "button";
+    maximizeButton.className = "maximize-btn";
+    maximizeButton.textContent = "□";
+    maximizeButton.setAttribute("aria-label", "Maximizar janela");
+    maximizeButton.title = "Maximizar janela";
+    closeButton.before(maximizeButton);
+    maximizeButton.addEventListener("click", () => {
+        const maximized = windowElement.classList.toggle("is-maximized");
+        const label = maximized ? "Restaurar janela" : "Maximizar janela";
+        maximizeButton.setAttribute("aria-label", label);
+        maximizeButton.title = label;
+        maximizeButton.textContent = maximized ? "❐" : "□";
+        if (!maximized) keepWindowsVisible();
+    });
 
     // ----- Botões da janela -----
 
@@ -248,7 +263,7 @@ windows.forEach(windowElement => {
 
     header.addEventListener("pointerdown", event => {
         // Não arrasta ao clicar nos botões
-        if (compactLayout.matches || event.button !== 0 || event.target.closest("button")) {
+        if (windowElement.classList.contains("is-maximized") || event.button !== 0 || event.target.closest("button")) {
             return;
         }
 
@@ -268,7 +283,7 @@ windows.forEach(windowElement => {
     });
 
     header.addEventListener("pointermove", event => {
-        if (!dragging || compactLayout.matches) {
+        if (!dragging || windowElement.classList.contains("is-maximized")) {
             return;
         }
 
@@ -276,8 +291,8 @@ windows.forEach(windowElement => {
         let y = event.clientY - offsetY;
 
         // Limites: não sai da tela e o título nunca fica embaixo da taskbar
-        const maxX = desktop.clientWidth - windowElement.offsetWidth;
-        const maxY = desktop.clientHeight - document.querySelector(".taskbar").offsetHeight - windowElement.offsetHeight;
+        const maxX = Math.max(0, desktop.clientWidth - windowElement.offsetWidth);
+        const maxY = Math.max(0, desktop.clientHeight - document.querySelector(".taskbar").offsetHeight - windowElement.offsetHeight);
 
         x = Math.max(0, Math.min(x, maxX));
         y = Math.max(0, Math.min(y, maxY));
@@ -307,13 +322,7 @@ windows.forEach(windowElement => {
 // Recoloca janelas arrastadas na área visível ao redimensionar ou girar a tela.
 function keepWindowsVisible() {
     windows.forEach(windowElement => {
-        if (compactLayout.matches) {
-            windowElement.style.removeProperty("left");
-            windowElement.style.removeProperty("top");
-            windowElement.style.removeProperty("transform");
-            return;
-        }
-        if (!windowElement.classList.contains("open") || !windowElement.style.left) return;
+        if (!windowElement.classList.contains("open") || windowElement.classList.contains("is-maximized") || !windowElement.style.left) return;
         const rect = windowElement.getBoundingClientRect();
         const maxX = Math.max(0, desktop.clientWidth - windowElement.offsetWidth);
         const maxY = Math.max(0, desktop.clientHeight - document.querySelector(".taskbar").offsetHeight - windowElement.offsetHeight);
