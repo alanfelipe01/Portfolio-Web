@@ -14,7 +14,7 @@ O projeto começou como uma forma de praticar HTML, CSS e JavaScript e continua 
 - Atalhos para meu GitHub e LinkedIn.
 - Um menu Iniciar com acesso às principais seções e redes.
 - Um Painel de Controle no menu Iniciar para alternar entre os temas Padrão, Noite e Órbita 95, com preferência salva no navegador quando possível.
-- Janelas que podem ser abertas, fechadas, minimizadas e restauradas pela barra de tarefas. No computador, também é possível arrastá-las.
+- Janelas que podem ser abertas, fechadas, minimizadas e restauradas pela barra de tarefas. Também é possível arrastá-las e maximizá-las.
 - Uma interface adaptada para telas menores e navegação por toque.
 
 A apresentação inicial fica registrada no navegador para não abrir automaticamente em todas as visitas. Se o armazenamento estiver indisponível, ela será exibida novamente ao carregar a página. O relógio tem um horário fixo e o ícone de som é apenas decorativo.
@@ -51,7 +51,7 @@ Depois, abra o arquivo `index.html` no navegador. Se preferir, também pode usar
 
 Clique ou toque nos ícones da área de trabalho para abrir as janelas ou acessar as redes. Use os botões no canto das janelas para minimizá-las ou fechá-las; os atalhos na barra de tarefas permitem alternar entre as janelas abertas.
 
-No computador, você também pode arrastar as janelas pela barra de título. No menu Iniciar, é possível navegar com Tab, setas, Home e End e fechá-lo com Esc.
+Arraste as janelas pela barra de título no computador ou no celular. Use o botão entre minimizar e fechar para maximizar ou restaurar uma janela. No menu Iniciar, é possível navegar com Tab, setas, Home e End e fechá-lo com Esc.
 
 ## Estrutura do projeto
 
