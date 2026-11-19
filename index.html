@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Alan.dev</title>
+    <title>Alan Felipe | Developer</title>
     <script src="js/theme.js"></script>
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/desktop.css">
@@ -56,7 +56,7 @@
 
         <!-- ATALHO DO GLITCH -->
         <button type="button" class="desktop-icon glitch-icon" id="glitch-shortcut" aria-controls="glitch-options">
-            <span class="folder-icon"><img src="assets/glitch/glitch-base.webp" alt="" width="48" height="48"></span>
+            <span class="folder-icon"><img src="assets/glitch/glitch-atalho.png" alt="" width="48" height="48"></span>
             <span>Glitch.exe</span>
         </button>
 
@@ -120,16 +120,39 @@
                     </figure>
                     <div class="intro-presentation">
                         <p class="intro-greeting"><code>print("Hello, World!")</code></p>
-                        <h1 id="intro-title">Eu sou Alan Felipe.</h1>
-                        <p>Estudante de Análise e Desenvolvimento de Sistemas, aprendendo desenvolvimento web com HTML, CSS e JavaScript.</p>
-                        <p>Estou construindo meus primeiros projetos e quero me especializar em back-end.</p>
+                        <h1 id="intro-title">Olá, eu sou Alan Felipe.</h1>
+                        <p>Sou estudante de Análise e Desenvolvimento de Sistemas na UNINASSAU, com foco em desenvolvimento back-end usando Python, Django e SQL.</p>
+                        <p>Também desenvolvo interfaces web com HTML, CSS e JavaScript. Um dos meus projetos é o EcoTour, vencedor do Hackathon UNINASSAU 2026.</p>
                     </div>
                 </div>
                 <div class="skills-content">
-                    <h2>Habilidades e estudos</h2>
-                    <fieldset><legend>Desenvolvimento web</legend><p>HTML, CSS e JavaScript — usados para criar interfaces e projetos para a web.</p></fieldset>
-                    <fieldset><legend>Em estudo</legend><p>Python, SQL e lógica de programação, com foco em desenvolvimento back-end.</p></fieldset>
-                    <fieldset><legend>Formação</legend><p>Análise e Desenvolvimento de Sistemas - UNINASSAU.</p></fieldset>
+                    <h2>Tecnologias e ferramentas</h2>
+                    <fieldset>
+                        <legend>Back-end</legend>
+                        <ul class="skills-list">
+                            <li><img src="assets/icons/technologies/python.svg" alt="" width="28" height="28">Python</li>
+                            <li><img src="assets/icons/technologies/django.svg" alt="" width="28" height="28">Django</li>
+                            <li><span class="skills-sql-icon" aria-hidden="true">SQL</span>SQL</li>
+                            <li><img src="assets/icons/technologies/sqlite.svg" alt="" width="28" height="28">SQLite</li>
+                        </ul>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Front-end</legend>
+                        <ul class="skills-list">
+                            <li><img src="assets/icons/technologies/html5.svg" alt="" width="28" height="28">HTML</li>
+                            <li><img src="assets/icons/technologies/css3.svg" alt="" width="28" height="28">CSS</li>
+                            <li><img src="assets/icons/technologies/javascript.svg" alt="" width="28" height="28">JavaScript</li>
+                        </ul>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Ferramentas</legend>
+                        <ul class="skills-list">
+                            <li><img src="assets/icons/technologies/git.svg" alt="" width="28" height="28">Git</li>
+                            <li><img src="assets/icons/technologies/github.svg" alt="" width="28" height="28">GitHub</li>
+                            <li><img src="assets/icons/technologies/vercel.svg" alt="" width="28" height="28">Vercel</li>
+                        </ul>
+                    </fieldset>
+                    <fieldset><legend>Formação</legend><p>Análise e Desenvolvimento de Sistemas — UNINASSAU (em andamento).</p></fieldset>
                 </div>
                 <div class="intro-actions" aria-label="Explore meu portfólio">
                     <button type="button" class="intro-action" data-open-window="projetos" aria-controls="projetos">Ver projetos</button>
@@ -296,14 +319,16 @@
             </header>
             <div class="window-content glitch-options-content">
                 <div class="glitch-intro">
-                    <div class="glitch-portrait" aria-hidden="true">
-                        <img src="assets/glitch/glitch-base.webp" alt="" width="72" height="72">
+                    <div class="glitch-portrait" aria-hidden="true"><img src="assets/glitch/glitch-base.webp" alt="" width="88" height="88"></div>
+                    <div class="glitch-speech">
+                        <span class="glitch-name">GLITCH.EXE</span>
+                        <h2>Olá! Eu sou o Glitch.</h2>
+                        <p>Seu companheiro de desktop está por aqui.</p>
                     </div>
-                    <div>
-                        <h2>Glitch está por aqui.</h2>
-                        <p>Estou por aqui para acompanhar você.</p>
-                        <p class="glitch-status">Status: <strong id="glitch-status" aria-live="polite">Ativo</strong></p>
-                    </div>
+                </div>
+                <div class="glitch-status-bar">
+                    <span>Estado do companheiro</span>
+                    <strong id="glitch-status" aria-live="polite">Ativo</strong>
                 </div>
                 <fieldset class="glitch-preferences">
                     <legend>Preferências</legend>
@@ -318,7 +343,7 @@
                     <button type="button" id="glitch-pause">Pausar</button>
                     <button type="button" id="glitch-hide">Ocultar</button>
                 </div>
-                <p class="glitch-hint">Use o ícone Glitch.exe para me trazer de volta.</p>
+                <p class="glitch-hint">Para me trazer de volta, use o ícone Glitch.exe no desktop.</p>
             </div>
         </section>
 

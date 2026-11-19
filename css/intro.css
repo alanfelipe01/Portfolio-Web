@@ -67,6 +67,45 @@
     margin-bottom: 16px;
 }
 
+.skills-content fieldset {
+    min-width: 0;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    list-style: none;
+    margin: 4px 0;
+    padding: 0;
+}
+
+.skills-list li {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 28px;
+    font-size: 16px;
+}
+
+.skills-list img {
+    display: block;
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.skills-sql-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 24px;
+    border: 1px solid #246a90;
+    color: #246a90;
+    font: bold 10px Arial, sans-serif;
+}
+
 .intro-actions {
     display: flex;
     flex-wrap: wrap;
