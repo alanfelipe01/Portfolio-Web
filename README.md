@@ -16,7 +16,7 @@ Um portfólio pessoal que transforma a navegação em uma área de trabalho insp
 - **Janelas:** podem ser arrastadas, minimizadas, maximizadas, restauradas e fechadas. A barra de tarefas permite alternar entre elas.
 - **Atalhos:** acesso ao GitHub, LinkedIn e contato por e-mail.
 
-A interface se adapta a telas menores e à navegação por toque. A janela de currículo já existe, mas seu conteúdo ainda está em preparação.
+A interface se adapta a telas menores e à navegação por toque. O currículo pode ser solicitado pelos canais de contato disponíveis na seção Sobre mim.
 
 ## Projetos apresentados
 
