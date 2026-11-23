@@ -61,6 +61,7 @@ function openWindow(windowId) {
 
     createTaskbarButton(windowElement);
     bringToFront(windowElement);
+    windowElement.dispatchEvent(new Event("desktop:open"));
 }
 
 function closeWindow(windowElement) {
@@ -71,6 +72,7 @@ function closeWindow(windowElement) {
     if (button) {
         button.remove();
     }
+    windowElement.dispatchEvent(new Event("desktop:close"));
 }
 
 function minimizeWindow(windowElement) {
@@ -113,8 +115,7 @@ function createTaskbarButton(windowElement) {
         if (isOpen && isActive) {
             minimizeWindow(windowElement);
         } else {
-            windowElement.classList.add("open");
-            bringToFront(windowElement);
+            openWindow(windowElement.id);
         }
     });
 

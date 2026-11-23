@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/windows.css">
     <link rel="stylesheet" href="css/intro.css">
     <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/browser.css">
     <link rel="stylesheet" href="css/taskbar.css">
     <link rel="stylesheet" href="css/minesweeper.css">
     <link rel="stylesheet" href="css/control-panel.css">
@@ -44,6 +45,11 @@
             <div class="folder-icon"><img src="assets/icons/projetos.svg" alt="" width="48" height="48"></div>
             <span>Projetos</span>
         </div>
+
+        <button type="button" class="desktop-icon browser-shortcut" data-window="navegador" aria-controls="navegador">
+            <span class="folder-icon"><img src="assets/images/navegador-globo.png" alt="" width="48" height="48"></span>
+            <span>Navegador</span>
+        </button>
 
         <!-- ATALHO DO GLITCH -->
         <button type="button" class="desktop-icon glitch-icon" id="glitch-shortcut" aria-controls="glitch-options">
@@ -172,67 +178,30 @@
             <div class="window-content projects-content">
                 <h2 id="projects-title">Meus Projetos</h2>
                 <p class="projects-intro">Conheça os projetos e estudos que compartilho no GitHub.</p>
-                <div class="project-list">
-                    <article class="project-card" aria-labelledby="project-ecotour">
-                        <header class="project-heading">
-                            <img class="project-icon" src="assets/icons/projeto-ecotour.svg" alt="" width="40" height="40">
-                            <h3 id="project-ecotour">EcoTour</h3>
-                        </header>
-                        <p><strong>Projeto vencedor do Hackathon UNINASSAU 2026.</strong></p>
-                        <p>Guia digital de descarte de resíduos, com orientações sobre materiais e pontos de coleta no campus.</p>
-                        <ul class="project-technologies" aria-label="Tecnologias do EcoTour">
-                            <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Python</li>
-                        </ul>
-                        <div class="project-actions">
-                            <a href="https://github.com/alanfelipe01/EcoTour" target="_blank" rel="noopener noreferrer" aria-label="Ver código do EcoTour no GitHub (nova aba)">Ver código ↗</a>
-                        </div>
-                    </article>
-
-                    <article class="project-card" aria-labelledby="project-litoranea">
-                        <header class="project-heading">
-                            <img class="project-icon" src="assets/icons/projeto-litoranea.svg" alt="" width="40" height="40">
-                            <h3 id="project-litoranea">Litorânea Ambiental</h3>
-                        </header>
-                        <p>Landing page para a empresa júnior de Ciências Ambientais da UFC, apresentando serviços, equipe e canais de contato.</p>
-                        <ul class="project-technologies" aria-label="Tecnologias de Litorânea Ambiental">
-                            <li>React</li><li>TypeScript</li><li>TanStack Start</li><li>Tailwind CSS</li>
-                        </ul>
-                        <div class="project-actions">
-                            <a href="https://litoranea-ambiental-ufc.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Visitar site de Litorânea Ambiental (nova aba)">Visitar site ↗</a>
-                            <a href="https://github.com/alanfelipe01/litoranea-ambiental" target="_blank" rel="noopener noreferrer" aria-label="Ver código de Litorânea Ambiental no GitHub (nova aba)">Ver código ↗</a>
-                        </div>
-                    </article>
-
-                    <article class="project-card" aria-labelledby="project-portfolio">
-                        <header class="project-heading">
-                            <img class="project-icon" src="assets/icons/projeto-portfolio.svg" alt="" width="40" height="40">
-                            <h3 id="project-portfolio">Portfolio-Web</h3>
-                        </header>
-                        <p>Este portfólio! Uma área de trabalho inspirada no Windows 95, com janelas interativas, barra de tarefas e menu Iniciar.</p>
-                        <ul class="project-technologies" aria-label="Tecnologias do Portfolio-Web">
-                            <li>HTML</li><li>CSS</li><li>JavaScript</li>
-                        </ul>
-                        <div class="project-actions">
-                            <a href="https://github.com/alanfelipe01/Portfolio-Web" target="_blank" rel="noopener noreferrer" aria-label="Ver código do Portfolio-Web no GitHub (nova aba)">Ver código ↗</a>
-                        </div>
-                    </article>
-
-                    <article class="project-card" aria-labelledby="project-python">
-                        <header class="project-heading">
-                            <img class="project-icon" src="assets/icons/projeto-python.svg" alt="" width="40" height="40">
-                            <h3 id="project-python">Python — Estudos e Exercícios</h3>
-                        </header>
-                        <p>Repositório de estudos com exercícios, desafios e mini projetos para praticar Python e lógica de programação, organizados por tópico.</p>
-                        <ul class="project-technologies" aria-label="Tecnologias de Python Estudos">
-                            <li>Python</li>
-                        </ul>
-                        <div class="project-actions">
-                            <a href="https://github.com/alanfelipe01/python-estudos" target="_blank" rel="noopener noreferrer" aria-label="Ver estudos de Python no GitHub (nova aba)">Ver repositório ↗</a>
-                        </div>
-                    </article>
-                </div>
-                <p class="projects-footer">4 projetos e estudos · Links abrem em uma nova aba.</p>
+                <div class="project-list"></div>
+                <p class="projects-footer"></p>
             </div>
+        </section>
+
+        <section class="window browser-window" id="navegador" aria-labelledby="browser-title">
+            <header class="window-header">
+                <div class="window-title browser-tab" id="browser-title"><img src="assets/images/navegador-globo.png" alt="" width="18" height="18"> <span id="browser-tab-title">Navegador</span></div>
+                <div class="window-buttons">
+                    <button type="button" class="minimize-btn" aria-label="Minimizar janela">_</button>
+                    <button type="button" class="close-btn" aria-label="Fechar janela">×</button>
+                </div>
+            </header>
+            <nav class="browser-toolbar" aria-label="Navegação do aplicativo">
+                <button type="button" id="browser-back" aria-label="Voltar" title="Voltar" disabled><span aria-hidden="true">←</span></button>
+                <button type="button" id="browser-forward" aria-label="Avançar" title="Avançar" disabled><span aria-hidden="true">→</span></button>
+                <button type="button" id="browser-reload" aria-label="Recarregar página" title="Recarregar página"><span aria-hidden="true">⟳</span></button>
+                <button type="button" id="browser-home" aria-label="Página inicial" title="Página inicial"><span aria-hidden="true">⌂</span></button>
+                <div class="browser-location">
+                    <span aria-hidden="true" class="browser-site-icon">◉</span>
+                    <input id="browser-address" aria-label="Endereço da página atual" readonly value="alan.exe/" spellcheck="false">
+                </div>
+            </nav>
+            <div class="window-content browser-viewport" id="browser-page"></div>
         </section>
 
         <section class="window mines-window" id="campo-minado" aria-label="Campo Minado">
@@ -333,6 +302,7 @@
             <nav class="start-menu" id="start-menu" aria-label="Menu Iniciar" hidden>
                 <div class="start-menu-brand" aria-hidden="true">Alan.dev</div>
                 <div class="start-menu-items">
+                    <button type="button" class="start-menu-item" data-open-window="navegador" aria-controls="navegador"><img class="start-menu-icon" src="assets/images/navegador-globo.png" alt="" width="24" height="24"> Navegador</button>
                     <button type="button" class="start-menu-item" data-open-window="campo-minado" aria-controls="campo-minado"><img class="start-menu-icon" src="assets/icons/campo-minado.svg" alt="" width="24" height="24"> Campo Minado</button>
                     <button type="button" class="start-menu-item" data-open-window="painel-controle" aria-controls="painel-controle"><span class="start-menu-icon control-panel-icon" aria-hidden="true">⚙</span> Painel de Controle</button>
                     <hr class="start-menu-divider">
@@ -389,6 +359,8 @@
         </footer>
     </main>
     <script src="js/script.js"></script>
+    <script src="js/browser-data.js"></script>
+    <script src="js/browser.js"></script>
     <script src="js/glitch-geometry.js"></script>
     <script src="js/glitch.js"></script>
     <script src="js/minesweeper.js"></script>
