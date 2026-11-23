@@ -11,7 +11,10 @@ const portfolioArchive = {
             features: ["Orientações de descarte por tipo de material.", "Consulta aos pontos de coleta no campus."],
             technologies: ["HTML", "CSS", "JavaScript", "Python"],
             images: [],
-            links: [{ label: "Ver código", href: "https://github.com/alanfelipe01/EcoTour" }]
+            links: [
+                { label: "Visitar site", href: "https://ecotour-nassau.vercel.app/" },
+                { label: "Ver código", href: "https://github.com/alanfelipe01/EcoTour" }
+            ]
         },
         {
             slug: "litoranea",
@@ -21,8 +24,7 @@ const portfolioArchive = {
             features: ["Apresentação dos serviços e da equipe.", "Acesso aos canais de contato da empresa júnior."],
             technologies: ["React", "TypeScript", "TanStack Start", "Tailwind CSS"],
             links: [
-                { label: "Visitar site", href: "https://litoranea-ambiental-ufc.vercel.app/" },
-                { label: "Ver código", href: "https://github.com/alanfelipe01/litoranea-ambiental" }
+                { label: "Visitar site", href: "https://litoranea-ambiental-ufc.vercel.app/" }
             ]
         },
         {
