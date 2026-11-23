@@ -10,6 +10,7 @@ Um portfólio pessoal que transforma a navegação em uma área de trabalho insp
 
 - **Sobre mim:** apresentação, formação e tecnologias que estudo.
 - **Projetos:** trabalhos e estudos com suas tecnologias e links para código ou demonstração.
+- **Navegador:** arquivo pessoal com histórico interno, fichas de projetos, certificações e uma seção de eventos e fotos.
 - **Glitch.exe:** um gato que acompanha a área de trabalho. É possível interagir com ele, pausar ou ocultá-lo e escolher se inicia com o site.
 - **Campo Minado:** jogo acessível pelo menu Iniciar, com cronômetro e modo de bandeira para telas de toque.
 - **Painel de Controle:** alterna entre os temas Padrão, Noite e Órbita 95.
@@ -66,9 +67,14 @@ Portfolio-Web/
 └── README.md
 ```
 
-## Próximos passos
+## Adicionar conteúdo ao navegador
 
-O portfólio continua em desenvolvimento. Entre as ideias em planejamento estão aprofundar a apresentação dos projetos e criar um navegador simulado dentro da área de trabalho.
+Edite `js/browser-data.js`. As alterações aparecem ao recarregar o portfólio. A pasta Projetos e o navegador compartilham a mesma lista.
+
+- **Projetos** — acrescente um objeto a `projects` com `slug` único (por exemplo, `ecotour`), `name`, `summary` e `icon`. A ficha aceita `description`, `distinction`, listas de `features` e `technologies`, `images` e `links` no formato `{ label, href }`. Cada projeto ganha o endereço interno `alan.exe/projetos/<slug>`.
+- **Certificações** — acrescente a `certifications` um objeto com `name`, `institution` e `date` (texto como deve aparecer). Inclua `href` ou `image` quando houver um comprovante.
+- **Eventos e fotos** — use `events` com `name`, `description` e, se disponíveis, `images` e o `project` correspondente ao slug de um projeto.
+  Adicione os registros da galeria a `photos`. Cada imagem usa `{ src, alt, caption }`, com caminho relativo ao portfólio, descrição acessível e legenda opcional. Esse formato também serve para imagens nas demais seções. Guarde os arquivos em `assets/images/`.
 
 ## Sobre mim
 
