@@ -4,7 +4,7 @@
     const address = document.getElementById("browser-address");
     const back = document.getElementById("browser-back");
     const forward = document.getElementById("browser-forward");
-    const { projects, certifications, events, photos } = portfolioArchive;
+    const { projects, certifications, events } = portfolioArchive;
     const sections = [
         { path: "projetos", title: "Projetos", icon: "projetos", subtitle: "Aplicações e estudos" },
         { path: "certificacoes", title: "Certificações", icon: "curriculo", subtitle: "Cursos e certificados" },
@@ -118,7 +118,7 @@
             if (matches(text)) results.append(entryButton("projetos/" + project.slug, project.name, project.summary, project.icon));
         }
         for (const section of sections) {
-            const records = section.path === "certificacoes" ? certifications : section.path === "eventos" ? [...events, ...photos] : [];
+            const records = section.path === "certificacoes" ? certifications : section.path === "eventos" ? events : [];
             const found = records.some(record => matches([record.name, record.institution, record.date, record.description, record.caption, record.alt].filter(Boolean).join(" ")));
             if (matches(section.title + " " + section.subtitle) || found) {
                 results.append(entryButton(section.path, section.title, section.subtitle, "assets/icons/" + section.icon + ".svg"));
@@ -167,13 +167,15 @@
         for (const event of events) {
             const card = element("article", "", "archive-record");
             card.append(element("h3", event.name), element("p", event.description));
-            if (event.images?.length) card.append(gallery(event.images));
+            if (event.images?.length) {
+                const eventGallery = gallery(event.images);
+                eventGallery.classList.add("event-gallery");
+                card.append(eventGallery);
+            }
             const project = projects.find(item => item.slug === event.project);
             if (project) card.append(routeButton("projetos/" + project.slug, "Conhecer " + project.name, "archive-link"));
             page.append(card);
         }
-        page.append(element("h3", "Fotos"));
-        page.append(photos.length ? gallery(photos) : note("Nenhuma foto publicada ainda."));
     }
 
     function render(focus = true) {
