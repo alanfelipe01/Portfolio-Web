@@ -105,6 +105,13 @@ function createTaskbarButton(windowElement) {
         .querySelector(".window-title")
         .textContent.trim();
 
+    if (windowElement.id === "navegador") {
+        const icon = windowElement.querySelector(".window-title img").cloneNode();
+        icon.className = "taskbar-window-icon";
+        icon.alt = "";
+        button.prepend(icon);
+    }
+
     button.addEventListener("click", () => {
         const isOpen = windowElement.classList.contains("open");
         const isActive = button.classList.contains("active");
