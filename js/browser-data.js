@@ -1,0 +1,62 @@
+/* Conteúdo editorial usado pela pasta Projetos e pelo navegador do desktop. */
+const portfolioArchive = {
+    projects: [
+        {
+            slug: "ecotour",
+            name: "EcoTour",
+            icon: "assets/icons/projeto-ecotour.svg",
+            summary: "Guia digital de descarte de resíduos, com orientações sobre materiais e pontos de coleta no campus.",
+            distinction: "Projeto vencedor do Hackathon UNINASSAU 2026.",
+            description: "O EcoTour reúne em um guia as duas etapas de uma dúvida comum no campus: como descartar um material e onde encontrar um ponto de coleta.",
+            features: ["Orientações de descarte por tipo de material.", "Consulta aos pontos de coleta no campus."],
+            technologies: ["HTML", "CSS", "JavaScript", "Python"],
+            images: [],
+            links: [{ label: "Ver código", href: "https://github.com/alanfelipe01/EcoTour" }]
+        },
+        {
+            slug: "litoranea",
+            name: "Litorânea Ambiental",
+            icon: "assets/icons/projeto-litoranea.svg",
+            summary: "Landing page para a empresa júnior de Ciências Ambientais da UFC, apresentando serviços, equipe e canais de contato.",
+            features: ["Apresentação dos serviços e da equipe.", "Acesso aos canais de contato da empresa júnior."],
+            technologies: ["React", "TypeScript", "TanStack Start", "Tailwind CSS"],
+            links: [
+                { label: "Visitar site", href: "https://litoranea-ambiental-ufc.vercel.app/" },
+                { label: "Ver código", href: "https://github.com/alanfelipe01/litoranea-ambiental" }
+            ]
+        },
+        {
+            slug: "portfolio",
+            name: "Portfolio-Web",
+            icon: "assets/icons/projeto-portfolio.svg",
+            summary: "Este portfólio! Uma área de trabalho inspirada no Windows 95, com janelas interativas, barra de tarefas e menu Iniciar.",
+            features: ["Atalhos para aplicativos na área de trabalho.", "Janelas que podem ser arrastadas, minimizadas e maximizadas."],
+            technologies: ["HTML", "CSS", "JavaScript"],
+            images: [{ src: "assets/images/portfolio-desktop.jpg", alt: "Área de trabalho do portfólio com a janela Sobre mim aberta e o Glitch." }],
+            links: [{ label: "Ver código", href: "https://github.com/alanfelipe01/Portfolio-Web" }]
+        },
+        {
+            slug: "python",
+            name: "Python — Estudos e Exercícios",
+            icon: "assets/icons/projeto-python.svg",
+            summary: "Repositório de estudos com exercícios, desafios e mini projetos para praticar Python e lógica de programação, organizados por tópico.",
+            features: ["Exercícios, desafios e mini projetos organizados por tópico."],
+            technologies: ["Python"],
+            links: [{ label: "Ver repositório", href: "https://github.com/alanfelipe01/python-estudos" }]
+        }
+    ],
+    // Exemplo de campos: { name, institution, date, href, image: { src, alt } }
+    certifications: [],
+    events: [
+        {
+            name: "Hackathon UNINASSAU 2026",
+            description: "O EcoTour, guia digital de descarte de resíduos no campus, foi o projeto vencedor.",
+            project: "ecotour",
+            images: []
+        }
+    ],
+    photos: [
+        { src: "assets/images/alan.jpeg", alt: "Alan Felipe em um evento de tecnologia.", caption: "Registro de um evento de tecnologia" },
+        { src: "assets/images/portfolio-desktop.jpg", alt: "Área de trabalho do portfólio com a janela Sobre mim aberta e o Glitch.", caption: "Portfolio-Web · Área de trabalho" }
+    ]
+};
