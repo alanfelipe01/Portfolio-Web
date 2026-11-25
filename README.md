@@ -23,8 +23,8 @@ A interface se adapta a telas menores e à navegação por toque. O currículo p
 
 | Projeto | Descrição | Links |
 | --- | --- | --- |
-| **EcoTour** | Guia digital de descarte de resíduos, vencedor do Hackathon UNINASSAU 2026. | [Código](https://github.com/alanfelipe01/EcoTour) |
-| **Litorânea Ambiental** | Landing page para a empresa júnior de Ciências Ambientais da UFC. | [Site](https://litoranea-ambiental-ufc.vercel.app/) · [Código](https://github.com/alanfelipe01/litoranea-ambiental) |
+| **EcoTour** | Guia digital de descarte de resíduos, vencedor do Hackathon UNINASSAU 2026. | [Site](https://ecotour-nassau.vercel.app/) · [Código](https://github.com/alanfelipe01/EcoTour) |
+| **Litorânea Ambiental** | Landing page para a empresa júnior de Ciências Ambientais da UFC. | [Site](https://litoranea-ambiental-ufc.vercel.app/) |
 | **Portfolio-Web** | Este portfólio, com área de trabalho e janelas interativas. | [Código](https://github.com/alanfelipe01/Portfolio-Web) |
 | **Python — Estudos e Exercícios** | Exercícios, desafios e projetos para praticar Python e lógica de programação. | [Repositório](https://github.com/alanfelipe01/python-estudos) |
 

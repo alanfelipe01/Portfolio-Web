@@ -11,7 +11,10 @@ const portfolioArchive = {
             features: ["Orientações de descarte por tipo de material.", "Consulta aos pontos de coleta no campus."],
             technologies: ["HTML", "CSS", "JavaScript", "Python"],
             images: [],
-            links: [{ label: "Ver código", href: "https://github.com/alanfelipe01/EcoTour" }]
+            links: [
+                { label: "Visitar site", href: "https://ecotour-nassau.vercel.app/" },
+                { label: "Ver código", href: "https://github.com/alanfelipe01/EcoTour" }
+            ]
         },
         {
             slug: "litoranea",
@@ -21,8 +24,7 @@ const portfolioArchive = {
             features: ["Apresentação dos serviços e da equipe.", "Acesso aos canais de contato da empresa júnior."],
             technologies: ["React", "TypeScript", "TanStack Start", "Tailwind CSS"],
             links: [
-                { label: "Visitar site", href: "https://litoranea-ambiental-ufc.vercel.app/" },
-                { label: "Ver código", href: "https://github.com/alanfelipe01/litoranea-ambiental" }
+                { label: "Visitar site", href: "https://litoranea-ambiental-ufc.vercel.app/" }
             ]
         },
         {
@@ -49,10 +51,16 @@ const portfolioArchive = {
     certifications: [],
     events: [
         {
-            name: "Hackathon UNINASSAU 2026",
-            description: "O EcoTour, guia digital de descarte de resíduos no campus, foi o projeto vencedor.",
-            project: "ecotour",
-            images: []
+            name: "Siará Tech Summit 2026",
+            description: "Participei dos três dias do Siará Tech Summit, promovido pelo Sebrae de 7 a 9 de outubro de 2026. Conhecer diversas startups e acompanhar palestras ampliou minha visão sobre tecnologia e inovação.",
+            images: [
+                { src: "assets/images/siara-tech-summit-alan.jpeg", alt: "Alan no auditório do Siará Tech Summit." },
+                { src: "assets/images/siara-tech-summit-palestra.jpeg", alt: "Palestra no palco do Siará Tech Summit." },
+                { src: "assets/images/siara-tech-summit-hackathon.jpeg", alt: "Entrada da área de hackathon do evento." },
+                { src: "assets/images/siara-tech-summit-grupo.jpeg", alt: "Grupo de participantes reunido no evento." },
+                { src: "assets/images/siara-tech-summit-amigos.jpeg", alt: "Alan e outros participantes em uma selfie no evento." },
+                { src: "assets/images/siara-tech-summit-retratos.jpeg", alt: "Três participantes seguram retratos ilustrados no evento." }
+            ]
         }
     ],
     photos: [
