@@ -57,6 +57,15 @@ const portfolioArchive = {
     certifications: [],
     events: [
         {
+            name: "Hackathon UNINASSAU 2026",
+            description: "Participei do Hackathon UNINASSAU 2026 com o EcoTour, um guia digital de descarte de resíduos desenvolvido em equipe para o campus UNINASSAU Aguanambi. O projeto foi vencedor do hackathon, e fui responsável pela programação do site.",
+            images: [
+                { src: "assets/images/hackathon-uninassau-equipe.jpeg", alt: "Três integrantes da equipe ao lado de uma tela com o EcoTour." },
+                { src: "assets/images/hackathon-uninassau-certificados.jpeg", alt: "Certificados de participação no Hackathon UNINASSAU 2026." }
+            ],
+            project: "ecotour"
+        },
+        {
             name: "Siará Tech Summit 2026",
             description: "Participei dos três dias do Siará Tech Summit, promovido pelo Sebrae de 7 a 9 de outubro de 2026. Conhecer diversas startups e acompanhar palestras ampliou minha visão sobre tecnologia e inovação.",
             images: [
