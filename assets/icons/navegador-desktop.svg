@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" shape-rendering="crispEdges">
+  <title>Navegador</title>
+  <!-- Globo em pixels, com paralelos e meridianos. -->
+  <path fill="#080b11" d="M12 2h8v1h3v1h2v1h2v2h1v2h1v3h1v8h-1v3h-1v2h-1v2h-2v1h-2v1h-3v1h-8v-1H9v-1H7v-1H5v-2H4v-2H3v-3H2v-8h1V9h1V7h1V5h2V4h2V3h3z"/>
+  <path fill="#55ddd8" d="M12 3h8v1h3v1h2v1h1v2h1v2h1v2h1v8h-1v3h-1v2h-1v1h-2v1h-2v1h-2v1h-8v-1H9v-1H7v-1H6v-2H5v-2H4v-2H3v-8h1v-2h1V8h1V6h1V5h2V4h3z"/>
+  <path fill="#38b7e1" d="M5 9h22v3h1v3H4v-3h1z"/>
+  <path fill="#2587cf" d="M3 15h26v5h-1v2H4v-2H3z"/>
+  <path fill="#315ca9" d="M4 22h24v1h-1v2h-1v1h-2v1h-2v1h-2v1h-8v-1H9v-1H7v-1H6v-2H5v-1H4z"/>
+  <!-- Linhas de latitude e longitude, escalonadas em pixels inteiros. -->
+  <path fill="#080b11" d="M3 11h26v1H3zm-1 6h28v1H2zm2 6h24v1H4zM15 3h1v26h-1zM11 4h2v1h-1v2h-1v2h-1v3H9v8h1v3h1v2h1v2h1v1h-2v-2h-1v-2H9v-2H8v-3H7v-6h1v-3h1V8h1V6h1zm8 0h2v2h1v2h1v3h1v3h1v6h-1v3h-1v2h-1v2h-1v1h-2v-1h1v-2h1v-2h1v-3h1v-8h-1V9h-1V7h-1V5h-1z"/>
+</svg>

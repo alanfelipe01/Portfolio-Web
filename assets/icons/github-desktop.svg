@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" shape-rendering="crispEdges">
+  <title>GitHub</title>
+  <path fill="#222b29" d="M4 2h24v2h2v24h-2v2H4v-2H2V4h2z"/>
+  <path fill="#fffdf2" d="M4 4h24v1H5v22H4z"/>
+  <path fill="#bcbcaf" d="M28 4h1v24h-1v1H4v-1h24z"/>
+  <path fill="#24292f" d="M5 5h23v23H5z"/>
+  <path fill="#111519" d="M26 6h2v22H5v-2h21z"/>
+  <!-- Orelhas, cabeça, patas e cauda do octocat. -->
+  <path fill="#fffdf2" d="M8 8h3v1h2v1h6V9h2V8h3v4h1v2h1v3h-1v2h-1v1h-2v1h-2v1h1v4h-4v-4h-2v4h-4v-4H9v1H7v-1H6v-2H5v-1h2v1h1v1h3v-1H9v-1H8v-1H7v-4h1v-2h1V9H8z"/>
+</svg>
