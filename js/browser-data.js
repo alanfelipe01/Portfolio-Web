@@ -57,6 +57,22 @@ const portfolioArchive = {
     certifications: [],
     events: [
         {
+            name: "NASA Space Apps Challenge 2026",
+            description: "Participei do NASA Space Apps Challenge 2026 em Fortaleza, nos dias 13, 14 e 15 de novembro. Com minha equipe, trabalhei no desafio de criar um software para monitorar indicadores de saúde de astronautas em missões espaciais.",
+            images: [
+                { src: "assets/images/nasa-space-apps-equipe.jpeg", alt: "Três participantes da equipe em uma selfie no NASA Space Apps." },
+                { src: "assets/images/nasa-space-apps-trabalho.jpeg", alt: "Participantes da equipe reunidos com seus computadores durante o evento." },
+                { src: "assets/images/nasa-space-apps-cracha.jpeg", alt: "Crachá de competidor de Alan em frente a um computador com código aberto." }
+            ]
+        },
+        {
+            name: "DevFest Fortaleza 2026",
+            description: "Participei do DevFest Fortaleza 2026, realizado na UNI7, onde acompanhei diversas palestras sobre tecnologia. O evento reuniu a comunidade para compartilhar conhecimentos, ideias e experiências sobre inovação.",
+            images: [
+                { src: "assets/images/devfest-fortaleza-palestra.jpeg", alt: "Palestrante apresenta conteúdo em um auditório do DevFest Fortaleza." }
+            ]
+        },
+        {
             name: "Hackathon UNINASSAU 2026",
             description: "Participei do Hackathon UNINASSAU 2026 com o EcoTour, um guia digital de descarte de resíduos desenvolvido em equipe para o campus UNINASSAU Aguanambi. O projeto foi vencedor do hackathon, e fui responsável pela programação do site.",
             images: [

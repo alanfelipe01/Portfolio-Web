@@ -264,6 +264,8 @@
 .archive-gallery figcaption { padding: 8px 3px 3px; font: 1rem var(--interface-font); }
 .event-gallery { grid-template-columns: repeat(auto-fill, minmax(min(100%, 160px), 180px)); gap: 12px; margin-top: 16px; }
 .event-gallery img { height: 220px; object-fit: contain; }
+.event-gallery figure:has(img[src="assets/images/nasa-space-apps-trabalho.jpeg"]) { overflow: hidden; }
+.event-gallery img[src="assets/images/nasa-space-apps-trabalho.jpeg"] { transform: scale(1.25); transform-origin: 95% 80%; }
 .event-gallery figcaption { font-size: 1rem; }
 
 .browser-window :is(button, input, a):focus-visible,
