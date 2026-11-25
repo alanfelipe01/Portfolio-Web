@@ -86,7 +86,7 @@
     }
 
     function renderHome() {
-        const cover = heading("O que vamos descobrir hoje?", "assets/images/navegador-globo.png", true);
+        const cover = heading("O que vamos descobrir hoje?", "assets/icons/navegador-desktop.svg", true);
         cover.append(element("p", "Escolha um caminho e comece a explorar."));
         const form = element("form", "", "archive-search");
         form.setAttribute("role", "search");
@@ -107,7 +107,7 @@
     }
 
     function renderSearch(query) {
-        page.append(heading("Resultados da pesquisa", "assets/images/navegador-globo.png"));
+        page.append(heading("Resultados da pesquisa", "assets/icons/navegador-desktop.svg"));
         page.append(element("p", "Pesquisa por: " + query));
         const normalize = value => value.toLocaleLowerCase("pt-BR").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
         const term = normalize(query);
