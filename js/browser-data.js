@@ -7,10 +7,16 @@ const portfolioArchive = {
             icon: "assets/icons/projeto-ecotour.svg",
             summary: "Guia digital de descarte de resíduos, com orientações sobre materiais e pontos de coleta no campus.",
             distinction: "Projeto vencedor do Hackathon UNINASSAU 2026.",
-            description: "O EcoTour reúne em um guia as duas etapas de uma dúvida comum no campus: como descartar um material e onde encontrar um ponto de coleta.",
-            features: ["Orientações de descarte por tipo de material.", "Consulta aos pontos de coleta no campus."],
+            description: "O EcoTour nasceu da necessidade de orientar a comunidade acadêmica sobre o descarte correto de resíduos no campus UNINASSAU Aguanambi. Desenvolvido em equipe para o Hackathon UNINASSAU 2026, o projeto começou com uma pesquisa que reuniu 52 respostas e ajudou a compreender as dúvidas sobre descarte. A equipe também realizou um levantamento de campo, registrando e fotografando nove pontos de coleta distribuídos em oito locais da unidade. Os dados coletados, combinados com a consulta a fontes ambientais, deram origem a um guia digital que reúne orientações por material e apresenta os pontos de descarte compatíveis. Fui responsável pela programação do site, desenvolvendo a interface e as funcionalidades de busca, consulta aos materiais e localização dos pontos de descarte.",
+            features: [
+                "Busca de materiais por nome, categoria ou termos alternativos.",
+                "Orientações sobre preparo, cuidados e coletor indicado para cada material.",
+                "Consulta aos pontos de descarte com fotos, localização e materiais aceitos.",
+                "Filtros de pontos por material e área do campus.",
+                "Indicação de destinos compatíveis e aviso quando não há ponto interno confirmado."
+            ],
             technologies: ["HTML", "CSS", "JavaScript", "Python"],
-            images: [],
+            images: [{ src: "assets/images/ecotour-pagina-inicial.png", alt: "Página inicial do EcoTour com busca de materiais e foto dos coletores no campus." }],
             links: [
                 { label: "Visitar site", href: "https://ecotour-nassau.vercel.app/" },
                 { label: "Ver código", href: "https://github.com/alanfelipe01/EcoTour" }
@@ -22,7 +28,7 @@ const portfolioArchive = {
             icon: "assets/icons/projeto-litoranea.svg",
             summary: "Landing page para a empresa júnior de Ciências Ambientais da UFC, apresentando serviços, equipe e canais de contato.",
             features: ["Apresentação dos serviços e da equipe.", "Acesso aos canais de contato da empresa júnior."],
-            technologies: ["React", "TypeScript", "TanStack Start", "Tailwind CSS"],
+            technologies: ["HTML", "CSS", "JavaScript", "TypeScript"],
             links: [
                 { label: "Visitar site", href: "https://litoranea-ambiental-ufc.vercel.app/" }
             ]
