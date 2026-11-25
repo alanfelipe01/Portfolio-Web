@@ -27,6 +27,8 @@ const portfolioArchive = {
             name: "Litorânea Ambiental",
             icon: "assets/icons/projeto-litoranea.svg",
             summary: "Landing page para a empresa júnior de Ciências Ambientais da UFC, apresentando serviços, equipe e canais de contato.",
+            description: "A Litorânea Ambiental é a empresa júnior de Ciências Ambientais da UFC. Sua landing page apresenta a organização e suas soluções ambientais, com serviços organizados por áreas como estudos e diagnósticos, gestão de resíduos, licenciamento e educação ambiental. O site também mostra as etapas de trabalho, apresenta a equipe e facilita o contato para solicitar um orçamento.",
+            images: [{ src: "assets/images/litoranea-pagina-inicial.png", alt: "Página inicial do site da Litorânea Ambiental, com o nome e a identidade visual da empresa júnior." }],
             features: ["Apresentação dos serviços e da equipe.", "Acesso aos canais de contato da empresa júnior."],
             technologies: ["HTML", "CSS", "JavaScript", "TypeScript"],
             links: [
