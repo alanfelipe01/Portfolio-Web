@@ -50,7 +50,7 @@ Clique ou toque nos ícones da área de trabalho para abrir janelas e acessar li
 
 No menu Iniciar, use **Tab**, as **setas**, **Home** e **End** para navegar e **Esc** para fechar. No Campo Minado, use o botão direito ou a tecla **F** para marcar uma bandeira; em telas de toque, ative o modo de bandeira.
 
-O navegador pode guardar localmente o tema, a preferência de inicialização do Glitch, a apresentação da primeira visita e o melhor tempo do jogo. Se o armazenamento estiver indisponível, algumas preferências podem não persistir. O relógio acompanha a hora do dispositivo, e os ícones de rede e som são decorativos.
+O navegador pode guardar localmente o tema, a preferência de inicialização do Glitch, a apresentação da primeira visita e o melhor tempo do jogo. Se o armazenamento estiver indisponível, algumas preferências podem não persistir. O relógio acompanha a hora do dispositivo, a data exibida é fixa e os ícones de rede e som são decorativos.
 
 ## Estrutura do projeto
 

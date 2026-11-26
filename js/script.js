@@ -6,7 +6,7 @@ const desktop = document.querySelector(".desktop");
 const desktopIcons = document.querySelectorAll(".desktop-icon");
 const windows = document.querySelectorAll(".window");
 const taskbar = document.getElementById("taskbar-windows");
-const clock = document.getElementById("clock");
+const clock = document.getElementById("clock-time");
 const startButton = document.querySelector(".start-button");
 const startMenu = document.getElementById("start-menu");
 
