@@ -68,6 +68,38 @@
     touch-action: manipulation;
 }
 
+.glitch-invitation {
+    position: absolute;
+    bottom: calc(100% + 2px);
+    left: 50%;
+    width: 124px;
+    box-sizing: border-box;
+    transform: translateX(-50%);
+    padding: 5px 4px;
+    border: 1px solid #53746e;
+    border-radius: 6px;
+    background: #f6fffb;
+    color: #123a35;
+    font: bold 11px/1.25 Tahoma, Arial, sans-serif;
+    text-align: center;
+    box-shadow: 1px 1px 0 #404040;
+}
+
+.glitch-invitation::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: calc(50% - 5px);
+    width: 8px;
+    height: 8px;
+    border-right: 1px solid #53746e;
+    border-bottom: 1px solid #53746e;
+    background: #f6fffb;
+    transform: rotate(45deg);
+}
+
+.glitch-mascot.is-invitation-hidden .glitch-invitation { visibility: hidden; }
+
 .glitch-interact:focus-visible {
     outline: 2px dotted white;
     outline-offset: 2px;

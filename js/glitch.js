@@ -126,7 +126,7 @@
         hideButton.disabled = !visible;
         assetMessage.hidden = !spriteFailed;
         shortcut.setAttribute("aria-label", visible ? "Abrir assistente Glitch" : "Mostrar Glitch");
-        const interactionLabel = activity === "sleeping" ? "Acordar e conversar com Glitch" : "Conversar com Glitch";
+        const interactionLabel = activity === "sleeping" ? "Acordar e conversar com Glitch, guia do portfólio" : "Conversar com Glitch, guia do portfólio";
         interactButton.setAttribute("aria-label", interactionLabel);
         interactButton.setAttribute("title", interactionLabel);
         storageMessage.textContent = storageAvailable
@@ -685,6 +685,10 @@
         }
         openWindow("glitch-options");
     });
+
+    const hideInvitation = () => mascot.classList.add("is-invitation-hidden");
+    setTimeout(hideInvitation, 8000);
+    conversationWindow.addEventListener("desktop:open", hideInvitation);
 
     interactButton.addEventListener("click", event => {
         const now = performance.now();
