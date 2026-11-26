@@ -13,6 +13,21 @@ const startMenu = document.getElementById("start-menu");
 let highestZIndex = 10;
 const compactLayout = window.matchMedia("(max-width: 700px), (pointer: coarse)");
 
+function updateClock() {
+    const now = new Date();
+    const hour = now.getHours();
+    const hours = hour % 12 || 12;
+    const minutes = String(now.getMinutes()).padStart(2, "0");
+    const period = hour < 12 ? "AM" : "PM";
+    clock.textContent = `${hours}:${minutes} ${period}`;
+}
+
+updateClock();
+setInterval(updateClock, 1000);
+document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) updateClock();
+});
+
 
 // =========================================
 // FUNÇÕES AUXILIARES
