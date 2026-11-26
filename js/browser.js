@@ -246,8 +246,8 @@
             card.append(tech);
         }
         const actions = element("div", "", "project-actions");
-        const details = routeButton("projetos/" + project.slug, "Ver detalhes");
-        details.setAttribute("aria-label", "Ver detalhes de " + project.name);
+        const details = routeButton("projetos/" + project.slug, "Abrir página do projeto");
+        details.setAttribute("aria-label", "Abrir página do projeto " + project.name + " no Navegador");
         actions.append(details);
         for (const { label, href } of project.links || []) {
             const link = externalLink(label, href);
