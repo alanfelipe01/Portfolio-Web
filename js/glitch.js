@@ -448,10 +448,13 @@
             .map(element => element.getBoundingClientRect())
             .filter(rect => rect.width > 0 && rect.height > 0);
         if (menuRect) obstacles.push(menuRect);
-        const size = { width: mascotRect.width, height: mascotRect.height };
+        // As imagens têm bastante transparência; a colisão acompanha o corpo
+        // nas diferentes poses, sem contar as bordas vazias do sprite.
+        const offset = { x: mascotRect.width * .11, y: mascotRect.height * .4 };
+        const size = { width: mascotRect.width * .78, height: mascotRect.height - offset.y };
         const bounds = {
             left: mobileMenuOpen ? Math.max(6, menuRect.left - desktopRect.left) : 6,
-            top: Math.max(6, ground - mascotRect.height),
+            top: Math.max(6, ground - size.height),
             right: mobileMenuOpen ? Math.min(desktopRect.width - 6, menuRect.right - desktopRect.left) : desktopRect.width - 6,
             bottom: ground
         };
@@ -467,13 +470,13 @@
             !GlitchGeometry.findFreePosition(size, bounds, blocked, 24, config.obstacleMargin)) {
             blocked = relativeObstacles([menuRect]);
         }
-        return { size, bounds, obstacles: blocked };
+        return { size, bounds, obstacles: blocked, offset };
     }
 
     function setPosition(next) {
         position = next;
-        mascot.style.left = next.x.toFixed(2) + "px";
-        mascot.style.top = next.y.toFixed(2) + "px";
+        mascot.style.left = (next.x - geometry.offset.x).toFixed(2) + "px";
+        mascot.style.top = (next.y - geometry.offset.y).toFixed(2) + "px";
     }
 
     function updateLayout() {
