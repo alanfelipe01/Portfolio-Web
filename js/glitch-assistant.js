@@ -103,6 +103,7 @@
             }
             choices.append(control);
         }
+        choices.parentElement.scrollTop = 0;
         back.disabled = history.length === 0;
         messages.scrollTop = messages.scrollHeight;
         if (focusChoice) choices.querySelector("button, a")?.focus({ preventScroll: true });

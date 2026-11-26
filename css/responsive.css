@@ -57,6 +57,67 @@
         touch-action: pan-y pinch-zoom;
     }
 
+    /* A conversa aproveita mais altura, sem ocupar o espaço do mascote. */
+    .window.glitch-window {
+        left: max(12px, env(safe-area-inset-left, 0px));
+        width: calc(100% - max(12px, env(safe-area-inset-left, 0px)) - max(12px, env(safe-area-inset-right, 0px)));
+        height: calc(100% - var(--taskbar-height) - 12px - env(safe-area-inset-top, 0px) - 138px);
+    }
+
+    .glitch-window .glitch-options-content {
+        display: flex;
+        flex-direction: column;
+        padding: 8px;
+    }
+
+    .glitch-chat {
+        display: flex;
+        flex: 1 0 260px;
+        flex-direction: column;
+        min-height: 0;
+    }
+
+    .glitch-chat-header { padding: 6px 8px; }
+    .glitch-chat-avatar { width: 40px; height: 40px; }
+    .glitch-options-content .glitch-chat-header p { font-size: 13px; }
+
+    .glitch-messages {
+        flex: 1 1 70px;
+        min-height: 64px;
+        max-height: none;
+        padding: 10px 8px;
+    }
+
+    .glitch-choices-panel {
+        flex: 0 1 auto;
+        min-height: 0;
+        max-height: 62%;
+        overflow-y: auto;
+        padding: 8px;
+        overscroll-behavior: contain;
+        scrollbar-width: thin;
+    }
+
+    .glitch-choices { flex-direction: column; }
+    .glitch-choices :is(button, a) { width: 100%; }
+
+    .glitch-conversation-controls {
+        flex-wrap: nowrap;
+        gap: 5px;
+        padding: 8px 0 0;
+    }
+
+    .glitch-conversation-controls button {
+        flex: 1 1 0;
+        min-width: 0;
+        padding: 6px 3px;
+        font-size: 13px;
+    }
+
+    .glitch-settings { flex: 0 0 auto; margin-top: 8px; }
+    .glitch-settings summary { min-height: 44px; margin-bottom: 0; padding: 12px 2px; }
+    .glitch-settings[open] summary { margin-bottom: 8px; }
+
     /* O Campo Minado acompanha o tamanho do tabuleiro, sem sobra na janela. */
     .window.mines-window {
         width: min(300px, calc(100% - max(24px, env(safe-area-inset-left, 0px)) - max(24px, env(safe-area-inset-right, 0px))));
@@ -139,6 +200,19 @@
     .start-menu-item {
         min-height: 52px;
     }
+}
+
+@media (max-width: 700px) and (max-height: 650px), (pointer: coarse) and (max-height: 650px) {
+    .glitch-chat { flex-basis: 228px; }
+    .glitch-messages { min-height: 80px; }
+}
+
+@media (max-width: 700px) and (max-height: 450px), (pointer: coarse) and (max-height: 450px) {
+    .window.glitch-window {
+        height: calc(100% - var(--taskbar-height) - 28px - env(safe-area-inset-top, 0px));
+    }
+    .glitch-chat { flex-basis: 160px; }
+    .glitch-messages { min-height: 48px; }
 }
 
 /* A janela maximizada ocupa a área de trabalho sem cobrir a barra de tarefas. */
