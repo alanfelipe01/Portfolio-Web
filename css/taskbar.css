@@ -184,6 +184,15 @@
 
 /*RELÓGIO*/
 
+.tray-network {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 20px;
+    height: 30px;
+    margin-left: 2px;
+}
+
 .tray-sound {
     display: flex;
     align-items: center;
