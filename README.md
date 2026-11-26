@@ -11,7 +11,7 @@ Um portfólio pessoal que transforma a navegação em uma área de trabalho insp
 - **Sobre mim:** apresentação, formação e tecnologias que estudo.
 - **Projetos:** trabalhos e estudos com suas tecnologias e links para código ou demonstração.
 - **Navegador:** arquivo pessoal com histórico interno, fichas de projetos, certificações e uma seção de eventos e fotos.
-- **Glitch.exe:** um gato que acompanha a área de trabalho. É possível interagir com ele, pausar ou ocultá-lo e escolher se inicia com o site.
+- **Glitch.exe:** um gato que acompanha a área de trabalho e ajuda a explorar o portfólio por assuntos e atalhos. É possível pausar ou ocultá-lo e escolher se inicia com o site.
 - **Campo Minado:** jogo acessível pelo menu Iniciar, com cronômetro e modo de bandeira para telas de toque.
 - **Painel de Controle:** alterna entre os temas Padrão, Noite e Órbita 95.
 - **Janelas:** podem ser arrastadas, minimizadas, maximizadas, restauradas e fechadas. A barra de tarefas permite alternar entre elas.
@@ -50,7 +50,7 @@ Clique ou toque nos ícones da área de trabalho para abrir janelas e acessar li
 
 No menu Iniciar, use **Tab**, as **setas**, **Home** e **End** para navegar e **Esc** para fechar. No Campo Minado, use o botão direito ou a tecla **F** para marcar uma bandeira; em telas de toque, ative o modo de bandeira.
 
-O navegador pode guardar localmente o tema, a preferência de inicialização do Glitch, a apresentação da primeira visita e o melhor tempo do jogo. Se o armazenamento estiver indisponível, algumas preferências podem não persistir. O relógio tem valor fixo e o ícone de som é decorativo.
+O navegador pode guardar localmente o tema, a preferência de inicialização do Glitch, a apresentação da primeira visita e o melhor tempo do jogo. Se o armazenamento estiver indisponível, algumas preferências podem não persistir. O relógio acompanha a hora do dispositivo, a data exibida é fixa e os ícones de rede e som são decorativos.
 
 ## Estrutura do projeto
 

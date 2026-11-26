@@ -7,6 +7,12 @@ const portfolioArchive = {
             icon: "assets/icons/projeto-ecotour.svg",
             summary: "Guia digital de descarte de resíduos, com orientações sobre materiais e pontos de coleta no campus.",
             distinction: "Projeto vencedor do Hackathon UNINASSAU 2026.",
+            highlights: [
+                { label: "O desafio", text: "Orientar o descarte correto de resíduos no campus." },
+                { label: "A pesquisa", text: "52 respostas e levantamento dos pontos de coleta." },
+                { label: "Minha contribuição", text: "Programação da interface e das funcionalidades." },
+                { label: "Resultado", text: "Projeto vencedor do Hackathon UNINASSAU 2026." }
+            ],
             description: "O EcoTour nasceu da necessidade de orientar a comunidade acadêmica sobre o descarte correto de resíduos no campus UNINASSAU Aguanambi. Desenvolvido em equipe para o Hackathon UNINASSAU 2026, o projeto começou com uma pesquisa que reuniu 52 respostas e ajudou a compreender as dúvidas sobre descarte. A equipe também realizou um levantamento de campo, registrando e fotografando nove pontos de coleta distribuídos em oito locais da unidade. Os dados coletados, combinados com a consulta a fontes ambientais, deram origem a um guia digital que reúne orientações por material e apresenta os pontos de descarte compatíveis. Fui responsável pela programação do site, desenvolvendo a interface e as funcionalidades de busca, consulta aos materiais e localização dos pontos de descarte.",
             features: [
                 "Busca de materiais por nome, categoria ou termos alternativos.",
