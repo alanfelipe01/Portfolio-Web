@@ -334,14 +334,14 @@
 .glitch-options-content p { margin: 0; font-size: 14px; line-height: 1.4; }
 .glitch-chat { border: 2px solid; border-color: #808080 white white #808080; background: #e9eceb; }
 .glitch-chat-header { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-bottom: 1px solid #9daeb0; background: #d4d9da; }
-.glitch-chat-avatar { width: 52px; height: 52px; flex: 0 0 auto; background: #243650; border: 2px solid; border-color: #777 white white #777; }
+.glitch-chat-avatar { width: 52px; height: 52px; flex: 0 0 auto; background: var(--window-title-background); border: 2px solid; border-color: #777 white white #777; }
 .glitch-chat-avatar img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .glitch-options-content .glitch-chat-header h2 { margin: 0 0 4px; color: #071746; font: bold 16px Tahoma, Arial, sans-serif; }
 .glitch-options-content .glitch-chat-header p { color: #34454e; font: 11px Tahoma, Arial, sans-serif; }
 .glitch-messages { display: flex; flex-direction: column; gap: 10px; min-height: 145px; max-height: 210px; overflow-y: auto; padding: 16px 12px; font-family: Tahoma, Arial, sans-serif; }
 .glitch-message { max-width: 90%; display: flex; gap: 7px; align-items: flex-end; }
 .glitch-message.is-user { align-self: flex-end; }
-.glitch-message-avatar { width: 29px; height: 29px; flex: 0 0 auto; border: 1px solid #637681; border-radius: 50%; background: #243650; object-fit: contain; }
+.glitch-message-avatar { width: 29px; height: 29px; flex: 0 0 auto; border: 1px solid #637681; border-radius: 50%; background: var(--window-title-background); object-fit: contain; }
 .glitch-options-content .glitch-message-bubble { padding: 10px 12px; border: 1px solid #b9c7c9; border-radius: 12px 12px 12px 3px; background: white; color: #102b40; font: 14px/1.45 Tahoma, Arial, sans-serif; overflow-wrap: anywhere; }
 .glitch-options-content .is-user .glitch-message-bubble { border-color: #8bbcb1; border-radius: 12px 12px 3px 12px; background: #d3eee3; }
 .glitch-visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
