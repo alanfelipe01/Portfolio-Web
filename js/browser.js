@@ -114,7 +114,7 @@
         const matches = value => normalize(value || "").includes(term);
         const results = element("div", "", "archive-directory");
         for (const project of projects) {
-            const text = [project.name, project.summary, project.description, project.distinction, ...(project.features || []), ...(project.technologies || [])].join(" ");
+            const text = [project.name, project.summary, project.description, project.distinction, ...(project.highlights || []).flatMap(item => [item.label, item.text]), ...(project.features || []), ...(project.technologies || [])].join(" ");
             if (matches(text)) results.append(entryButton("projetos/" + project.slug, project.name, project.summary, project.icon));
         }
         for (const section of sections) {
@@ -128,15 +128,39 @@
     }
 
     function renderProject(project) {
-        page.append(heading(project.name, project.icon), element("p", project.description || project.summary));
-        if (project.distinction) page.append(element("p", project.distinction, "archive-distinction"));
+        page.append(heading(project.name, project.icon));
+        if (project.highlights?.length) {
+            if (project.links?.length) {
+                const links = element("div", "", "project-actions project-quick-actions");
+                for (const { label, href } of project.links) links.append(externalLink(label, href));
+                page.append(links);
+            }
+            const overview = element("section", "", "project-overview");
+            overview.setAttribute("aria-label", "Resumo do projeto");
+            const highlights = element("dl", "", "project-highlights");
+            for (const { label, text } of project.highlights) {
+                const item = element("div");
+                item.append(element("dt", label), element("dd", text));
+                highlights.append(item);
+            }
+            overview.append(highlights);
+            if (project.images?.length) overview.append(gallery([project.images[0]]));
+            page.append(overview);
+            if (project.description) page.append(element("h3", "Sobre o projeto"), element("p", project.description));
+        } else {
+            page.append(element("p", project.description || project.summary));
+            if (project.distinction) page.append(element("p", project.distinction, "archive-distinction"));
+        }
         page.append(element("h3", "Funcionalidades"), project.features?.length
             ? list(project.features) : note("Funcionalidades a documentar."));
         page.append(element("h3", "Tecnologias"), project.technologies?.length
             ? list(project.technologies, "project-technologies") : note("Tecnologias a informar."));
-        page.append(element("h3", "Imagens"), project.images?.length
-            ? gallery(project.images) : note("Capturas do projeto a adicionar."));
-        if (project.links?.length) {
+        const remainingImages = project.highlights?.length ? project.images?.slice(1) : project.images;
+        if (remainingImages?.length || !project.highlights?.length) {
+            page.append(element("h3", "Imagens"), remainingImages?.length
+                ? gallery(remainingImages) : note("Capturas do projeto a adicionar."));
+        }
+        if (project.links?.length && !project.highlights?.length) {
             const links = element("div", "", "project-actions");
             for (const { label, href } of project.links) links.append(externalLink(label, href));
             page.append(element("h3", "Links externos"), links);
