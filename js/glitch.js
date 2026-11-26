@@ -114,7 +114,7 @@
     }
 
     function canAct() {
-        return canInteract() && !motionPreference.matches && activity !== "sleeping" && !conversationWindow.classList.contains("open");
+        return canInteract() && !motionPreference.matches && activity !== "sleeping";
     }
 
     function updateControls() {
@@ -210,13 +210,13 @@
     }
 
     function tryEnterSleep() {
-        if (!canInteract() || activity === "sleeping" || conversationWindow.classList.contains("open")) return false;
+        if (!canInteract() || activity === "sleeping") return false;
         if (!sleepRequested && performance.now() - lastInteractionAt < config.sleepAfter) return false;
         return enterSleep();
     }
 
     function scheduleSleepCheck() {
-        if (!canInteract() || activity === "sleeping" || sleepTimer !== null || conversationWindow.classList.contains("open")) return;
+        if (!canInteract() || activity === "sleeping" || sleepTimer !== null) return;
         const remaining = config.sleepAfter - (performance.now() - lastInteractionAt);
         if (remaining <= 0) {
             if (activity === "idle" || activity === "sitting") enterSleep();
