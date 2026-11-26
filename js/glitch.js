@@ -438,29 +438,36 @@
         const mascotRect = mascot.getBoundingClientRect();
         const startMenu = document.getElementById("start-menu");
         const mobileMenuOpen = !startMenu.hidden && window.matchMedia("(max-width: 700px), (pointer: coarse)").matches;
-        // No celular, o topo do menu oferece uma superfície para o Glitch.
+        const menuRect = !startMenu.hidden ? startMenu.getBoundingClientRect() : null;
+        // No celular, o Glitch fica dentro das bordas do topo do menu.
         const ground = mobileMenuOpen
-            ? startMenu.getBoundingClientRect().top - desktopRect.top - config.obstacleMargin
+            ? menuRect.top - desktopRect.top - config.obstacleMargin
             : taskbarRect.top - desktopRect.top;
-        const obstacles = [...desktop.querySelectorAll(".desktop-icon, .window.open")]
+        const openWindows = [...desktop.querySelectorAll(".window.open")];
+        const obstacles = [...desktop.querySelectorAll(".desktop-icon"), ...openWindows]
             .map(element => element.getBoundingClientRect())
             .filter(rect => rect.width > 0 && rect.height > 0);
-        if (!startMenu.hidden) obstacles.push(startMenu.getBoundingClientRect());
-        return {
-            size: { width: mascotRect.width, height: mascotRect.height },
-            bounds: {
-                left: 6,
-                top: Math.max(6, ground - mascotRect.height),
-                right: desktopRect.width - 6,
-                bottom: ground
-            },
-            obstacles: obstacles.map(rect => ({
-                left: rect.left - desktopRect.left,
-                top: rect.top - desktopRect.top,
-                right: rect.right - desktopRect.left,
-                bottom: rect.bottom - desktopRect.top
-            }))
+        if (menuRect) obstacles.push(menuRect);
+        const size = { width: mascotRect.width, height: mascotRect.height };
+        const bounds = {
+            left: mobileMenuOpen ? Math.max(6, menuRect.left - desktopRect.left) : 6,
+            top: Math.max(6, ground - mascotRect.height),
+            right: mobileMenuOpen ? Math.min(desktopRect.width - 6, menuRect.right - desktopRect.left) : desktopRect.width - 6,
+            bottom: ground
         };
+        const relativeObstacles = rects => rects.map(rect => ({
+            left: rect.left - desktopRect.left,
+            top: rect.top - desktopRect.top,
+            right: rect.right - desktopRect.left,
+            bottom: rect.bottom - desktopRect.top
+        }));
+        let blocked = relativeObstacles(obstacles);
+        // Sem janela aberta, os ícones não devem esconder o Glitch em telas baixas.
+        if (mobileMenuOpen && openWindows.length === 0 &&
+            !GlitchGeometry.findFreePosition(size, bounds, blocked, 24, config.obstacleMargin)) {
+            blocked = relativeObstacles([menuRect]);
+        }
+        return { size, bounds, obstacles: blocked };
     }
 
     function setPosition(next) {
