@@ -222,6 +222,13 @@
         render();
     }
 
+    document.addEventListener("alan-portfolio:open-project", event => {
+        const project = projects.find(item => item.slug === event.detail);
+        if (!project) return;
+        openWindow("navegador");
+        navigate("projetos/" + project.slug);
+    });
+
     // A pasta original e as fichas detalhadas consultam o mesmo catálogo.
     const folder = document.querySelector("#projetos .project-list");
     for (const project of projects) {

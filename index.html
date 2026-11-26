@@ -89,7 +89,7 @@
             <img class="glitch-rest-pose" id="glitch-sleep" src="assets/glitch/glitch-dormindo.webp" alt="" draggable="false" hidden>
             <img class="glitch-rest-pose" id="glitch-wake" src="assets/glitch/glitch-acordando.webp" alt="" draggable="false" hidden>
             <img class="glitch-rest-pose" id="glitch-stretch" src="assets/glitch/glitch-espreguicando.webp" alt="" draggable="false" hidden>
-            <button type="button" class="glitch-interact" id="glitch-interact" aria-label="Interagir com Glitch" title="Interagir com Glitch"></button>
+            <button type="button" class="glitch-interact" id="glitch-interact" aria-label="Conversar com Glitch" title="Conversar com Glitch"></button>
         </div>
 
  <!-- JANELA SOBRE MIM -->
@@ -262,14 +262,24 @@
                 </div>
             </header>
             <div class="window-content glitch-options-content">
-                <div class="glitch-intro">
-                    <div class="glitch-portrait" aria-hidden="true"><img src="assets/glitch/glitch-base.webp" alt="" width="88" height="88"></div>
-                    <div class="glitch-speech">
-                        <span class="glitch-name">GLITCH.EXE</span>
-                        <h2>Olá! Eu sou o Glitch.</h2>
-                        <p>Seu companheiro de desktop está por aqui.</p>
+                <section class="glitch-chat" aria-labelledby="glitch-chat-title">
+                    <header class="glitch-chat-header">
+                        <div class="glitch-chat-avatar" aria-hidden="true"><img src="assets/glitch/glitch-base.webp" alt="" width="52" height="52"></div>
+                        <div><h2 id="glitch-chat-title">Glitch</h2><p>Seu guia pelo portfólio</p></div>
+                    </header>
+                    <div class="glitch-messages" id="glitch-messages" role="log" aria-label="Conversa com o Glitch" aria-live="polite" aria-relevant="additions"></div>
+                    <div class="glitch-choices-panel">
+                        <h3 id="glitch-choices-title">Escolha sua resposta</h3>
+                        <div class="glitch-choices" id="glitch-choices" role="group" aria-labelledby="glitch-choices-title"></div>
                     </div>
-                </div>
+                </section>
+                <nav class="glitch-conversation-controls" aria-label="Controles da conversa">
+                    <button type="button" id="glitch-back">Voltar</button>
+                    <button type="button" id="glitch-restart">Recomeçar</button>
+                    <button type="button" id="glitch-end">Fechar conversa</button>
+                </nav>
+                <details class="glitch-settings">
+                    <summary>Configurações do Glitch</summary>
                 <div class="glitch-status-bar">
                     <span>Estado do companheiro</span>
                     <strong id="glitch-status" aria-live="polite">Ativo</strong>
@@ -288,6 +298,7 @@
                     <button type="button" id="glitch-hide">Ocultar</button>
                 </div>
                 <p class="glitch-hint">Para me trazer de volta, use o ícone Glitch.exe no desktop.</p>
+                </details>
             </div>
         </section>
 
@@ -358,6 +369,7 @@
     <script src="js/browser.js"></script>
     <script src="js/glitch-geometry.js"></script>
     <script src="js/glitch.js"></script>
+    <script src="js/glitch-assistant.js"></script>
     <script src="js/minesweeper.js"></script>
 </body>
 </html>

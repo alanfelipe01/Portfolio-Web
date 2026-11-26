@@ -46,6 +46,7 @@
     const assetMessage = document.getElementById("glitch-asset-message");
     const pauseButton = document.getElementById("glitch-pause");
     const hideButton = document.getElementById("glitch-hide");
+    const conversationWindow = document.getElementById("glitch-options");
     const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
     const poses = {
         base: document.getElementById("glitch-sprite"),
@@ -113,7 +114,7 @@
     }
 
     function canAct() {
-        return canInteract() && !motionPreference.matches && activity !== "sleeping";
+        return canInteract() && !motionPreference.matches && activity !== "sleeping" && !conversationWindow.classList.contains("open");
     }
 
     function updateControls() {
@@ -124,8 +125,8 @@
         pauseButton.disabled = !visible || spriteFailed;
         hideButton.disabled = !visible;
         assetMessage.hidden = !spriteFailed;
-        shortcut.setAttribute("aria-label", visible ? "Abrir opções do Glitch" : "Mostrar Glitch");
-        const interactionLabel = activity === "sleeping" ? "Acordar Glitch" : "Interagir com Glitch";
+        shortcut.setAttribute("aria-label", visible ? "Abrir assistente Glitch" : "Mostrar Glitch");
+        const interactionLabel = activity === "sleeping" ? "Acordar e conversar com Glitch" : "Conversar com Glitch";
         interactButton.setAttribute("aria-label", interactionLabel);
         interactButton.setAttribute("title", interactionLabel);
         storageMessage.textContent = storageAvailable
@@ -209,13 +210,13 @@
     }
 
     function tryEnterSleep() {
-        if (!canInteract() || activity === "sleeping") return false;
+        if (!canInteract() || activity === "sleeping" || conversationWindow.classList.contains("open")) return false;
         if (!sleepRequested && performance.now() - lastInteractionAt < config.sleepAfter) return false;
         return enterSleep();
     }
 
     function scheduleSleepCheck() {
-        if (!canInteract() || activity === "sleeping" || sleepTimer !== null) return;
+        if (!canInteract() || activity === "sleeping" || sleepTimer !== null || conversationWindow.classList.contains("open")) return;
         const remaining = config.sleepAfter - (performance.now() - lastInteractionAt);
         if (remaining <= 0) {
             if (activity === "idle" || activity === "sitting") enterSleep();
@@ -681,13 +682,13 @@
             lastInteractionAt = performance.now();
             sleepRequested = false;
             refresh();
-        } else {
-            openWindow("glitch-options");
         }
+        openWindow("glitch-options");
     });
 
     interactButton.addEventListener("click", event => {
         const now = performance.now();
+        if (visible && poseReady.base && hasSpace) openWindow("glitch-options");
         if (!canInteract()) return;
         if (activity === "sleeping") {
             wakeGlitch();
